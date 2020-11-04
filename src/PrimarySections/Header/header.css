@@ -1,0 +1,65 @@
+/* Search form Select */
+.search-form select {
+  width: 100% !important;
+  height: 100%;
+  text-align: center !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: none;
+  background-image: none;
+  padding: 0 0 5px 5px;
+  cursor: pointer;
+}
+/* Browse Catagories */
+.categorie-menus {
+  -webkit-transition: height 4s ease;
+  -moz-transition: height 4s ease;
+  -ms-transition: height 4s ease;
+  -o-transition: height 4s ease;
+  transition: height 4s ease !important;
+}
+/* header-top-menu css */
+.header-top-menu {
+  position: relative;
+}
+.header-top-menu .top-main-menu .main-menu {
+  /* main menu css in mobile version */
+  display: none;
+}
+.header-top-menu .top-main-menu .main-menu.active {
+  /* main menu small view toggle */
+  display: block;
+}
+
+/* ham-burger css */
+.ham-burger {
+  width: max-content;
+  position: absolute;
+  right: 5px;
+  z-index: 9999;
+}
+
+.mburger:hover {
+  color: #efefef;
+}
+
+/* toggle active/inActive */
+.active {
+  display: block;
+}
+.inActive {
+  display: none;
+}
+/* media query css here */
+@media (min-width: 992px) {
+  /* Main menu css here */
+  .header-top-menu .top-main-menu .main-menu {
+    display: block !important;
+  }
+}
+

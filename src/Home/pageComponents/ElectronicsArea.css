@@ -1,0 +1,27 @@
+/* ---------------------------
+    home-module-four arrows 
+---------------*/
+.home-module-four .owl-nav{
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #f0f0f0;
+    border-radius: 25px;
+    height: 32px;
+    line-height: 32px;
+    position: absolute;
+    right: 0;
+    top: -64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 7px;
+}
+.home-module-four .owl-nav .owl-prev,
+.home-module-four .owl-nav .owl-next{
+    height: 100%;
+    width: 100%;
+}
+.home-module-four .owl-nav:hover button.owl-prev,
+.home-module-four .owl-nav:hover button.owl-next{
+    background-color: #fff;
+    color:#222;
+}
