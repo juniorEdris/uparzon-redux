@@ -12,6 +12,7 @@ import BusinessAndOffice from './pageComponents/BusinessAndOffice';
 import LongBanner from './pageComponents/LongBanner'
 import BrandArea from './pageComponents/BrandArea';
 import ScrollBar from '../PrimarySections/ScrollBar'
+import URL from '../RequestLinks'
 
 
 
@@ -20,7 +21,7 @@ export default function HomeMainSection() {
     return (
         <div>
             <HomeSlider/>
-            <OurProduct/>
+            <OurProduct fetchURL={URL.products}/>
             <HomeBanner/>
             <FeaturedCategory/>
             <HotCollection/>

@@ -55,6 +55,7 @@ export default function ModalSection(){
                             {...largSlider}
                             ref={slider => (slider1 = slider)}
                             >
+                                
                             <div class="product-large-slider mb-20">
                                 <div class="pro-large-img">
                                     <img src="https://uparzon.com.bd/assets/img/product/product-4.jpg" alt=""/>
