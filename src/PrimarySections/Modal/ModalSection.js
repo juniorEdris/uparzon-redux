@@ -4,7 +4,11 @@ import React, { useEffect, useState } from 'react'
 import Slider from 'react-slick'
 import './ModalSection.css'
 
-export default function ModalSection(){
+export default function ModalSection({product}){
+    console.log("modal product",product);
+    // const [shots,prodName] = product
+    // console.log("product shots",shots,prodName);
+    // console.log("product shots",product.map(img => img.shots));
     const [nav1, setNav1] = useState(null)
     const [nav2, setNav2] = useState(null)
 
@@ -55,7 +59,14 @@ export default function ModalSection(){
                             {...largSlider}
                             ref={slider => (slider1 = slider)}
                             >
-                                
+                            {/* {product?.shots.map(img => (
+                                <div class="product-large-slider mb-20">
+                                    <div class="pro-large-img">
+                                        <img src={img} alt="" />
+                                    </div>
+                                </div>
+                            ))} */}
+                            
                             <div class="product-large-slider mb-20">
                                 <div class="pro-large-img">
                                     <img src="https://uparzon.com.bd/assets/img/product/product-4.jpg" alt=""/>
@@ -87,6 +98,11 @@ export default function ModalSection(){
                             {...proNav}
                             ref={slider => (slider2 = slider)}
                             >
+                                {/* {product?.shots.map(img=>(
+                                <div className="pro-nav">
+                                    <div className="pro-nav-thumb"><img src={img} alt="" /></div>
+                                </div>
+                                ))} */}
                                 <div className="pro-nav">
                                     <div className="pro-nav-thumb"><img src="https://uparzon.com.bd/assets/img/product/product-4.jpg" alt="" /></div>
                                 </div>
@@ -110,7 +126,7 @@ export default function ModalSection(){
                         <div className="product-details-inner">
                             <div className="product-details-contentt">
                             <div className="pro-details-name mb-10">
-                                <h3>Bose SoundLink Bluetooth Speaker</h3>
+                            <h3>{product?.prodName || 'Bose SoundLink Bluetooth Speaker'}</h3>
                             </div>
                             <div className="pro-details-review mb-20">
                                 <ul>
@@ -125,8 +141,8 @@ export default function ModalSection(){
                                 </ul>
                             </div>
                             <div className="price-box mb-15">
-                                <span className="regular-price"><span className="special-price">£50.00</span></span>
-                                <span className="old-price"><del>£60.00</del></span>
+                                <span className="regular-price"><span className="special-price">{`$${product?.price}`}</span></span>
+                                <span className="old-price"><del>{product?.oldPrice ? `£${product.oldPrice}` : ''}</del></span>
                             </div>
                             <div className="product-detail-sort-des pb-20">
                                 <p>Canon's press material for the EOS 5D states that it 'defines (a) new D-SLR category', while we're not typically too concerned</p>

@@ -16,3 +16,19 @@ import axios from 'axios'
 
 
 export default Connection
+
+
+
+// Our product datas
+// useEffect(() => {
+//     const fetchData = async () =>{
+//       const request = await axios(fetchURL)
+//       const {data} = request;
+//       setProducts(data);
+//       return data
+//     }
+//     fetchData()
+    
+//   }, [fetchURL])
+//   console.log(">>>",products.map(product => product.shop_name));
+//   console.log("data",Entertainments);

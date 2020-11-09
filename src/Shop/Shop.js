@@ -10,7 +10,7 @@ export default function Shop() {
             <ShopBreadCrumbs/>
             <ShopWrapper/>
             <ScrollBar/>
-            <Modal/>
+            {/* <Modal/> */}
         </div>
     )
 }

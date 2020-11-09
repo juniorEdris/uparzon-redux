@@ -1,31 +1,42 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React,{ useEffect } from 'react'
+import React, { useReducer } from 'react'
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import './OurProduct.css'
 import { Link } from 'react-router-dom';
 import { Electronics, Entertainments, MobileProducts, Truncate } from '../../Data';
-import axios from '../../PrimarySections/Connections/Axios';
+// import axios from '../../PrimarySections/Connections/Axios';
 import { useState } from 'react';
+import ModalSection from '../../PrimarySections/Modal/ModalSection';
 // import requests from '../../RequestLinks';
-
- function OurProduct ({fetchURL}) {
-   const [products, setProducts] = useState([])
-
-  useEffect(() => {
-    const fetchData = async () =>{
-      const request = await axios(fetchURL)
-      const {data} = request;
-      console.log("req",request);
-      setProducts(data);
-      return request
+function OurProduct () {
+  
+  const [products, setProducts] = useState(Electronics,Entertainments,MobileProducts)
+  
+  const initialState = {
+    product:products,
+  }
+  const reducer = (state,action)=>{
+    if(action.type === 'QUICK_VIEW'){
+      console.log('payload',action.payload);
+      return {
+        ...state,
+        singleProd:action.payload[0]
+      }
     }
-    fetchData()
-    
-  }, [fetchURL])
-  console.log(">>>",products.map(product => product.name));
-  console.log("data",Entertainments);
+  }
+  const [state, dispatch] = useReducer(reducer, initialState)
+
+  
+  const quickView = (id)=>{
+    const singleItem = products.filter(prod => prod.id === id)
+    dispatch({type:"QUICK_VIEW",payload:singleItem})
+    console.log('here is id',singleItem);
+  }
+
+
+
 
   const options = {
     loop: true,
@@ -83,13 +94,13 @@ import { useState } from 'react';
             >
         
         {products.map(product => (
-                  <div className="product-item">
+                  <div className="product-item" id={product.id}>
                   <div className="product-thumb">
                     <Link to="/">
                       {/* <img src={`${product.photo1}`} className="pri-img" alt={product.name} />
                       <img src={`${product.photo2}`} className="sec-img" alt={product.name} /> */}
-                      <img src={`https:${product.photo}`} className="pri-img" alt={product.name} />
-                      <img src={`https:${product.photo}`} className="sec-img" alt={product.name} />
+                      <img src={product.img1} className="pri-img" alt={product.prodName} />
+                      <img src={product.img2} className="sec-img" alt={product.prodName} />
                     </Link>
                     
                     <div className="box-label">
@@ -103,15 +114,15 @@ import { useState } from 'react';
                     <div className="action-links">
                       <a href="#" title="Wishlist"><i className="lnr lnr-heart" /></a>
                       <a href="#" title="Compare"><i className="lnr lnr-sync" /></a>
-                      <a href="#" title="Quick view" data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
+                      <a href="#" title="Quick view" onClick={()=>quickView(product.id)} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
                     </div>
                   </div>
                   <div className="product-caption">
                     <div className="manufacture-product">
-                      <p><a href="shop-grid-left-sidebar.html">{product.shop_name}</a></p>
+                      <p><a href="shop-grid-left-sidebar.html">{product.brand}</a></p>
                     </div>
                     <div className="product-name">
-                      <h4><a href="product-details.html" title={product.name}>{Truncate(product.name,25) }</a></h4>
+                      <h4><a href="product-details.html" title={product.prodName}>{Truncate(product.prodName,25) }</a></h4>
                     </div>
                     <div className="ratings">
                       <span className="purple"><i className="lnr lnr-star" /></span>
@@ -146,35 +157,34 @@ import { useState } from 'react';
         >
 
         {
-          Entertainments.map(data =>(
-
-            <div className="product-item">
+          products.map(product =>(
+            <div className="product-item" id={product.id}>
           <div className="product-thumb">
             <a href="product-details.html">
-              <img src={data.img1} className="pri-img" alt={data.prodName} />
-              <img src={data.img2} className="sec-img" alt={data.prodName} />
+              <img src={product.img1} className="pri-img" alt={product.prodName} />
+              <img src={product.img2} className="sec-img" alt={product.prodName} />
             </a>
             <div className="box-label">
               <div className="label-product label_new">
-                <span>{data.latest ? 'new': ''}</span>
+                <span>{product.latest ? 'new': ''}</span>
               </div>
 
               <div className="label-product label_sale">
-                <span>{data.sale ? `-${data.sale}%` : '' }</span>
+                <span>{product.sale ? `-${product.sale}%` : '' }</span>
               </div>
             </div>
             <div className="action-links">
               <a href="#" title="Wishlist"><i className="lnr lnr-heart" /></a>
               <a href="#" title="Compare"><i className="lnr lnr-sync" /></a>
-              <a href="#" title="Quick view" data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
+              <a href="#" title="Quick view" onClick={()=>quickView(product.id)} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
             </div>
           </div>
           <div className="product-caption">
             <div className="manufacture-product">
-              <p><a href="shop-grid-left-sidebar.html">{data.brand}</a></p>
+              <p><a href="shop-grid-left-sidebar.html">{product.brand}</a></p>
             </div>
             <div className="product-name">
-              <h4><a href="product-details.html" title={data.prodName} >{Truncate(data.prodName,25)}</a></h4>
+              <h4><a href="product-details.html" title={product.prodName} >{Truncate(product.prodName,25)}</a></h4>
             </div>
             <div className="ratings">
               <span className="purple"><i className="lnr lnr-star" /></span>
@@ -184,8 +194,8 @@ import { useState } from 'react';
               <span><i className="lnr lnr-star" /></span>
             </div>
             <div className="price-box">
-              <span className="regular-price"><span className={` ${data.special && 'special-price'}`}>£{data.price}</span></span>
-              <span className="old-price"><del>{data.oldPrice ? `£${data.oldPrice}` : ''}</del></span>
+              <span className="regular-price"><span className={` ${product.special && 'special-price'}`}>£{product.price}</span></span>
+              <span className="old-price"><del>{product.oldPrice ? `£${product.oldPrice}` : ''}</del></span>
             </div>
             <button className="btn-cart" type="button">add to cart</button>
           </div>
@@ -209,32 +219,33 @@ import { useState } from 'react';
         className="owl-theme"
         {...options}
         >
-        {MobileProducts.map(data => (<div className="product-item">
-          <div className="product-thumb">
+        {products.map(product => (
+        <div className="product-item" id={product.id}>
+          <div className="product-thumb" >
             <a href="product-details.html">
-              <img src={data.img1} className="pri-img" alt={data.prodName} />
-              <img src={data.img2} className="sec-img" alt={data.prodName} />
+              <img src={product.img1} className="pri-img" alt={product.prodName} />
+              <img src={product.img2} className="sec-img" alt={product.prodName} />
             </a>
             <div className="box-label">
               <div className="label-product label_new">
-                <span>{data.latest ? 'new': ''}</span>
+                <span>{product.latest ? 'new': ''}</span>
               </div>
               <div className="label-product label_sale">
-                <span>{data.sale ? `-${data.sale}%` : '' }</span>
+                <span>{product.sale ? `-${product.sale}%` : '' }</span>
               </div>
             </div>
             <div className="action-links">
               <a href="#" title="Wishlist"><i className="lnr lnr-heart" /></a>
               <a href="#" title="Compare"><i className="lnr lnr-sync" /></a>
-              <a href="#" title="Quick view" data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
+              <a href="#" title="Quick view" onClick={()=>{quickView(product.id)}} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
             </div>
           </div>
           <div className="product-caption">
             <div className="manufacture-product">
-            <p><a href="shop-grid-left-sidebar.html">{data.brand}</a></p>
+            <p><a href="shop-grid-left-sidebar.html">{product.brand}</a></p>
             </div>
             <div className="product-name">
-              <h4><a href="product-details.html" title={data.prodName}>{Truncate(data.prodName,25)}</a></h4>
+              <h4><a href="product-details.html" title={product.prodName}>{Truncate(product.prodName,25)}</a></h4>
             </div>
             <div className="ratings">
               <span><i className="lnr lnr-star" /></span>
@@ -244,8 +255,8 @@ import { useState } from 'react';
               <span><i className="lnr lnr-star" /></span>
             </div>
             <div className="price-box">
-            <span className="regular-price"><span className={`${data.special && 'special-price'}`}>£{data.price}</span></span>
-              <span className="old-price"><del>{data.oldPrice ? `£${data.oldPrice}` : ''}</del></span>
+            <span className="regular-price"><span className={`${product.special && 'special-price'}`}>£{product.price}</span></span>
+              <span className="old-price"><del>{product.oldPrice ? `£${product.oldPrice}` : ''}</del></span>
             </div>
             <button className="btn-cart" type="button">add to cart</button>
           </div>
@@ -259,6 +270,7 @@ import { useState } from 'react';
 </div>
           {/* </Slider> */}
         </div>
+         <ModalSection product={state.singleProd}/>
         </div>
         )
     }

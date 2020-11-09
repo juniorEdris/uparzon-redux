@@ -74,7 +74,7 @@ function App() {
             <Header/>
             <Home/>
             <Footer/>
-            <Modal/>
+            {/* <Modal/> */}
           </Route>
         </Switch>
         
