@@ -6,7 +6,7 @@ import './ModalSection.css'
 
 export default function ModalSection({product,}){
     console.log("modal product",product);
-    console.log("modal product",product?.shots.map(shot => shot));
+    console.log("ratings length",product?.ratings.length);
     // const [shots,prodName] = product
     // console.log("product shots",shots,prodName);
     // console.log("product shots",product.map(img => img.shots));
@@ -100,12 +100,13 @@ export default function ModalSection({product,}){
                             {...proNav}
                             ref={slider => (slider2 = slider)}
                             >
+                                
                                 <div className="pro-nav">
                                 {product?.shots.map((img)=>
                                 {return(
-                                    <div className="pro-nav-thumb"><img src={img} alt="QuickView Images" title={product?.prodName} /></div>
+                                        <div className="pro-nav-thumb"><img src={img} alt="QuickView Images" title={product?.prodName} /></div>
                                     )})}
-                                    </div>
+                                </div>
                                 {/* <div className="pro-nav">
                                     <div className="pro-nav-thumb"><img src="https://uparzon.com.bd/assets/img/product/product-4.jpg" alt="" /></div>
                                 </div>
@@ -129,7 +130,7 @@ export default function ModalSection({product,}){
                         <div className="product-details-inner">
                             <div className="product-details-contentt">
                             <div className="pro-details-name mb-10">
-                            <h3>{product?.prodName || 'Bose SoundLink Bluetooth Speaker'}</h3>
+                            <h3>{product?.prodName || 'Product name null'}</h3>
                             </div>
                             <div className="pro-details-review mb-20">
                                 <ul>
@@ -140,7 +141,7 @@ export default function ModalSection({product,}){
                                     <span><i className="fa fa-star" /></span>
                                     <span><i className="fa fa-star" /></span>
                                 </li>
-                                <li><a href="#">1 Reviews</a></li>
+                                <li><a href="#">{product?.ratings ? `${product?.ratings?.length} Reviews` : '0 Reviews'}</a></li>
                                 </ul>
                             </div>
                             <div className="price-box mb-15">
@@ -148,11 +149,11 @@ export default function ModalSection({product,}){
                                 <span className="old-price"><del>{product?.oldPrice ? `£${product.oldPrice}` : ''}</del></span>
                             </div>
                             <div className="product-detail-sort-des pb-20">
-                                <p>Canon's press material for the EOS 5D states that it 'defines (a) new D-SLR category', while we're not typically too concerned</p>
+                            <p>{product?.description}</p>
                             </div>
                             <div className="pro-details-list pt-20">
                                 <ul>
-                                <li><span>Availability :</span>In Stock</li>
+                                <li><span>Availability :</span>{product?.isStock ? 'In Stock' : 'Out of Stock'}</li>
                                 </ul>
                             </div>
                             <div className="product-availabily-option mt-15 mb-15">
@@ -162,12 +163,14 @@ export default function ModalSection({product,}){
                                 <ul>
                                 
                                 {
-                                    products?.colors.map(color =>)
+                                    product?.colors.map(color =>{return(
+                                    <li>
+                                        <a className="c-black" href="#" title="Black" style={{backgroundColor:`${color}`}} />
+                                    </li>  
+                                    )})
                                 }
-                                    <li>
-                                    <a className="c-black" href="#" title="Black" style={{backgroundColor:`${}`}} />
-                                    </li>
-                                    <li>
+                                    
+                                    {/* <li>
                                     <a className="c-blue" href="#" title="Blue" />
                                     </li>
                                     <li>
@@ -178,7 +181,7 @@ export default function ModalSection({product,}){
                                     </li>
                                     <li>
                                     <a className="c-red" href="#" title="Red" />
-                                    </li>
+                                    </li> */}
                                 </ul>
                                 </div>
                             </div>

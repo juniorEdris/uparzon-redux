@@ -4,20 +4,21 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-## Next day tasks 
+## Next day tasks
 
     ## Done
-    
-    > Set the Hot Collection & Our Product's boxx-tab functionality.---
 
-    > Browse Categories => More Catagories dropdown functionality.---
+    > useReducer working.
+    > Modal view can show the product details.
 
-    > Change SliderArea to React Owl Carousel---
-    
-    ## Yet to Work on
+    ## Will Work on
 
     > Style search-form > select options.
-
     > Set page navbar in mobile view.
-
     > Set Website primary colors in purple.
+    > Use Context API to get access to modal views.
+    > fix the rating starts to apear according to the ratings count.
+    > Quick view nav need to be fixed.
+    > In shop page [filter button,category check box] need to fixed.
+    > In list view hover buttons needs to adjust some margin
+    > Use Semantic UI in all Dropdown
