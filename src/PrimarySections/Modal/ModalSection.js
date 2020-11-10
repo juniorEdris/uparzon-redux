@@ -4,8 +4,9 @@ import React, { useEffect, useState } from 'react'
 import Slider from 'react-slick'
 import './ModalSection.css'
 
-export default function ModalSection({product}){
+export default function ModalSection({product,}){
     console.log("modal product",product);
+    console.log("modal product",product?.shots.map(shot => shot));
     // const [shots,prodName] = product
     // console.log("product shots",shots,prodName);
     // console.log("product shots",product.map(img => img.shots));
@@ -59,15 +60,16 @@ export default function ModalSection({product}){
                             {...largSlider}
                             ref={slider => (slider1 = slider)}
                             >
-                            {/* {product?.shots.map(img => (
+                                {product?.shots.map((img) => {
+                                    return(
                                 <div class="product-large-slider mb-20">
                                     <div class="pro-large-img">
                                         <img src={img} alt="" />
                                     </div>
                                 </div>
-                            ))} */}
+                                )})}
                             
-                            <div class="product-large-slider mb-20">
+                            {/* <div class="product-large-slider mb-20">
                                 <div class="pro-large-img">
                                     <img src="https://uparzon.com.bd/assets/img/product/product-4.jpg" alt=""/>
                                 </div>
@@ -91,19 +93,20 @@ export default function ModalSection({product}){
                                 <div class="pro-large-img">
                                     <img src="https://uparzon.com.bd/assets/img/product/product-8.jpg" alt=""/>
                                 </div>
-                            </div>
+                            </div> */}
                             </Slider>
                         
                             <Slider
                             {...proNav}
                             ref={slider => (slider2 = slider)}
                             >
-                                {/* {product?.shots.map(img=>(
                                 <div className="pro-nav">
-                                    <div className="pro-nav-thumb"><img src={img} alt="" /></div>
-                                </div>
-                                ))} */}
-                                <div className="pro-nav">
+                                {product?.shots.map((img)=>
+                                {return(
+                                    <div className="pro-nav-thumb"><img src={img} alt="QuickView Images" title={product?.prodName} /></div>
+                                    )})}
+                                    </div>
+                                {/* <div className="pro-nav">
                                     <div className="pro-nav-thumb"><img src="https://uparzon.com.bd/assets/img/product/product-4.jpg" alt="" /></div>
                                 </div>
                                 <div className="pro-nav">
@@ -117,7 +120,7 @@ export default function ModalSection({product}){
                                 </div>
                                 <div className="pro-nav">
                                     <div className="pro-nav-thumb"><img src="https://uparzon.com.bd/assets/img/product/product-8.jpg" alt="" /></div>
-                                </div>
+                                </div> */}
                                 
                             </Slider>
                         
@@ -157,8 +160,12 @@ export default function ModalSection({product}){
                                 <div className="color-optionn">
                                 <h4><sup>*</sup>color</h4>
                                 <ul>
+                                
+                                {
+                                    products?.colors.map(color =>)
+                                }
                                     <li>
-                                    <a className="c-black" href="#" title="Black" />
+                                    <a className="c-black" href="#" title="Black" style={{backgroundColor:`${}`}} />
                                     </li>
                                     <li>
                                     <a className="c-blue" href="#" title="Blue" />

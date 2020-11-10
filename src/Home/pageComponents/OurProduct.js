@@ -12,27 +12,40 @@ import ModalSection from '../../PrimarySections/Modal/ModalSection';
 // import requests from '../../RequestLinks';
 function OurProduct () {
   
-  const [products, setProducts] = useState(Electronics,Entertainments,MobileProducts)
+  const [Electproducts] = useState(Electronics)
+  const [Entertproducts] = useState(Entertainments)
+  const [Mobileproducts] = useState(MobileProducts)
   
   const initialState = {
-    product:products,
+    product:[],
   }
   const reducer = (state,action)=>{
     if(action.type === 'QUICK_VIEW'){
-      console.log('payload',action.payload);
+      const singleItem = action.payload
+      // console.log('payload',singleItem);
       return {
         ...state,
-        singleProd:action.payload[0]
+        singleProd:singleItem[0],
       }
     }
   }
   const [state, dispatch] = useReducer(reducer, initialState)
 
   
-  const quickView = (id)=>{
-    const singleItem = products.filter(prod => prod.id === id)
-    dispatch({type:"QUICK_VIEW",payload:singleItem})
-    console.log('here is id',singleItem);
+  const quickView = (id,productCata)=>{
+    if(productCata === 'Electronics'){
+      const singleProd = Electproducts.filter(prod => prod.id === id)
+      dispatch({type:"QUICK_VIEW",payload:singleProd})
+      // console.log('here is id',singleProd);
+    }else if(productCata === 'Entertainment'){
+      const singleProd = Entertproducts.filter(prod => prod.id === id)
+      dispatch({type:"QUICK_VIEW",payload:singleProd})
+      // console.log('here is id',singleProd);
+    }else if(productCata === 'Mobile'){
+      const singleProd = Mobileproducts.filter(prod => prod.id === id)
+      dispatch({type:"QUICK_VIEW",payload:singleProd})
+      // console.log('here is id',singleProd);
+    }
   }
 
 
@@ -93,7 +106,7 @@ function OurProduct () {
               {...options}
             >
         
-        {products.map(product => (
+        {Electproducts.map(product => (
                   <div className="product-item" id={product.id}>
                   <div className="product-thumb">
                     <Link to="/">
@@ -114,7 +127,7 @@ function OurProduct () {
                     <div className="action-links">
                       <a href="#" title="Wishlist"><i className="lnr lnr-heart" /></a>
                       <a href="#" title="Compare"><i className="lnr lnr-sync" /></a>
-                      <a href="#" title="Quick view" onClick={()=>quickView(product.id)} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
+                      <a href="#" title="Quick view" onClick={()=>quickView(product.id,'Electronics')} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
                     </div>
                   </div>
                   <div className="product-caption">
@@ -157,7 +170,7 @@ function OurProduct () {
         >
 
         {
-          products.map(product =>(
+          Entertproducts.map(product =>(
             <div className="product-item" id={product.id}>
           <div className="product-thumb">
             <a href="product-details.html">
@@ -176,7 +189,7 @@ function OurProduct () {
             <div className="action-links">
               <a href="#" title="Wishlist"><i className="lnr lnr-heart" /></a>
               <a href="#" title="Compare"><i className="lnr lnr-sync" /></a>
-              <a href="#" title="Quick view" onClick={()=>quickView(product.id)} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
+              <a href="#" title="Quick view" onClick={()=>quickView(product.id,'Entertainment')} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
             </div>
           </div>
           <div className="product-caption">
@@ -219,7 +232,7 @@ function OurProduct () {
         className="owl-theme"
         {...options}
         >
-        {products.map(product => (
+        {Mobileproducts.map(product => (
         <div className="product-item" id={product.id}>
           <div className="product-thumb" >
             <a href="product-details.html">
@@ -237,7 +250,7 @@ function OurProduct () {
             <div className="action-links">
               <a href="#" title="Wishlist"><i className="lnr lnr-heart" /></a>
               <a href="#" title="Compare"><i className="lnr lnr-sync" /></a>
-              <a href="#" title="Quick view" onClick={()=>{quickView(product.id)}} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
+              <a href="#" title="Quick view" onClick={()=>{quickView(product.id,'Mobile')}} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
             </div>
           </div>
           <div className="product-caption">
