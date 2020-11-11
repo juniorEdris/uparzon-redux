@@ -37,6 +37,32 @@ function OurProduct () {
     }
   }
 
+  const addToCart= (id,productCata)=>{
+    if(productCata === 'Electronics'){
+      const singleProd = Electproducts.filter(prod => prod.id === id)
+      dispatch({type:"ADD_TO_CART",payload:singleProd})
+    }else if(productCata === 'Entertainment'){
+      const singleProd = Entertproducts.filter(prod => prod.id === id)
+      dispatch({type:"ADD_TO_CART",payload:singleProd})
+    }else{
+      const singleProd = MobileProducts.filter(prod => prod.id === id)
+      dispatch({type:"ADD_TO_CART",payload:singleProd})
+    }
+  }
+  const addToWishList= (id,productCata)=>{
+    if(productCata === 'Electronics'){
+      const singleProd = Electproducts.filter(prod => prod.id === id)
+      dispatch({type:"ADD_TO_WISH_LIST",payload:singleProd})
+      console.log('wishcart',singleProd);
+    }else if(productCata === 'Entertainment'){
+      const singleProd = Entertproducts.filter(prod => prod.id === id)
+      dispatch({type:"ADD_TO_WISH_LIST",payload:singleProd})
+    }else{
+      const singleProd = MobileProducts.filter(prod => prod.id === id)
+      dispatch({type:"ADD_TO_WISH_LIST",payload:singleProd})
+    }
+  }
+
 
 
 
@@ -99,8 +125,6 @@ function OurProduct () {
                   <div className="product-item" id={product.id}>
                   <div className="product-thumb">
                     <Link to="/">
-                      {/* <img src={`${product.photo1}`} className="pri-img" alt={product.name} />
-                      <img src={`${product.photo2}`} className="sec-img" alt={product.name} /> */}
                       <img src={product.img1} className="pri-img" alt={product.prodName} />
                       <img src={product.img2} className="sec-img" alt={product.prodName} />
                     </Link>
@@ -114,7 +138,7 @@ function OurProduct () {
                       </div>
                     </div>
                     <div className="action-links">
-                      <a href="#" title="Wishlist"><i className="lnr lnr-heart" /></a>
+                      <a href="#" title="Wishlist" onClick={()=> addToWishList(product.id,'Electronics')}><i className="lnr lnr-heart" /></a>
                       <a href="#" title="Compare"><i className="lnr lnr-sync" /></a>
                       <a href="#" title="Quick view" onClick={()=>quickView(product.id,'Electronics')} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
                     </div>
@@ -137,7 +161,7 @@ function OurProduct () {
                       <span className="regular-price"><span className={` ${product.special && 'special-price'}`}>£{product.price}</span></span>
                       <span className="old-price"><del>{product.oldPrice ? `£${product.oldPrice}` : ''}</del></span>
                     </div>
-                    <button className="btn-cart" type="button">add to cart</button>
+                    <button className="btn-cart" onClick={()=> addToCart(product.id,'Electronics')} type="button">add to cart</button>
                   </div>
                 </div>/* </div> end single item */
         ))
@@ -176,7 +200,7 @@ function OurProduct () {
               </div>
             </div>
             <div className="action-links">
-              <a href="#" title="Wishlist"><i className="lnr lnr-heart" /></a>
+              <a href="#" title="Wishlist" onClick={()=> addToWishList(product.id,'Entertainment')}><i className="lnr lnr-heart" /></a>
               <a href="#" title="Compare"><i className="lnr lnr-sync" /></a>
               <a href="#" title="Quick view" onClick={()=>quickView(product.id,'Entertainment')} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
             </div>
@@ -199,7 +223,7 @@ function OurProduct () {
               <span className="regular-price"><span className={` ${product.special && 'special-price'}`}>£{product.price}</span></span>
               <span className="old-price"><del>{product.oldPrice ? `£${product.oldPrice}` : ''}</del></span>
             </div>
-            <button className="btn-cart" type="button">add to cart</button>
+            <button className="btn-cart" onClick={()=> addToCart(product.id,'Entertainment')} type="button">add to cart</button>
           </div>
         </div>/* </div> end single item */
           ))
@@ -237,7 +261,7 @@ function OurProduct () {
               </div>
             </div>
             <div className="action-links">
-              <a href="#" title="Wishlist"><i className="lnr lnr-heart" /></a>
+              <a href="#" title="Wishlist" onClick={()=> addToWishList(product.id,'Mobile')}><i className="lnr lnr-heart" /></a>
               <a href="#" title="Compare"><i className="lnr lnr-sync" /></a>
               <a href="#" title="Quick view" onClick={()=>{quickView(product.id,'Mobile')}} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
             </div>
@@ -260,7 +284,7 @@ function OurProduct () {
             <span className="regular-price"><span className={`${product.special && 'special-price'}`}>£{product.price}</span></span>
               <span className="old-price"><del>{product.oldPrice ? `£${product.oldPrice}` : ''}</del></span>
             </div>
-            <button className="btn-cart" type="button">add to cart</button>
+            <button className="btn-cart" onClick={()=> addToCart(product.id,'Mobile')} type="button">add to cart</button>
           </div>
         </div> /* </div> end single item */
         ))}

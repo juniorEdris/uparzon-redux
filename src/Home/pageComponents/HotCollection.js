@@ -30,6 +30,32 @@ export default function HotCollection() {
     }
   }
 
+  const addToCart= (id,productCata)=>{
+    if(productCata === 'Electronics'){
+      const singleProd = Electproducts.filter(prod => prod.id === id)
+      dispatch({type:"ADD_TO_CART",payload:singleProd})
+    }else if(productCata === 'Entertainment'){
+      const singleProd = Entertproducts.filter(prod => prod.id === id)
+      dispatch({type:"ADD_TO_CART",payload:singleProd})
+    }else{
+      const singleProd = MobileProducts.filter(prod => prod.id === id)
+      dispatch({type:"ADD_TO_CART",payload:singleProd})
+    }
+  }
+  const addToWishList= (id,productCata)=>{
+    if(productCata === 'Electronics'){
+      const singleProd = Electproducts.filter(prod => prod.id === id)
+      dispatch({type:"ADD_TO_WISH_LIST",payload:singleProd})
+      console.log('wishcart',singleProd);
+    }else if(productCata === 'Entertainment'){
+      const singleProd = Entertproducts.filter(prod => prod.id === id)
+      dispatch({type:"ADD_TO_WISH_LIST",payload:singleProd})
+    }else{
+      const singleProd = MobileProducts.filter(prod => prod.id === id)
+      dispatch({type:"ADD_TO_WISH_LIST",payload:singleProd})
+    }
+  }
+
     return (
 <div className="home-module-three hm-1 fix pb-40">
   <div className="container-fluid">
@@ -82,7 +108,7 @@ export default function HotCollection() {
                   </div>
                 </div>
                 <div className="action-links">
-                  <a href="#" title="Wishlist"><i className="lnr lnr-heart" /></a>
+                  <a href="#" title="Wishlist" onClick={()=>addToWishList(data.id,'Electronics')}><i className="lnr lnr-heart" /></a>
                   <a href="#" title="Compare"><i className="lnr lnr-sync" /></a>
                   <a href="#" title="Quick view" onClick={()=>quickView(data.id,'Electronics')} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
                 </div>
@@ -105,7 +131,7 @@ export default function HotCollection() {
                   <span className="regular-price"><span className={` ${data.special && 'special-price'}`}>£{data.price}</span></span>
                   <span className="old-price"><del>{data.oldPrice ? `£${data.oldPrice}` : ''}</del></span>
                 </div>
-                <button className="btn-cart" type="button">add to cart</button>
+                <button className="btn-cart" type="button" onClick={()=>addToCart(data.id,'Electronics')}>add to cart</button>
               </div>
             </div>
           </div> /* single item end */
@@ -147,7 +173,7 @@ export default function HotCollection() {
                     </div>
                 </div>
                 <div className="action-links">
-                  <a href="#" title="Wishlist"><i className="lnr lnr-heart" /></a>
+                  <a href="#" title="Wishlist" onClick={()=>addToWishList(data.id,'Electronics')}><i className="lnr lnr-heart" /></a>
                   <a href="#" title="Compare"><i className="lnr lnr-sync" /></a>
                   <a href="#" title="Quick view" onClick={()=>quickView(data.id,'Entertainment')} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
                 </div>
@@ -170,7 +196,7 @@ export default function HotCollection() {
                   <span className="regular-price"><span className={` ${data.special && 'special-price'}`}>£{data.price}</span></span>
                   <span className="old-price"><del>{data.oldPrice ? `£${data.oldPrice}` : ''}</del></span>
                 </div>
-                <button className="btn-cart" type="button">add to cart</button>
+                <button className="btn-cart" type="button" onClick={()=>addToCart(data.id,'Electronics')}>add to cart</button>
               </div>
             </div>
           </div> /* single item end */
@@ -212,7 +238,7 @@ export default function HotCollection() {
                     </div>
                 </div>
                 <div className="action-links">
-                  <a href="#" title="Wishlist"><i className="lnr lnr-heart" /></a>
+                  <a href="#" title="Wishlist" onClick={()=>addToWishList(data.id,'Electronics')}><i className="lnr lnr-heart" /></a>
                   <a href="#" title="Compare"><i className="lnr lnr-sync" /></a>
                   <a href="#" title="Quick view" onClick={()=>quickView(data.id,'Electronics')} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
                 </div>
@@ -235,7 +261,7 @@ export default function HotCollection() {
                   <span className="regular-price"><span className={` ${data.special && 'special-price'}`}>£{data.price}</span></span>
                   <span className="old-price"><del>{data.oldPrice ? `£${data.oldPrice}` : ''}</del></span>
                 </div>
-                <button className="btn-cart" type="button">add to cart</button>
+                <button className="btn-cart" type="button" onClick={()=>addToCart(data.id,'Electronics')}>add to cart</button>
               </div>
             </div>
           </div> /* single item end */

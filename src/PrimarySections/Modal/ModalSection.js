@@ -5,11 +5,6 @@ import Slider from 'react-slick'
 import './ModalSection.css'
 
 export default function ModalSection({product}){
-    console.log("modal product",product);
-    console.log("ratings length",product?.ratings.length);
-    // const [shots,prodName] = product
-    // console.log("product shots",shots,prodName);
-    // console.log("product shots",product.map(img => img.shots));
     const [nav1, setNav1] = useState(null)
     const [nav2, setNav2] = useState(null)
 

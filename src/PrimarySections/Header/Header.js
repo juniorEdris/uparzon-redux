@@ -3,10 +3,15 @@ import "mburger-css/dist/mburger.css"
 import "mburger-css/dist/mburger"
 import './header.css'
 import { Link } from 'react-router-dom'
+import { useStateValue } from '../../Utility/StateProvider'
 
 
 function Header () {
 
+    // Basket counting functionality
+    const[{basket,wishList}] = useStateValue()
+    console.log(basket);
+    console.log('My Array',wishList);
     //catagories menu dropdown
     const[isBrowsing,setBrowsing] = useState(false)
     const browseCatalog = (e)=>{
@@ -32,6 +37,7 @@ function Header () {
     //main menu set
     const [mainMenu, setMainMenu] = useState(false)
     console.log("main-menu",mainMenu);
+    
 
         return (
 <header className="header-pos" id='top'>
@@ -81,16 +87,19 @@ function Header () {
                                 <a className="ha-toggle" href="/compare"><span className="lnr lnr-sync" />Product compare</a>
                                 </li>
                                 <li className="wishlist">
-                                <a className="ha-toggle" href="/wishlist"><span className="lnr lnr-heart" /><span className="count">1</span>wishlist</a>
+                                <a className="ha-toggle" href="/wishlist"><span className="lnr lnr-heart" /><span className="count">{ wishList.length || 0 }</span>wishlist</a>
                                 </li>
                                 <li className="my-cart">
-                                <a onClick={showCart} className="ha-toggle" href="/"><span className="lnr lnr-cart" /><span className="count">2</span>my cart</a>
+                                <a onClick={showCart} className="ha-toggle" href="/"><span className="lnr lnr-cart" /><span className="count">{ basket.length || 0 }</span>my cart</a>
                                 <ul className={`mini-cart-drop-down ha-dropdown ${isCartActive ? 'active': 'inActive'}`}>
                                     <li className="mb-30">
                                     <div className="cart-img">
                                         <a href="/"><img alt="" src="assets/img/cart/cart-1.jpg" /></a>
                                     </div>
                                     <div className="cart-info">
+                                        {
+                                            basket.map(prod => console.log("cartInfo",prod[0]?.prodName))
+                                        }
                                         <h4><a href="/">Koss Porta Pro On Ear  Headphones </a></h4>
                                         <span> <span>1 x </span>£165.00</span>
                                     </div>
