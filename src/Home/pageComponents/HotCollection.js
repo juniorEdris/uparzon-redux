@@ -1,8 +1,34 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
+import React,{useState} from 'react'
 import { Electronics, Entertainments, MobileProducts, Truncate } from '../../Data'
+import ModalSection from '../../PrimarySections/Modal/ModalSection'
+import { useStateValue } from '../../Utility/StateProvider'
 
 export default function HotCollection() {
+
+  const [state,dispatch] = useStateValue()
+  const [Electproducts] = useState(Electronics)
+  const [Entertproducts] = useState(Entertainments)
+  const [Mobileproducts] = useState(MobileProducts)
+  
+  
+
+  
+  const quickView = (id,productCata)=>{
+    if(productCata === 'Electronics'){
+      const singleProd = Electproducts.filter(prod => prod.id === id)
+      dispatch({type:"QUICK_VIEW",payload:singleProd})
+      // console.log('here is id',singleProd);
+    }else if(productCata === 'Entertainment'){
+      const singleProd = Entertproducts.filter(prod => prod.id === id)
+      dispatch({type:"QUICK_VIEW",payload:singleProd})
+      // console.log('here is id',singleProd);
+    }else if(productCata === 'Mobile'){
+      const singleProd = Mobileproducts.filter(prod => prod.id === id)
+      dispatch({type:"QUICK_VIEW",payload:singleProd})
+      // console.log('here is id',singleProd);
+    }
+  }
 
     return (
 <div className="home-module-three hm-1 fix pb-40">
@@ -38,10 +64,10 @@ export default function HotCollection() {
             </div>
           </div> {/* single item end */}
           {
-      Electronics.map(data =>(
+      Electproducts.map(data =>(
 
           <div className="col mb-30">
-            <div className="product-item">
+            <div className="product-item" id={data.id}>
               <div className="product-thumb">
                 <a href="product-details.html">
                   <img src={data.img1} className="pri-img" alt={data.prodName} />
@@ -58,7 +84,7 @@ export default function HotCollection() {
                 <div className="action-links">
                   <a href="#" title="Wishlist"><i className="lnr lnr-heart" /></a>
                   <a href="#" title="Compare"><i className="lnr lnr-sync" /></a>
-                  <a href="#" title="Quick view" data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
+                  <a href="#" title="Quick view" onClick={()=>quickView(data.id,'Electronics')} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
                 </div>
               </div>
               <div className="product-caption">
@@ -103,9 +129,9 @@ export default function HotCollection() {
             </div>
           </div> {/* single item end */}
           {
-            Entertainments.map(data=>(
+            Entertproducts.map(data=>(
               <div className="col mb-30">
-            <div className="product-item">
+            <div className="product-item" id={data.id}>
               <div className="product-thumb">
                 <a href="product-details.html">
                   <img src={data.img1} className="pri-img" alt={data.prodName} />
@@ -123,7 +149,7 @@ export default function HotCollection() {
                 <div className="action-links">
                   <a href="#" title="Wishlist"><i className="lnr lnr-heart" /></a>
                   <a href="#" title="Compare"><i className="lnr lnr-sync" /></a>
-                  <a href="#" title="Quick view" data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
+                  <a href="#" title="Quick view" onClick={()=>quickView(data.id,'Entertainment')} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
                 </div>
               </div>
               <div className="product-caption">
@@ -168,9 +194,9 @@ export default function HotCollection() {
           </div> {/* single item end */}
 
           {
-            MobileProducts.map(data =>(
+            Mobileproducts.map(data =>(
               <div className="col mb-30">
-            <div className="product-item">
+            <div className="product-item" id={data.id}>
               <div className="product-thumb">
                 <a href="product-details.html">
                   <img src={data.img1} className="pri-img" alt={data.prodName} />
@@ -188,7 +214,7 @@ export default function HotCollection() {
                 <div className="action-links">
                   <a href="#" title="Wishlist"><i className="lnr lnr-heart" /></a>
                   <a href="#" title="Compare"><i className="lnr lnr-sync" /></a>
-                  <a href="#" title="Quick view" data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
+                  <a href="#" title="Quick view" onClick={()=>quickView(data.id,'Electronics')} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
                 </div>
               </div>
               <div className="product-caption">
@@ -224,6 +250,8 @@ export default function HotCollection() {
 
     </div>
   </div>
+
+  <ModalSection product={state.singleProd}/>
 </div>
 
     )

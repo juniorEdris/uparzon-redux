@@ -16,11 +16,12 @@ import Product from './VendorPages/ProductCart/ProductCart';
 import Checkout from './VendorPages/Checkout/Checkout';
 import Register from './VendorPages/MyAccount/Register/Register';
 import Login from './VendorPages/MyAccount/Login/Login';
-import Modal from './PrimarySections/Modal/ModalSection';
 import './App.css';
 
 
 function App() {
+
+  
   return (
     <div className="app">
       <Router>
@@ -74,7 +75,6 @@ function App() {
             <Header/>
             <Home/>
             <Footer/>
-            {/* <Modal/> */}
           </Route>
         </Switch>
         

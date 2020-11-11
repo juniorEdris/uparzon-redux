@@ -18,6 +18,7 @@ import URL from '../RequestLinks'
 
 export default function HomeMainSection() {
 
+
     return (
         <div>
             <HomeSlider/>

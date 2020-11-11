@@ -1,12 +1,39 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
+import React,{useState} from 'react'
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import './BrandArea.css'
-import { MobileProducts, Truncate } from '../../Data';
+import { Electronics, Entertainments, MobileProducts, Truncate } from '../../Data';
+import { useStateValue } from '../../Utility/StateProvider';
+import ModalSection from '../../PrimarySections/Modal/ModalSection';
 
 export default function BrandArea() {
+
+
+  const [state,dispatch] = useStateValue()
+  const [Electproducts] = useState(Electronics)
+  const [Entertproducts] = useState(Entertainments)
+  const [Mobileproducts] = useState(MobileProducts)
+  
+  
+
+  
+  const quickView = (id,productCata)=>{
+    if(productCata === 'Electronics'){
+      const singleProd = Electproducts.filter(prod => prod.id === id)
+      dispatch({type:"QUICK_VIEW",payload:singleProd})
+      // console.log('here is id',singleProd);
+    }else if(productCata === 'Entertainment'){
+      const singleProd = Entertproducts.filter(prod => prod.id === id)
+      dispatch({type:"QUICK_VIEW",payload:singleProd})
+      // console.log('here is id',singleProd);
+    }else if(productCata === 'Mobile'){
+      const singleProd = Mobileproducts.filter(prod => prod.id === id)
+      dispatch({type:"QUICK_VIEW",payload:singleProd})
+      // console.log('here is id',singleProd);
+    }
+  }
 
   const brandOptions = {
     loop: true,
@@ -171,6 +198,8 @@ const options = {
     </div>
   </div>
 </div>
+  <ModalSection product={state.singleProd}/>
+
 
         </div>
     )

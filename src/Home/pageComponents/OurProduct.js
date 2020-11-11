@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useReducer } from 'react'
+import React from 'react'
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
@@ -8,28 +8,17 @@ import { Link } from 'react-router-dom';
 import { Electronics, Entertainments, MobileProducts, Truncate } from '../../Data';
 // import axios from '../../PrimarySections/Connections/Axios';
 import { useState } from 'react';
+import { useStateValue } from '../../Utility/StateProvider';
 import ModalSection from '../../PrimarySections/Modal/ModalSection';
 // import requests from '../../RequestLinks';
 function OurProduct () {
   
+  const [state,dispatch] = useStateValue()
   const [Electproducts] = useState(Electronics)
   const [Entertproducts] = useState(Entertainments)
   const [Mobileproducts] = useState(MobileProducts)
   
-  const initialState = {
-    product:[],
-  }
-  const reducer = (state,action)=>{
-    if(action.type === 'QUICK_VIEW'){
-      const singleItem = action.payload
-      // console.log('payload',singleItem);
-      return {
-        ...state,
-        singleProd:singleItem[0],
-      }
-    }
-  }
-  const [state, dispatch] = useReducer(reducer, initialState)
+  
 
   
   const quickView = (id,productCata)=>{

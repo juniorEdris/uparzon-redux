@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react'
 import Slider from 'react-slick'
 import './ModalSection.css'
 
-export default function ModalSection({product,}){
+export default function ModalSection({product}){
     console.log("modal product",product);
     console.log("ratings length",product?.ratings.length);
     // const [shots,prodName] = product
