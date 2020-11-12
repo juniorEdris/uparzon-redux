@@ -1,8 +1,14 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useStateValue } from '../../../Utility/StateProvider'
+import './WishlistBody.css'
 
 export default function WishListBody() {
+
+    const [{wishList}] = useStateValue()
+
+    console.log('WishList page',wishList);
     return (
         <div>
             {/* Start of wishlist Wrapper */}
@@ -31,24 +37,29 @@ export default function WishListBody() {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                    <td>
-                                        <Link to="product-details.html"><img src="https://uparzon.com.bd/assets/img/product/pro-layout-img6.jpg" alt="Wishlist Product Image" title="Compete Track Tote" /></Link>
-                                    </td>
-                                    <td>
-                                        <Link to="product-details.html">Compete Track Tote</Link>
-                                    </td>
-                                    <td>3</td>
-                                    <td>In Stock</td>
-                                    <td>
-                                        <div className="price"><small><del>$430.00</del></small> <strong>$100.00</strong></div>
-                                    </td>
-                                    <td>
-                                        <button type="button" className="btn btn-primary"><i className="fa fa-shopping-cart" /></button>
-                                        <Link to="#" className="btn btn-danger"><i className="fa fa-times" /></Link>
-                                    </td>
-                                    </tr>
-                                    <tr>
+                                    {
+                                        wishList?.map(prod =>(
+                                            <tr id={prod.id}>
+                                            <td>
+                                                <Link to="product-details.html"><img className='wish__thumb' src={prod.img1} alt="Wishlist Product Image" title={prod.name} /></Link>
+                                            </td>
+                                            <td>
+                                                <Link to="product-details.html">{prod.name}</Link>
+                                            </td>
+                                            <td>null</td>
+                                            <td>{prod.isStock ? 'In stock' : 'Out of stock'}</td>
+                                            <td>
+                                                <div className="price"><small><del>{prod.oldPrice || ''}</del></small> <strong>{prod.price}</strong></div>
+                                            </td>
+                                            <td>
+                                                <button type="button" className="btn btn-primary"><i className="fa fa-shopping-cart" /></button>
+                                                <Link to="#" className="btn btn-danger"><i className="fa fa-times" /></Link>
+                                            </td>
+                                            </tr>
+
+                                        ))
+                                    }
+                                    {/* <tr>
                                     <td>
                                         <Link to="product-details.html"><img src="https://uparzon.com.bd/assets/img/product/pro-layout-img5.jpg" alt="Wishlist Product Image" title="Rival Field Messenger 6" /></Link>
                                     </td>
@@ -81,7 +92,7 @@ export default function WishListBody() {
                                         <button type="button" className="btn btn-primary"><i className="fa fa-shopping-cart" /></button>
                                         <Link to="#" className="btn btn-danger"><i className="fa fa-times" /></Link>
                                     </td>
-                                    </tr>
+                                    </tr> */}
                                 </tbody>
                                 </table>
                             </div>

@@ -1,8 +1,10 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useStateValue } from '../../../Utility/StateProvider'
 
 export default function CartBody() {
+    const [{basket}] = useStateValue();
     return (
         <div>
             {/* Start cart Wrapper */}
@@ -31,32 +33,37 @@ export default function CartBody() {
                                     </tr>
                                 </thead>
                                 <tbody>
+                                {
+                                basket.map(prod=>(
                                     <tr>
-                                    <td>
-                                        <Link to="product-details.html"><img src="https://uparzon.com.bd/assets/img/product/pro-layout-img5.jpg" alt="Cart Product Image" title="Compete Track Tote" className="img-thumbnail" /></Link>
-                                    </td>
-                                    <td>
-                                        <Link to="product-details.html">Compete Track Tote</Link>
-                                        <span>Delivery Date: 2019-09-22</span>
-                                        <span>Color: Brown</span>
-                                        <span>Reward Points: 300</span>
-                                    </td>
-                                    <td>3</td>
-                                    <td>
-                                        <div className="input-group btn-block">
-                                        <div className="product-qty mr-3">
-                                            <input type="text" defaultValue={0} />
-                                        </div>
-                                        <span className="input-group-btn">
-                                            <button type="submit" className="btn btn-primary"><i className="fa fa-refresh" /></button>
-                                            <button type="button" className="btn btn-danger pull-right"><i className="fa fa-times-circle" /></button>
-                                        </span>
-                                        </div>
-                                    </td>
-                                    <td>$200.00</td>
-                                    <td>$200.00</td>
+                                        <td>
+                                            <Link to="product-details.html"><img src={prod.img1} alt={prod.name} title={prod.name} className="img-thumbnail" /></Link>
+                                        </td>
+                                        <td>
+                                            <Link to="product-details.html">{prod.name}</Link>
+                                            <span>Delivery Date: 2019-09-22</span>
+                                            <span>Color: Brown</span>
+                                            <span>Reward Points: 300</span>
+                                        </td>
+                                        <td>3</td>
+                                        <td>
+                                            <div className="input-group btn-block">
+                                            <div className="product-qty mr-3">
+                                                <input type="number" defaultValue={0} />
+                                            </div>
+                                            <span className="input-group-btn">
+                                                <button type="submit" className="btn btn-primary"><i className="fa fa-refresh" /></button>
+                                                <button type="button" className="btn btn-danger pull-right"><i className="fa fa-times-circle" /></button>
+                                            </span>
+                                            </div>
+                                        </td>
+                                        <td>${prod.price}</td>
+                                        <td>$200.00</td>
                                     </tr>
-                                    <tr>
+                                ))
+                                
+                                }
+                                    {/* <tr>
                                     <td>
                                         <Link to="product-details.html"><img src="https://uparzon.com.bd/assets/img/product/pro-layout-img4.jpg" alt="Cart Product Image" title="Rival Field Messenger 6" className="img-thumbnail" /></Link>
                                     </td>
@@ -103,7 +110,7 @@ export default function CartBody() {
                                     </td>
                                     <td>$180.00</td>
                                     <td>$180.00</td>
-                                    </tr>
+                                    </tr> */}
                                 </tbody>
                                 </table>
                             </div>

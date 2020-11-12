@@ -92,24 +92,26 @@ function Header () {
                                 <li className="my-cart">
                                 <a onClick={showCart} className="ha-toggle" href="/"><span className="lnr lnr-cart" /><span className="count">{ basket.length || 0 }</span>my cart</a>
                                 <ul className={`mini-cart-drop-down ha-dropdown ${isCartActive ? 'active': 'inActive'}`}>
-                                    <li className="mb-30">
-                                    <div className="cart-img">
-                                        <a href="/"><img alt="" src="assets/img/cart/cart-1.jpg" /></a>
-                                    </div>
-                                    <div className="cart-info">
                                         {
-                                            basket.map(prod => console.log("cartInfo",prod[0]?.prodName))
+                                            basket.map((prod) => (
+                                            <li className="mb-30">
+                                                <div className="cart-img">
+                                                    <a href="/"><img alt="" src={prod?.img2} /></a>
+                                                </div>
+                                                <div className="cart-info">
+                                                        <h4><a href="/">{prod.name} </a></h4>
+                                                        <span> <span>{`${1} x` }</span>{`£ ${prod.price}`}</span>
+                                                </div>
+                                                <div className="del-icon">
+                                                    <i className="fa fa-times-circle" />
+                                                </div>
+                                            </li>
+                                                ))
                                         }
-                                        <h4><a href="/">Koss Porta Pro On Ear  Headphones </a></h4>
-                                        <span> <span>1 x </span>£165.00</span>
-                                    </div>
-                                    <div className="del-icon">
-                                        <i className="fa fa-times-circle" />
-                                    </div>
-                                    </li>
+
                                     <li>
                                     <div className="subtotal-text">Sub-total: </div>
-                                    <div className="subtotal-price">£48.94</div>
+                                    <div className="subtotal-price">£ 120</div>
                                     </li>
                                     <li>
                                     <div className="subtotal-text">Eco Tax (-2.00): </div>

@@ -372,7 +372,7 @@ export  const MobileProducts = [
 
 //654654687489746546476846476496476464647464647646
 
-export const quickViewprod = [
+export const AllProduct = [
     {
         "id":1,
         "brand":"Sony",
@@ -385,6 +385,10 @@ export const quickViewprod = [
         "sale" : 10,
         "special":true,
         "shots":["https://uparzon.com.bd/assets/img/product/product-1.jpg","https://uparzon.com.bd/assets/img/product/product-2.jpg","https://uparzon.com.bd/assets/img/product/product-3.jpg","https://uparzon.com.bd/assets/img/product/product-4.jpg","https://uparzon.com.bd/assets/img/product/product-5.jpg","https://uparzon.com.bd/assets/img/product/product-6.jpg"],
+        "categories":"Electronics",
+        "colors":["red","blue","black","white"],
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        "isStock":true,
     },
     {
         "id":2,
@@ -397,6 +401,10 @@ export const quickViewprod = [
         "latest" : true,
         "sale" : 12,
         "shots":["https://uparzon.com.bd/assets/img/product/product-1.jpg","https://uparzon.com.bd/assets/img/product/product-2.jpg","https://uparzon.com.bd/assets/img/product/product-3.jpg","https://uparzon.com.bd/assets/img/product/product-4.jpg","https://uparzon.com.bd/assets/img/product/product-5.jpg","https://uparzon.com.bd/assets/img/product/product-6.jpg"],
+        "categories":"Electronics",
+        "colors":["red","blue","black","white"],
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        "isStock":true,
 
     },
     {
@@ -409,6 +417,10 @@ export const quickViewprod = [
         "img2":"https://uparzon.com.bd/assets/img/product/product-6.jpg",
         "latest" : false,
         "shots":["https://uparzon.com.bd/assets/img/product/product-1.jpg","https://uparzon.com.bd/assets/img/product/product-2.jpg","https://uparzon.com.bd/assets/img/product/product-3.jpg","https://uparzon.com.bd/assets/img/product/product-4.jpg","https://uparzon.com.bd/assets/img/product/product-5.jpg","https://uparzon.com.bd/assets/img/product/product-6.jpg"],
+        "categories":"Electronics",
+        "colors":["red","blue","black","white"],
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        "isStock":true,
     },
     {
         "id":4,
@@ -420,6 +432,10 @@ export const quickViewprod = [
         "img2":"https://uparzon.com.bd/assets/img/product/product-8.jpg",
         "latest" : false,
         "shots":["https://uparzon.com.bd/assets/img/product/product-1.jpg","https://uparzon.com.bd/assets/img/product/product-2.jpg","https://uparzon.com.bd/assets/img/product/product-3.jpg","https://uparzon.com.bd/assets/img/product/product-4.jpg","https://uparzon.com.bd/assets/img/product/product-5.jpg","https://uparzon.com.bd/assets/img/product/product-6.jpg"],
+        "categories":"Electronics",
+        "colors":["red","blue","black","white"],
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        "isStock":true,
     },
     {
         "id":5,
@@ -431,6 +447,10 @@ export const quickViewprod = [
         "img2":"https://uparzon.com.bd/assets/img/product/product-9.jpg",
         "latest" : false,
         "shots":["https://uparzon.com.bd/assets/img/product/product-1.jpg","https://uparzon.com.bd/assets/img/product/product-2.jpg","https://uparzon.com.bd/assets/img/product/product-3.jpg","https://uparzon.com.bd/assets/img/product/product-4.jpg","https://uparzon.com.bd/assets/img/product/product-5.jpg","https://uparzon.com.bd/assets/img/product/product-6.jpg"],
+        "categories":"Electronics",
+        "colors":["red","blue","black","white"],
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        "isStock":true,
     },
     {
         "id":6,
@@ -443,6 +463,10 @@ export const quickViewprod = [
         "latest" : false,
         "sale" : 20,
         "shots":["https://uparzon.com.bd/assets/img/product/product-1.jpg","https://uparzon.com.bd/assets/img/product/product-2.jpg","https://uparzon.com.bd/assets/img/product/product-3.jpg","https://uparzon.com.bd/assets/img/product/product-4.jpg","https://uparzon.com.bd/assets/img/product/product-5.jpg","https://uparzon.com.bd/assets/img/product/product-6.jpg"],
+        "categories":"Electronics",
+        "colors":["red","blue","black","white"],
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        "isStock":true,
     },
     {
         "id":7,
@@ -455,6 +479,10 @@ export const quickViewprod = [
         "latest" : false,
         "sale" : 30,
         "shots":["https://uparzon.com.bd/assets/img/product/product-1.jpg","https://uparzon.com.bd/assets/img/product/product-2.jpg","https://uparzon.com.bd/assets/img/product/product-3.jpg","https://uparzon.com.bd/assets/img/product/product-4.jpg","https://uparzon.com.bd/assets/img/product/product-5.jpg","https://uparzon.com.bd/assets/img/product/product-6.jpg"],
+        "categories":"Electronics",
+        "colors":["red","blue","black","white"],
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        "isStock":true,
     },
     {
         "id":8,
@@ -468,6 +496,10 @@ export const quickViewprod = [
         "sale" : 7,
         "special":true,
         "shots":["https://uparzon.com.bd/assets/img/product/product-1.jpg","https://uparzon.com.bd/assets/img/product/product-2.jpg","https://uparzon.com.bd/assets/img/product/product-3.jpg","https://uparzon.com.bd/assets/img/product/product-4.jpg","https://uparzon.com.bd/assets/img/product/product-5.jpg","https://uparzon.com.bd/assets/img/product/product-6.jpg"],
+        "categories":"Entertainment",
+        "colors":["red","blue","black","white"],
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        "isStock":true,
     },
     {
         "id":9,
@@ -480,6 +512,10 @@ export const quickViewprod = [
         "latest" : true,
         "sale" : 5,
         "shots":["https://uparzon.com.bd/assets/img/product/product-1.jpg","https://uparzon.com.bd/assets/img/product/product-2.jpg","https://uparzon.com.bd/assets/img/product/product-3.jpg","https://uparzon.com.bd/assets/img/product/product-4.jpg","https://uparzon.com.bd/assets/img/product/product-5.jpg","https://uparzon.com.bd/assets/img/product/product-6.jpg"],
+        "categories":"Entertainment",
+        "colors":["red","blue","black","white"],
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        "isStock":true,
     },
     {
         "id":10,
@@ -492,6 +528,10 @@ export const quickViewprod = [
         "latest" : false,
         // "sale" : 12,
         "shots":["https://uparzon.com.bd/assets/img/product/product-1.jpg","https://uparzon.com.bd/assets/img/product/product-2.jpg","https://uparzon.com.bd/assets/img/product/product-3.jpg","https://uparzon.com.bd/assets/img/product/product-4.jpg","https://uparzon.com.bd/assets/img/product/product-5.jpg","https://uparzon.com.bd/assets/img/product/product-6.jpg"],
+        "categories":"Entertainment",
+        "colors":["red","blue","black","white"],
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        "isStock":true,
     },
     {
         "id":11,
@@ -504,6 +544,10 @@ export const quickViewprod = [
         "latest" : false,
         "sale" : 12,
         "shots":["https://uparzon.com.bd/assets/img/product/product-1.jpg","https://uparzon.com.bd/assets/img/product/product-2.jpg","https://uparzon.com.bd/assets/img/product/product-3.jpg","https://uparzon.com.bd/assets/img/product/product-4.jpg","https://uparzon.com.bd/assets/img/product/product-5.jpg","https://uparzon.com.bd/assets/img/product/product-6.jpg"],
+        "categories":"Entertainment",
+        "colors":["red","blue","black","white"],
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        "isStock":true,
     },
     {
         "id":12,
@@ -516,6 +560,10 @@ export const quickViewprod = [
         "latest" : false,
         // "sale" : 12,
         "shots":["https://uparzon.com.bd/assets/img/product/product-1.jpg","https://uparzon.com.bd/assets/img/product/product-2.jpg","https://uparzon.com.bd/assets/img/product/product-3.jpg","https://uparzon.com.bd/assets/img/product/product-4.jpg","https://uparzon.com.bd/assets/img/product/product-5.jpg","https://uparzon.com.bd/assets/img/product/product-6.jpg"],
+        "categories":"Entertainment",
+        "colors":["red","blue","black","white"],
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        "isStock":true,
     },
     {
         "id":13,
@@ -528,6 +576,10 @@ export const quickViewprod = [
         "latest" : false,
         // "sale" : 12,
         "shots":["https://uparzon.com.bd/assets/img/product/product-1.jpg","https://uparzon.com.bd/assets/img/product/product-2.jpg","https://uparzon.com.bd/assets/img/product/product-3.jpg","https://uparzon.com.bd/assets/img/product/product-4.jpg","https://uparzon.com.bd/assets/img/product/product-5.jpg","https://uparzon.com.bd/assets/img/product/product-6.jpg"],
+        "categories":"Entertainment",
+        "colors":["red","blue","black","white"],
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        "isStock":true,
     },
     {
         "id":14,
@@ -540,6 +592,10 @@ export const quickViewprod = [
         "latest" : false,
         "sale" : 44,
         "shots":["https://uparzon.com.bd/assets/img/product/product-1.jpg","https://uparzon.com.bd/assets/img/product/product-2.jpg","https://uparzon.com.bd/assets/img/product/product-3.jpg","https://uparzon.com.bd/assets/img/product/product-4.jpg","https://uparzon.com.bd/assets/img/product/product-5.jpg","https://uparzon.com.bd/assets/img/product/product-6.jpg"],
+        "categories":"Entertainment",
+        "colors":["red","blue","black","white"],
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        "isStock":true,
     },
     {
         "id":15,
@@ -553,6 +609,10 @@ export const quickViewprod = [
         "sale" : 5,
         "special":true,
         "shots":["https://uparzon.com.bd/assets/img/product/product-1.jpg","https://uparzon.com.bd/assets/img/product/product-2.jpg","https://uparzon.com.bd/assets/img/product/product-3.jpg","https://uparzon.com.bd/assets/img/product/product-4.jpg","https://uparzon.com.bd/assets/img/product/product-5.jpg","https://uparzon.com.bd/assets/img/product/product-6.jpg"],
+        "categories":"Mobile",
+        "colors":["red","blue","black","white"],
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        "isStock":true,
     },
     {
         "id":16,
@@ -565,6 +625,10 @@ export const quickViewprod = [
         "latest" : true,
         "sale" : 8,
         "shots":["https://uparzon.com.bd/assets/img/product/product-1.jpg","https://uparzon.com.bd/assets/img/product/product-2.jpg","https://uparzon.com.bd/assets/img/product/product-3.jpg","https://uparzon.com.bd/assets/img/product/product-4.jpg","https://uparzon.com.bd/assets/img/product/product-5.jpg","https://uparzon.com.bd/assets/img/product/product-6.jpg"],
+        "categories":"Mobile",
+        "colors":["red","blue","black","white"],
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        "isStock":true,
     },
     {
         "id":17,
@@ -577,6 +641,10 @@ export const quickViewprod = [
         "latest" : false,
         // "sale" : 12,
         "shots":["https://uparzon.com.bd/assets/img/product/product-1.jpg","https://uparzon.com.bd/assets/img/product/product-2.jpg","https://uparzon.com.bd/assets/img/product/product-3.jpg","https://uparzon.com.bd/assets/img/product/product-4.jpg","https://uparzon.com.bd/assets/img/product/product-5.jpg","https://uparzon.com.bd/assets/img/product/product-6.jpg"],
+        "categories":"Mobile",
+        "colors":["red","blue","black","white"],
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        "isStock":true,
     },
     {
         "id":18,
@@ -589,6 +657,10 @@ export const quickViewprod = [
         "latest" : false,
         // "sale" : 12,
         "shots":["https://uparzon.com.bd/assets/img/product/product-1.jpg","https://uparzon.com.bd/assets/img/product/product-2.jpg","https://uparzon.com.bd/assets/img/product/product-3.jpg","https://uparzon.com.bd/assets/img/product/product-4.jpg","https://uparzon.com.bd/assets/img/product/product-5.jpg","https://uparzon.com.bd/assets/img/product/product-6.jpg"],
+        "categories":"Mobile",
+        "colors":["red","blue","black","white"],
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        "isStock":true,
     },
     {
         "id":19,
@@ -601,6 +673,10 @@ export const quickViewprod = [
         "latest" : false,
         // "sale" : 12,
         "shots":["https://uparzon.com.bd/assets/img/product/product-1.jpg","https://uparzon.com.bd/assets/img/product/product-2.jpg","https://uparzon.com.bd/assets/img/product/product-3.jpg","https://uparzon.com.bd/assets/img/product/product-4.jpg","https://uparzon.com.bd/assets/img/product/product-5.jpg","https://uparzon.com.bd/assets/img/product/product-6.jpg"],
+        "categories":"Mobile",
+        "colors":["red","blue","black","white"],
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        "isStock":true,
     },
     {
         "id":20,
@@ -613,6 +689,10 @@ export const quickViewprod = [
         "latest" : false,
         // "sale" : 12,
         "shots":["https://uparzon.com.bd/assets/img/product/product-1.jpg","https://uparzon.com.bd/assets/img/product/product-2.jpg","https://uparzon.com.bd/assets/img/product/product-3.jpg","https://uparzon.com.bd/assets/img/product/product-4.jpg","https://uparzon.com.bd/assets/img/product/product-5.jpg","https://uparzon.com.bd/assets/img/product/product-6.jpg"],
+        "categories":"Mobile",
+        "colors":["red","blue","black","white"],
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        "isStock":true,
     },
     {
         "id":21,
@@ -625,5 +705,9 @@ export const quickViewprod = [
         "latest" : false,
         // "sale" : 12,
         "shots":["https://uparzon.com.bd/assets/img/product/product-1.jpg","https://uparzon.com.bd/assets/img/product/product-2.jpg","https://uparzon.com.bd/assets/img/product/product-3.jpg","https://uparzon.com.bd/assets/img/product/product-4.jpg","https://uparzon.com.bd/assets/img/product/product-5.jpg","https://uparzon.com.bd/assets/img/product/product-6.jpg"],
+        "categories":"Mobile",
+        "colors":["red","blue","black","white"],
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.",
+        "isStock":true,
     },    
 ] 
