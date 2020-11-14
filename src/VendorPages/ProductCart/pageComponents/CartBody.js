@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { getSubTotal } from '../../../Utility/Reducer';
 import { useStateValue } from '../../../Utility/StateProvider'
 
 export default function CartBody() {
@@ -216,7 +217,7 @@ export default function CartBody() {
                                     <tbody>
                                     <tr>
                                         <td><strong>Sub-Total:</strong></td>
-                                        <td>$860.00</td>
+                                        <td>${getSubTotal(basket).toFixed(2)}</td>
                                     </tr>
                                     <tr>
                                         <td><strong>Total:</strong></td>

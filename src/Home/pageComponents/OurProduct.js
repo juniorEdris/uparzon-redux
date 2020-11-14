@@ -34,14 +34,19 @@ function OurProduct () {
   }
 
   const addToCart= (id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors)=>{
+    if(state.user){
       dispatch({type:"ADD_TO_CART",payload:{
-        id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors
-      }})
+              id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors
+            }})
+    }
+      
     }
   const addToWishList= (id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors)=>{
+    
       dispatch({type:"ADD_TO_WISH_LIST",payload:{
         id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors
       }})
+    
   }
 
 

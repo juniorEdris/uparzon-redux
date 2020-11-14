@@ -125,7 +125,7 @@ export default function ModalSection({product}){
                         <div className="product-details-inner">
                             <div className="product-details-contentt">
                             <div className="pro-details-name mb-10">
-                            <h3>{product?.prodName || 'Product name null'}</h3>
+                            <h3>{product?.name || 'Product name null'}</h3>
                             </div>
                             <div className="pro-details-review mb-20">
                                 <ul>

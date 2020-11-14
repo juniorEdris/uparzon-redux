@@ -1,7 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { getSubTotal } from '../../../Utility/Reducer'
+import { useStateValue } from '../../../Utility/StateProvider'
 
 export default function CheckoutBody() {
+    const[{basket}] = useStateValue()
+    
     return (
         <div>
             {/* Start of Checkout Wrapper */}
@@ -258,34 +262,33 @@ export default function CheckoutBody() {
                                 <h3>Your Order</h3>
                             </div>
                             <div className="product-container">
+                                {
+                                    basket ? 
+                                
+                                basket?.map(product =>(
                                 <div className="product-list">
-                                <div className="product-inner media align-items-center">
-                                    <div className="product-image mr-4 mr-sm-5 mr-md-4 mr-lg-5">
-                                    <Link to="#">
-                                        <img src="https://uparzon.com.bd/assets/img/product/product-13.jpg" alt="Compete Track Tote" title="Compete Track Tote" />
-                                    </Link>
-                                    </div>
-                                    <div className="media-body">
-                                    <h5>Compete Track Tote</h5>
-                                    <p className="product-quantity">Quantity: 3</p>
-                                    <p className="product-final-price">$180.00</p>
-                                    </div>
-                                </div>
-                                </div>
-                                <div className="product-list">
-                                <div className="product-inner media align-items-center">
-                                    <div className="product-image mr-4 mr-sm-5 mr-md-4 mr-lg-5">
-                                    <Link to="#">
-                                        <img src="https://uparzon.com.bd/assets/img/product/product-4.jpg" alt="Rival Field Messenger 6" title="Rival Field Messenger 6" />
-                                    </Link>
-                                    </div>
-                                    <div className="media-body">
-                                    <h5>Rival Field Messenger 6</h5>
-                                    <p className="product-quantity">Quantity: 5</p>
-                                    <p className="product-final-price">$260.00</p>
+                                    <div className="product-inner media align-items-center" id={product.d}>
+                                        <div className="product-image mr-4 mr-sm-5 mr-md-4 mr-lg-5">
+                                        <Link to="#">
+                                            <img src={product.img1} alt={product.name} title={product.name} />
+                                        </Link>
+                                        </div>
+                                        <div className="media-body">
+                                        <h5>{product.name}</h5>
+                                        <p className="product-quantity">Quantity: 3</p>
+                                        <p className="product-final-price">${product.price}</p>
+                                        </div>
                                     </div>
                                 </div>
-                                </div>
+                                    )) 
+                                    : 
+                                    <div className="product-list">
+                                        <h1>No product yet</h1>
+                                    </div>
+
+                                    
+                                }
+                                
                             </div> {/* end of product-container */}
                             <div className="order-review">
                                 <div className="table-responsive">
@@ -293,7 +296,7 @@ export default function CheckoutBody() {
                                     <tbody>
                                     <tr className="cart-subtotal">
                                         <th>Subtotal</th>
-                                        <td className="text-center">$440.00</td>
+                                        <td className="text-center">${getSubTotal(basket).toFixed(2)}</td>
                                     </tr>            
                                     <tr className="order-total">
                                         <th>Total</th>

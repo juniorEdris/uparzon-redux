@@ -4,12 +4,13 @@ import "mburger-css/dist/mburger"
 import './header.css'
 import { Link } from 'react-router-dom'
 import { useStateValue } from '../../Utility/StateProvider'
+import { getSubTotal } from '../../Utility/Reducer'
 
 
 function Header () {
 
     // Basket counting functionality
-    const[{basket,wishList}] = useStateValue()
+    const[{basket,wishList,user}] = useStateValue()
     console.log(basket);
     console.log('My Array',wishList);
     //catagories menu dropdown
@@ -84,13 +85,20 @@ function Header () {
                             <div className="mini-cart-option">
                             <ul>
                                 <li className="compare">
-                                <a className="ha-toggle" href="/compare"><span className="lnr lnr-sync" />Product compare</a>
+                                {
+                                    //turnery option
+                                    user ? 
+                                    <Link className="ha-toggle" to={`/compare`}><span className="lnr lnr-sync" />Product compare</Link>
+                                    :
+                                    <Link className="ha-toggle" to="/login"><span className="lnr lnr-user" />user</Link>
+                                }
                                 </li>
+                                
                                 <li className="wishlist">
-                                <a className="ha-toggle" href="/wishlist"><span className="lnr lnr-heart" /><span className="count">{ wishList.length || 0 }</span>wishlist</a>
+                                <Link className="ha-toggle" to={wishList.length > 0 && `/wishlist`}><span className="lnr lnr-heart" /><span className="count">{ wishList.length || 0 }</span>wishlist</Link>
                                 </li>
                                 <li className="my-cart">
-                                <a onClick={showCart} className="ha-toggle" href="/"><span className="lnr lnr-cart" /><span className="count">{ basket.length || 0 }</span>my cart</a>
+                                {user && <Link onClick={basket.length > 0 && showCart} className="ha-toggle" to="#"><span className="lnr lnr-cart" /><span className="count">{ basket.length || 0 }</span>my cart</Link>}
                                 <ul className={`mini-cart-drop-down ha-dropdown ${isCartActive ? 'active': 'inActive'}`}>
                                         {
                                             basket.map((prod) => (
@@ -111,7 +119,7 @@ function Header () {
 
                                     <li>
                                     <div className="subtotal-text">Sub-total: </div>
-                                    <div className="subtotal-price">£ 120</div>
+                                    <div className="subtotal-price">{`£ ${getSubTotal(basket).toFixed(2)}`}</div>
                                     </li>
                                     <li>
                                     <div className="subtotal-text">Eco Tax (-2.00): </div>
@@ -126,13 +134,14 @@ function Header () {
                                     <div className="subtotal-price"><span>£60.24</span></div>
                                     </li>
                                     <li className="mt-30">
-                                    <a className="cart-button" href="/cart">view cart</a>
+                                    <Link className="cart-button" to="/cart">view cart</Link>
                                     </li>
                                     <li>
-                                    <a className="cart-button" href="/checkout">checkout</a>
+                                    <Link className="cart-button" to="/checkout">checkout</Link>
                                     </li>
                                 </ul>
                                 </li>
+                                
                             </ul>
                             </div>
                         </div>
