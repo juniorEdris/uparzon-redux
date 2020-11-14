@@ -27,9 +27,9 @@ function OurProduct () {
   const [Entertproducts] = useState(Entertainments)
   const [Mobileproducts] = useState(MobileProducts)
   
-  const quickView = (id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors)=>{
+  const quickView = (id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings)=>{
       dispatch({type:"QUICK_VIEW",payload:{
-        id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors
+        id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings
       }})
   }
 
@@ -125,7 +125,7 @@ function OurProduct () {
                   <div className="action-links">
                     <a href="#" title="Wishlist" data-wishList onClick={()=> addToWishList(product.id,product.brand,product.prodName,product.oldPrice,product.price,product.sale,product.latest,product.special,product.img1,product.img2,product.categories,product.shots,product.colors)}><i className="lnr lnr-heart" /></a>
                     <a href="#" title="Compare"><i className="lnr lnr-sync" /></a>
-                    <a href="#" title="Quick view" onClick={()=>{quickView(product.id,product.brand,product.prodName,product.oldPrice,product.price,product.sale,product.latest,product.special,product.img1,product.img2,product.categories,product.shots,product.colors)}} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
+                    <a href="#" title="Quick view" onClick={()=>{quickView(product.id,product.brand,product.prodName,product.oldPrice,product.price,product.sale,product.latest,product.special,product.img1,product.img2,product.categories,product.shots,product.colors,product.ratings)}} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
                   </div>
                 </div>
                 <div className="product-caption">
@@ -186,7 +186,7 @@ function OurProduct () {
                   <div className="action-links">
                     <Link to="" title="Wishlist" onClick={()=> addToWishList(product.id,product.brand,product.prodName,product.oldPrice,product.price,product.sale,product.latest,product.special,product.img1,product.img2,product.categories,product.shots,product.colors)}><i className="lnr lnr-heart" /></Link>
                     <Link to="" title="Compare"><i className="lnr lnr-sync" /></Link>
-                    <Link to="" title="Quick view" onClick={()=>{quickView(product.id,product.brand,product.prodName,product.oldPrice,product.price,product.sale,product.latest,product.special,product.img1,product.img2,product.categories,product.shots,product.colors)}} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></Link>
+                    <Link to="" title="Quick view" onClick={()=>{quickView(product.id,product.brand,product.prodName,product.oldPrice,product.price,product.sale,product.latest,product.special,product.img1,product.img2,product.categories,product.shots,product.colors,product.ratings)}} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></Link>
                   </div>
                 </div>
                 <div className="product-caption">
@@ -247,7 +247,7 @@ function OurProduct () {
             <div className="action-links">
               <a href="#" title="Wishlist" onClick={()=> addToWishList(product.id,product.brand,product.prodName,product.oldPrice,product.price,product.sale,product.latest,product.special,product.img1,product.img2,product.categories,product.shots,product.colors)}><i className="lnr lnr-heart" /></a>
               <a href="#" title="Compare"><i className="lnr lnr-sync" /></a>
-              <a href="#" title="Quick view" onClick={()=>{quickView(product.id,product.brand,product.prodName,product.oldPrice,product.price,product.sale,product.latest,product.special,product.img1,product.img2,product.categories,product.shots,product.colors)}} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
+              <a href="#" title="Quick view" onClick={()=>{quickView(product.id,product.brand,product.prodName,product.oldPrice,product.price,product.sale,product.latest,product.special,product.img1,product.img2,product.categories,product.shots,product.colors,product.ratings)}} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
             </div>
           </div>
           <div className="product-caption">
