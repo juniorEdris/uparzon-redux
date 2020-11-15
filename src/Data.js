@@ -8,7 +8,7 @@ export  const Electronics = [
     {
         "id":1,
         "brand":"Sony",
-        "prodName":"jony XB10 Portable  Wireless Speaker",
+        "name":"jony XB10 Portable  Wireless Speaker",
         "price":30.31,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-1.jpg",
@@ -26,7 +26,7 @@ export  const Electronics = [
     {
         "id":2,
         "brand":"Microsoft",
-        "prodName":"Windows 10 - Product of Microsoft",
+        "name":"Windows 10 - Product of Microsoft",
         "price":10.31,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-3.jpg",
@@ -43,7 +43,7 @@ export  const Electronics = [
     {
         "id":3,
         "brand":"Gucci",
-        "prodName":"Reck Sneakers - Gucci A American Brand",
+        "name":"Reck Sneakers - Gucci A American Brand",
         "price":7.31,
         // "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-5.jpg",
@@ -59,7 +59,7 @@ export  const Electronics = [
     {
         "id":4,
         "brand":"Nike",
-        "prodName":"Portable Back Pack - Nike Just Do It",
+        "name":"Portable Back Pack - Nike Just Do It",
         "price":22.31,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-7.jpg",
@@ -75,7 +75,7 @@ export  const Electronics = [
     {
         "id":5,
         "brand":"Lotto",
-        "prodName":"Jungle Tees - Lotto Italian brand",
+        "name":"Jungle Tees - Lotto Italian brand",
         "price":9.31,
         // "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-10.jpg",
@@ -91,7 +91,7 @@ export  const Electronics = [
     {
         "id":6,
         "brand":"Tommy Hillfiger",
-        "prodName":"Water Ressist Sporty Watch - Tommy Hillfiger",
+        "name":"Water Ressist Sporty Watch - Tommy Hillfiger",
         "price":66.3,
         // "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-11.jpg",
@@ -108,7 +108,7 @@ export  const Electronics = [
     {
         "id":7,
         "brand":"Allen Solly",
-        "prodName":"Underuniverse Trouser - Allen Solly AUS",
+        "name":"Underuniverse Trouser - Allen Solly AUS",
         "price":75.31,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-13.jpg",
@@ -128,7 +128,7 @@ export  const Entertainments = [
     {
         "id":8,
         "brand":"Sony",
-        "prodName":"Sony MS5500 5.1 Channel Speakers Black",
+        "name":"Sony MS5500 5.1 Channel Speakers Black",
         "price":124.31,
         // "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-1.jpg",
@@ -146,7 +146,7 @@ export  const Entertainments = [
     {
         "id":9,
         "brand":"Croma",
-        "prodName":"Croma CRES1082 5.1 Channel Speaker Vlack",
+        "name":"Croma CRES1082 5.1 Channel Speaker Vlack",
         "price":150.31,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-3.jpg",
@@ -163,7 +163,7 @@ export  const Entertainments = [
     {
         "id":10,
         "brand":"Sony",
-        "prodName":"Sony BDV-E4100 5.1 Home Theatre System",
+        "name":"Sony BDV-E4100 5.1 Home Theatre System",
         "price":227.31,
         // "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-5.jpg",
@@ -180,7 +180,7 @@ export  const Entertainments = [
     {
         "id":11,
         "brand":"Phillips",
-        "prodName":"Philips SPA3000U 5.1 Speakers",
+        "name":"Philips SPA3000U 5.1 Speakers",
         "price":422.31,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-7.jpg",
@@ -197,7 +197,7 @@ export  const Entertainments = [
     {
         "id":12,
         "brand":"Payoneer",
-        "prodName":"Pioneer VSX-323K and SPE335XT 5.1 Component Home Theatre System",
+        "name":"Pioneer VSX-323K and SPE335XT 5.1 Component Home Theatre System",
         "price":449.31,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-10.jpg",
@@ -214,7 +214,7 @@ export  const Entertainments = [
     {
         "id":13,
         "brand":"Zebronic",
-        "prodName":"Zebronic SPK-SWT8290 5.1 Speaker System",
+        "name":"Zebronic SPK-SWT8290 5.1 Speaker System",
         "price":366.3,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-11.jpg",
@@ -231,7 +231,7 @@ export  const Entertainments = [
     {
         "id":14,
         "brand":"JBL",
-        "prodName":"JBL Cinema BD 100 Complete 5.1-Channel 3D Blu-ray Disc Integrated Home Theater System",
+        "name":"JBL Cinema BD 100 Complete 5.1-Channel 3D Blu-ray Disc Integrated Home Theater System",
         "price":475.31,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-13.jpg",
@@ -251,7 +251,7 @@ export  const MobileProducts = [
     {
         "id":15,
         "brand":"Oppo",
-        "prodName":"Oppo K7x - Latest Phone in 2020",
+        "name":"Oppo K7x - Latest Phone in 2020",
         "price":124.31,
         // "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-1.jpg",
@@ -269,7 +269,7 @@ export  const MobileProducts = [
     {
         "id":16,
         "brand":"Infinix",
-        "prodName":"Infinix Smart 4",
+        "name":"Infinix Smart 4",
         "price":150.31,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-3.jpg",
@@ -286,7 +286,7 @@ export  const MobileProducts = [
     {
         "id":17,
         "brand":"Sony",
-        "prodName":"Sony Experia",
+        "name":"Sony Experia",
         "price":227.31,
         // "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-5.jpg",
@@ -303,7 +303,7 @@ export  const MobileProducts = [
     {
         "id":18,
         "brand":"OnePlus",
-        "prodName":"OnePlus 8T Cyberpunk 2077 Limited Edition",
+        "name":"OnePlus 8T Cyberpunk 2077 Limited Edition",
         "price":422.31,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-7.jpg",
@@ -320,7 +320,7 @@ export  const MobileProducts = [
     {
         "id":19,
         "brand":"ZTE",
-        "prodName":"ZTE Blade A3Y (Yahoo Mobile)",
+        "name":"ZTE Blade A3Y (Yahoo Mobile)",
         "price":449.31,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-10.jpg",
@@ -337,7 +337,7 @@ export  const MobileProducts = [
     {
         "id":20,
         "brand":"Huawei",
-        "prodName":"Huawei Mate 40 Pro",
+        "name":"Huawei Mate 40 Pro",
         "price":366.3,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-11.jpg",
@@ -354,7 +354,7 @@ export  const MobileProducts = [
     {
         "id":21,
         "brand":"Gionee",
-        "prodName":"Gionee F8 Neo",
+        "name":"Gionee F8 Neo",
         "price":475.31,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-13.jpg",
@@ -376,7 +376,7 @@ export const AllProduct = [
     {
         "id":1,
         "brand":"Sony",
-        "prodName":"jony XB10 Portable  Wireless Speaker",
+        "name":"jony XB10 Portable  Wireless Speaker",
         "price":30.31,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-1.jpg",
@@ -394,7 +394,7 @@ export const AllProduct = [
     {
         "id":2,
         "brand":"Microsoft",
-        "prodName":"Windows 10 - Product of Microsoft",
+        "name":"Windows 10 - Product of Microsoft",
         "price":10.31,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-3.jpg",
@@ -412,7 +412,7 @@ export const AllProduct = [
     {
         "id":3,
         "brand":"Gucci",
-        "prodName":"Reck Sneakers - Gucci A American Brand",
+        "name":"Reck Sneakers - Gucci A American Brand",
         "price":7.31,
         // "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-5.jpg",
@@ -428,7 +428,7 @@ export const AllProduct = [
     {
         "id":4,
         "brand":"Nike",
-        "prodName":"Portable Back Pack - Nike Just Do It",
+        "name":"Portable Back Pack - Nike Just Do It",
         "price":22.31,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-7.jpg",
@@ -444,7 +444,7 @@ export const AllProduct = [
     {
         "id":5,
         "brand":"Lotto",
-        "prodName":"Jungle Tees - Lotto Italian brand",
+        "name":"Jungle Tees - Lotto Italian brand",
         "price":9.31,
         // "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-10.jpg",
@@ -460,7 +460,7 @@ export const AllProduct = [
     {
         "id":6,
         "brand":"Tommy Hillfiger",
-        "prodName":"Water Ressist Sporty Watch - Tommy Hillfiger",
+        "name":"Water Ressist Sporty Watch - Tommy Hillfiger",
         "price":66.3,
         // "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-11.jpg",
@@ -477,7 +477,7 @@ export const AllProduct = [
     {
         "id":7,
         "brand":"Allen Solly",
-        "prodName":"Underuniverse Trouser - Allen Solly AUS",
+        "name":"Underuniverse Trouser - Allen Solly AUS",
         "price":75.31,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-13.jpg",
@@ -494,7 +494,7 @@ export const AllProduct = [
     {
         "id":8,
         "brand":"Sony",
-        "prodName":"Sony MS5500 5.1 Channel Speakers Black",
+        "name":"Sony MS5500 5.1 Channel Speakers Black",
         "price":124.31,
         // "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-1.jpg",
@@ -512,7 +512,7 @@ export const AllProduct = [
     {
         "id":9,
         "brand":"Croma",
-        "prodName":"Croma CRES1082 5.1 Channel Speaker Vlack",
+        "name":"Croma CRES1082 5.1 Channel Speaker Vlack",
         "price":150.31,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-3.jpg",
@@ -529,7 +529,7 @@ export const AllProduct = [
     {
         "id":10,
         "brand":"Sony",
-        "prodName":"Sony BDV-E4100 5.1 Home Theatre System",
+        "name":"Sony BDV-E4100 5.1 Home Theatre System",
         "price":227.31,
         // "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-5.jpg",
@@ -546,7 +546,7 @@ export const AllProduct = [
     {
         "id":11,
         "brand":"Phillips",
-        "prodName":"Philips SPA3000U 5.1 Speakers",
+        "name":"Philips SPA3000U 5.1 Speakers",
         "price":422.31,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-7.jpg",
@@ -563,7 +563,7 @@ export const AllProduct = [
     {
         "id":12,
         "brand":"Payoneer",
-        "prodName":"Pioneer VSX-323K and SPE335XT 5.1 Component Home Theatre System",
+        "name":"Pioneer VSX-323K and SPE335XT 5.1 Component Home Theatre System",
         "price":449.31,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-10.jpg",
@@ -580,7 +580,7 @@ export const AllProduct = [
     {
         "id":13,
         "brand":"Zebronic",
-        "prodName":"Zebronic SPK-SWT8290 5.1 Speaker System",
+        "name":"Zebronic SPK-SWT8290 5.1 Speaker System",
         "price":366.3,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-11.jpg",
@@ -597,7 +597,7 @@ export const AllProduct = [
     {
         "id":14,
         "brand":"JBL",
-        "prodName":"JBL Cinema BD 100 Complete 5.1-Channel 3D Blu-ray Disc Integrated Home Theater System",
+        "name":"JBL Cinema BD 100 Complete 5.1-Channel 3D Blu-ray Disc Integrated Home Theater System",
         "price":475.31,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-13.jpg",
@@ -614,7 +614,7 @@ export const AllProduct = [
     {
         "id":15,
         "brand":"Oppo",
-        "prodName":"Oppo K7x - Latest Phone in 2020",
+        "name":"Oppo K7x - Latest Phone in 2020",
         "price":124.31,
         // "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-1.jpg",
@@ -632,7 +632,7 @@ export const AllProduct = [
     {
         "id":16,
         "brand":"Infinix",
-        "prodName":"Infinix Smart 4",
+        "name":"Infinix Smart 4",
         "price":150.31,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-3.jpg",
@@ -649,7 +649,7 @@ export const AllProduct = [
     {
         "id":17,
         "brand":"Sony",
-        "prodName":"Sony Experia",
+        "name":"Sony Experia",
         "price":227.31,
         // "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-5.jpg",
@@ -666,7 +666,7 @@ export const AllProduct = [
     {
         "id":18,
         "brand":"OnePlus",
-        "prodName":"OnePlus 8T Cyberpunk 2077 Limited Edition",
+        "name":"OnePlus 8T Cyberpunk 2077 Limited Edition",
         "price":422.31,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-7.jpg",
@@ -683,7 +683,7 @@ export const AllProduct = [
     {
         "id":19,
         "brand":"ZTE",
-        "prodName":"ZTE Blade A3Y (Yahoo Mobile)",
+        "name":"ZTE Blade A3Y (Yahoo Mobile)",
         "price":449.31,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-10.jpg",
@@ -700,7 +700,7 @@ export const AllProduct = [
     {
         "id":20,
         "brand":"Huawei",
-        "prodName":"Huawei Mate 40 Pro",
+        "name":"Huawei Mate 40 Pro",
         "price":366.3,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-11.jpg",
@@ -717,7 +717,7 @@ export const AllProduct = [
     {
         "id":21,
         "brand":"Gionee",
-        "prodName":"Gionee F8 Neo",
+        "name":"Gionee F8 Neo",
         "price":475.31,
         "oldPrice":466.0,
         "img1":"https://uparzon.com.bd/assets/img/product/product-13.jpg",

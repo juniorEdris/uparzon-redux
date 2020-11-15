@@ -1,65 +1,101 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
-import { Link } from 'react-router-dom';
-import { AllProduct, Electronics, Entertainments, MobileProducts, Truncate } from '../../../Data';
-import ModalSection from '../../../PrimarySections/Modal/ModalSection';
-import { useStateValue } from '../../../Utility/StateProvider';
-// import { useStateValue } from '../../../Utility/StateProvider'
+// Our Product,Hot Collection,Brand Sale,Shop(short-cirtuit function to show grid and list view) product component
 
-export default function Product({id,brand,prodName,oldPrice,price,sale,latest,special,img1,img2,categories}) {
+import React,{useEffect} from 'react'
+import { Link } from 'react-router-dom';
+import {  Truncate } from '../../../Data';
+import { useStateValue } from '../../../Utility/StateProvider';
+import $ from 'jquery'
+
+export default function Product({id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings,description,isGrid,isList}) {
   
-  
-  console.log('props',categories);
-  
-  
-  const [dispatch] = useStateValue()
-  const quickView = (id,productCata)=>{
-    console.log('quickview',id,productCata);
-    if(productCata === 'Electronics'){
-      const singleProd = AllProduct.filter(prod => prod.id === id)
-      dispatch({type:"QUICK_VIEW",payload:singleProd})
-      console.log('here is id',singleProd);
-    }else if(productCata === 'Entertainment'){
-      const singleProd = AllProduct.filter(prod => prod.id === id)
-      dispatch({type:"QUICK_VIEW",payload:singleProd})
-      console.log('here is id',singleProd);
-    }else if(productCata === 'Mobile'){
-      const singleProd = AllProduct.filter(prod => prod.id === id)
-      dispatch({type:"QUICK_VIEW",payload:singleProd})
-      console.log('here is id',singleProd);
-    }
+  useEffect(() => {
+    $('.action-links a').on('click',function( event ) {
+      event.preventDefault();
+    });
+  }, [])
+
+
+  const [state,dispatch] = useStateValue()
+  const quickView = ()=>{
+      dispatch({type:"QUICK_VIEW",payload:{
+        id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings
+      }})
   }
 
   const addToCart= ()=>{
-    
-      dispatch({
-      type:"ADD_TO_CART",
-      payload:{
-        id,
-        prodName,
-        price,
-        img1,
-      }
-    })
-  }
-      }
+    if(state.user){
+      dispatch({type:"ADD_TO_CART",payload:{
+              id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings
+            }})
+    }
+      
+    }
   const addToWishList= ()=>{
+    
       dispatch({type:"ADD_TO_WISH_LIST",payload:{
-        id,
-        brand,
-        prodName,
-        price,
-        img1
+        id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings
       }})
-      console.log('wishcart',prodName)
+    
   }
     return (
         <div>
-            <div className="product-item" id={id}>
+
+
+          {
+            isList ?  
+            <div className="sinrato-list-item mb-30" id={id}>
+            <div className="sinrato-thumb">
+            <a href="product-details.html">
+                <img src={img1} className="pri-img" alt={name} />
+                <img src={img2} className="sec-img" alt={name} />
+            </a>
+            <div className="box-label">
+                <div className="label-product label_new">
+                    <span>{latest ? 'new': ''}</span>
+                </div>
+                <div className="label-product label_sale">
+                    <span>{sale ? `-${sale}%` : '' }</span>
+                </div>
+            </div>
+            </div>
+            <div className="sinrato-list-item-content">
+            <div className="manufacture-product">
+                <span><Link to='/'>{brand}</Link></span>
+            </div>
+            <div className="sinrato-product-name">
+                <h4><a href="product-details.html" title={name}>{Truncate(name)}</a></h4>
+            </div>
+            <div className="sinrato-ratings mb-15">
+                <span><i className="fa fa-star" /></span>
+                <span><i className="fa fa-star" /></span>
+                <span><i className="fa fa-star" /></span>
+                <span><i className="fa fa-star" /></span>
+                <span><i className="fa fa-star" /></span>
+            </div>
+            <div className="sinrato-product-des">
+                <p> {description || 'no description'}</p>
+            </div>
+            </div>
+            <div className="sinrato-box-action">
+            <div className="price-box">
+                <span className="regular-price"><span className={` ${special && 'special-price'}`}>£{price}</span></span>
+                <span className="old-price"><del>{oldPrice ? `£${oldPrice}` : ''}</del></span>
+            </div>
+            <button className="btn-cart" type="button" onClick={()=> addToCart(id,'Electronics')}>add to cart</button>
+            <div className="action-links sinrat-list-icon">
+                <Link to='#' title="Wishlist" onClick={()=> addToWishList(id,'Electronics')}><i className="lnr lnr-heart" /></Link>
+                <Link to='#' title="Compare"><i className="lnr lnr-sync" /></Link>
+                <Link to='#' title="Quick view" onClick={()=>quickView(id,'Electronics')} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></Link>
+            </div>
+            </div>
+        </div>
+            :
+            <div className={`product-item ${isGrid && 'mb-30'}`} id={id}>
                   <div className="product-thumb">
                     <Link to="/">
-                      <img src={img1} className="pri-img" alt={prodName} />
-                      <img src={img2} className="sec-img" alt={prodName} />
+                      <img src={img1} className="pri-img" alt={name} />
+                      <img src={img2} className="sec-img" alt={name} />
                     </Link>
                     
                     <div className="box-label">
@@ -71,17 +107,17 @@ export default function Product({id,brand,prodName,oldPrice,price,sale,latest,sp
                       </div>
                     </div>
                     <div className="action-links">
-                      <a href="#" title="Wishlist" onClick={()=> addToWishList(id,brand,prodName,price,img1)}><i className="lnr lnr-heart" /></a>
-                      <a href="#" title="Compare"><i className="lnr lnr-sync" /></a>
-                      <a href="#" title="Quick view" onClick={()=>quickView(id,categories)} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></a>
+                      <Link to="#" title="Wishlist" onClick={()=> addToWishList()}><i className="lnr lnr-heart" /></Link>
+                      <Link to="#" title="Compare"><i className="lnr lnr-sync" /></Link>
+                      <Link to="#" title="Quick view" onClick={()=>quickView()} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></Link>
                     </div>
                   </div>
                   <div className="product-caption">
                     <div className="manufacture-product">
-                      <p><a href="shop-grid-left-sidebar.html">{brand}</a></p>
+                      <p><Link to="/">{brand}</Link></p>
                     </div>
                     <div className="product-name">
-                      <h4><a href="product-details.html" title={prodName}>{Truncate(prodName,25) }</a></h4>
+                      <h4><Link to="/" title={name}>{Truncate(name,25) }</Link></h4>
                     </div>
                     <div className="ratings">
                       <span className="purple"><i className="lnr lnr-star" /></span>
@@ -96,7 +132,10 @@ export default function Product({id,brand,prodName,oldPrice,price,sale,latest,sp
                     </div>
                     <button className="btn-cart" onClick={()=> addToCart()} type="button">add to cart</button>
                   </div>
-                </div>{/* </div> end single item*/}
+                
+                </div>
+          }
+          
 
         </div>
     )

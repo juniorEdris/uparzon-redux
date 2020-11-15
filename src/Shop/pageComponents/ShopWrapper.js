@@ -11,6 +11,7 @@ import { Electronics,Entertainments,MobileProducts, Truncate } from '../../Data'
 import { useStateValue } from '../../Utility/StateProvider'
 import ModalSection from '../../PrimarySections/Modal/ModalSection'
 import Sidebar from './ShopSidebar'
+import Product from '../../Home/pageComponents/Subfolder/Product'
 
 export default function ShopWrapper() {
 
@@ -30,42 +31,14 @@ $('.product-view-mode a').on('click', function(e){
 
 }, [])
 
-    const [state,dispatch] = useStateValue()
+    const [state] = useStateValue()
     const [Electproducts] = useState(Electronics)
     //quickView triggers all data in the popup
     const quickView = (id,productCata)=>{
-        if(productCata === 'Electronics'){
-          const singleProd = Electproducts.filter(prod => prod.id === id)
-          dispatch({type:"QUICK_VIEW",payload:singleProd})
-          // console.log('here is id',singleProd);
-        }
       }
-      const addToCart= (id,productCata)=>{
-        if(productCata === 'Electronics'){
-          const singleProd = Electproducts.filter(prod => prod.id === id)
-          dispatch({type:"ADD_TO_CART",payload:singleProd})
-        }
-        // else if(productCata === 'Entertainment'){
-        //   const singleProd = Entertproducts.filter(prod => prod.id === id)
-        //   dispatch({type:"ADD_TO_CART",payload:singleProd})
-        // }else{
-        //   const singleProd = MobileProducts.filter(prod => prod.id === id)
-        //   dispatch({type:"ADD_TO_CART",payload:singleProd})
-        // }
+      const addToCart= (id,productCata)=>{        
       }
       const addToWishList= (id,productCata)=>{
-        if(productCata === 'Electronics'){
-          const singleProd = Electproducts.filter(prod => prod.id === id)
-          dispatch({type:"ADD_TO_WISH_LIST",payload:singleProd})
-          console.log('wishcart',singleProd);
-         }
-        //else if(productCata === 'Entertainment'){
-        //   const singleProd = Entertproducts.filter(prod => prod.id === id)
-        //   dispatch({type:"ADD_TO_WISH_LIST",payload:singleProd})
-        // }else{
-        //   const singleProd = MobileProducts.filter(prod => prod.id === id)
-        //   dispatch({type:"ADD_TO_WISH_LIST",payload:singleProd})
-        // }
       }
 
 
@@ -132,93 +105,10 @@ $('.product-view-mode a').on('click', function(e){
                     <div className="shop-product-wrap grid row">
                         {Electproducts.map(data=>(
                     <div className="col-lg-3 col-md-4 col-sm-6">
-                        <div className="product-item mb-30" id={data.id}>
-                            <div className="product-thumb">
-                            <a href="product-details.html">
-                                <img src={data.img1} className="pri-img" alt={data.prodName} />
-                                <img src={data.img2} className="sec-img" alt={data.prodName} />
-                            </a>
-                            <div className="box-label">
-                                <div className="label-product label_new">
-                                    <span>{data.latest ? 'new': ''}</span>
-                                </div>
-                                <div className="label-product label_sale">
-                                    <span>{data.sale ? `-${data.sale}%` : '' }</span>
-                                </div>
-                            </div>
-                            <div className="action-links">
-                                <Link to='#' title="Wishlist" onClick={()=> addToWishList(data.id,'Electronics')}><i className="lnr lnr-heart" /></Link>
-                                <Link to='#' title="Compare"><i className="lnr lnr-sync" /></Link>
-                                <Link to='#' title="Quick view" onClick={()=>quickView(data.id,'Electronics')} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></Link>
-                            </div>
-                            </div>
-                            <div className="product-caption">
-                            <div className="manufacture-product">
-                                <p><a href="/">{data.brand}</a></p>
-                            </div>
-                            <div className="product-name">
-                                <h4><a href="product-details.html" title={data.prodName}>{Truncate(data.prodName,25)}</a></h4>
-                            </div>
-                            <div className="ratings">
-                                <span className="yellow"><i className="lnr lnr-star" /></span>
-                                <span className="yellow"><i className="lnr lnr-star" /></span>
-                                <span className="yellow"><i className="lnr lnr-star" /></span>
-                                <span className="yellow"><i className="lnr lnr-star" /></span>
-                                <span><i className="lnr lnr-star" /></span>
-                            </div>
-                            <div className="price-box">
-                                <span className="regular-price"><span className={` ${data.special && 'special-price'}`}>£{data.price}</span></span>
-                                <span className="old-price"><del>{data.oldPrice ? `£${data.oldPrice}` : ''}</del></span>
-                            </div>
-                            <button className="btn-cart" type="button" onClick={()=> addToCart(data.id,'Electronics')}>add to cart</button>
-                            </div>
-                        </div> {/* end single grid item */}
-                        <div className="sinrato-list-item mb-30" id={data.id}>
-                            <div className="sinrato-thumb">
-                            <a href="product-details.html">
-                                <img src={data.img1} className="pri-img" alt={data.prodName} />
-                                <img src={data.img2} className="sec-img" alt={data.prodName} />
-                            </a>
-                            <div className="box-label">
-                                <div className="label-product label_new">
-                                    <span>{data.latest ? 'new': ''}</span>
-                                </div>
-                                <div className="label-product label_sale">
-                                    <span>{data.sale ? `-${data.sale}%` : '' }</span>
-                                </div>
-                            </div>
-                            </div>
-                            <div className="sinrato-list-item-content">
-                            <div className="manufacture-product">
-                                <span><Link to='/'>{data.brand}</Link></span>
-                            </div>
-                            <div className="sinrato-product-name">
-                                <h4><a href="product-details.html" title={data.prodName}>{Truncate(data.prodName)}</a></h4>
-                            </div>
-                            <div className="sinrato-ratings mb-15">
-                                <span><i className="fa fa-star" /></span>
-                                <span><i className="fa fa-star" /></span>
-                                <span><i className="fa fa-star" /></span>
-                                <span><i className="fa fa-star" /></span>
-                                <span><i className="fa fa-star" /></span>
-                            </div>
-                            <div className="sinrato-product-des">
-                                <p> {data.description || 'no description'}</p>
-                            </div>
-                            </div>
-                            <div className="sinrato-box-action">
-                            <div className="price-box">
-                                <span className="regular-price"><span className={` ${data.special && 'special-price'}`}>£{data.price}</span></span>
-                                <span className="old-price"><del>{data.oldPrice ? `£${data.oldPrice}` : ''}</del></span>
-                            </div>
-                            <button className="btn-cart" type="button" onClick={()=> addToCart(data.id,'Electronics')}>add to cart</button>
-                            <div className="action-links sinrat-list-icon">
-                                <Link to='#' title="Wishlist" onClick={()=> addToWishList(data.id,'Electronics')}><i className="lnr lnr-heart" /></Link>
-                                <Link to='#' title="Compare"><i className="lnr lnr-sync" /></Link>
-                                <Link to='#' title="Quick view" onClick={()=>quickView(data.id,'Electronics')} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></Link>
-                            </div>
-                            </div>
-                        </div> {/* end single list item */}
+                        {/* grid view starts here */}
+                        <Product isGrid={true} key={data.id} {...data} />
+                        {/* List view starts here */}
+                        <Product key={data.id} {...data} isList={true}/>
                         
                         </div>
                         ))}
@@ -252,7 +142,7 @@ $('.product-view-mode a').on('click', function(e){
             </div>
             {/* shop page main wrapper end */}
 
-            <ModalSection product={state.singleProd}/>
+            <ModalSection product={state.quickView}/>
         </div>
     )
 }

@@ -9,7 +9,7 @@ import StaticsBanner from './pageComponents/StaticsBanner'
 import ElectronicsArea from './pageComponents/ElectronicsArea';
 import HeadphonesAccessories from './pageComponents/HeadphonesAccessories';
 import BusinessAndOffice from './pageComponents/BusinessAndOffice';
-import LongBanner from './pageComponents/LongBanner'
+import WideBanner from './pageComponents/LongBanner'
 import BrandArea from './pageComponents/BrandArea';
 import ScrollBar from '../PrimarySections/ScrollBar'
 import URL from '../RequestLinks'
@@ -30,7 +30,7 @@ export default function HomeMainSection() {
             <ElectronicsArea/>
             <HeadphonesAccessories/>
             <BusinessAndOffice/>
-            <LongBanner/>
+            <WideBanner/>
             <BrandArea/>
             <FeatureArea/>
             <ScrollBar/>

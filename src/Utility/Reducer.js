@@ -2,7 +2,7 @@ export const initialState = {
     product:[],
     basket:[],
     wishList:[],
-    user:null
+    user:1
   }
   
   export default function reducer (state,action){

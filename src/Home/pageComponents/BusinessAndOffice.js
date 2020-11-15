@@ -3,7 +3,8 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import './BusinessAndOfice.css'
-import { Entertainments, Truncate } from '../../Data';
+import { Entertainments } from '../../Data';
+import Card from './Subfolder/Card';
 
 export default function BusinessAndOffice() {
 
@@ -38,34 +39,9 @@ export default function BusinessAndOffice() {
       <OwlCarousel
           className="owl-theme"
           {...options}
-      >
-        {Entertainments.map(data =>(
-          <div className="product-module-four-item">
-          <div className="product-module-caption">
-            <div className="manufacture-com">
-              <p><a href="shop-grid-left-sidebar.html">{data.brand}</a></p>
-            </div>
-            <div className="product-module-name">
-              <h4><a href="product-details.html" title={data.prodName}>{Truncate(data.prodName,20)}</a></h4>
-            </div>
-            <div className="ratings">
-              <span><i className="lnr lnr-star" /></span>
-              <span><i className="lnr lnr-star" /></span>
-              <span><i className="lnr lnr-star" /></span>
-              <span><i className="lnr lnr-star" /></span>
-              <span><i className="lnr lnr-star" /></span>
-            </div>
-            <div className="price-box-module">
-              <span className="regular-price"><span className={` special-price`}>£{data.price}</span></span>
-              <span className="old-price"><del>{data.oldPrice ? `£${data.oldPrice}` : ''}</del></span>
-            </div>
-          </div>
-          <div className="product-module-thumb">
-            <a href="product-details.html">
-              <img src={data.img1} alt={data.prodName} />
-            </a>
-          </div>
-        </div> 
+      > 
+        {Entertainments.map(product =>(
+          <Card key={product.id} {...product}/>
         ))}
           
       </OwlCarousel>
