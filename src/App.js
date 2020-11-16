@@ -6,16 +6,16 @@ import {
 } from "react-router-dom";
 import Header from './PrimarySections/Header/Header'
 import Home from './Home/HomeMainSection';
-import Footer from './PrimarySections/FooterSection';
+import Footer from './PrimarySections/Footer/Index';
 import Blog from './Blog/Blog';
 import Shop from './Shop/Shop';
 import Contact from './Contact/Contact';
-import Compare from './VendorPages/Compare/Compare';
-import WishList from './VendorPages/WishList/WishList';
-import Product from './VendorPages/ProductCart/ProductCart';
-import Checkout from './VendorPages/Checkout/Checkout';
-import Register from './VendorPages/MyAccount/Register/Register';
-import Login from './VendorPages/MyAccount/Login/Login';
+import Compare from './Compare/Compare';
+import WishList from './WishList/WishList';
+import Product from './ProductCart/ProductCart';
+import Checkout from './Checkout/Index';
+import Register from './MyAccount/Register/Register';
+import Login from './MyAccount/Login/Login';
 import './App.css';
 
 

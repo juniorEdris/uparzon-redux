@@ -1,0 +1,17 @@
+.wish__thumb {
+  height: 150px;
+  width: 150px;
+  object-fit: content;
+}
+.choose_product {
+  width: 100%;
+}
+.choose_product a {
+  width: 200px;
+  background-color: #4f0f40;
+  color: #fff;
+  border: none;
+}
+.choose_product a:hover {
+  background-color: #111;
+}

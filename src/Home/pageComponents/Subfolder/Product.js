@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-// Our Product,Hot Collection,Brand Sale,Shop(short-cirtuit function to show grid and list view) product component
+// Our Product,Hot Collection,Brand Sale,Shop(short-cirtuit evaluation to show grid and list view) product component
 
 import React,{useEffect} from 'react'
 import { Link } from 'react-router-dom';
@@ -16,7 +16,7 @@ export default function Product({id,brand,name,oldPrice,price,sale,latest,specia
   }, [])
 
 
-  const [state,dispatch] = useStateValue()
+  const [{user},dispatch] = useStateValue()
   const quickView = ()=>{
       dispatch({type:"QUICK_VIEW",payload:{
         id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings
@@ -24,12 +24,11 @@ export default function Product({id,brand,name,oldPrice,price,sale,latest,specia
   }
 
   const addToCart= ()=>{
-    if(state.user){
+    if(user || !user){
       dispatch({type:"ADD_TO_CART",payload:{
               id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings
             }})
-    }
-      
+      }
     }
   const addToWishList= ()=>{
     
@@ -82,11 +81,11 @@ export default function Product({id,brand,name,oldPrice,price,sale,latest,specia
                 <span className="regular-price"><span className={` ${special && 'special-price'}`}>£{price}</span></span>
                 <span className="old-price"><del>{oldPrice ? `£${oldPrice}` : ''}</del></span>
             </div>
-            <button className="btn-cart" type="button" onClick={()=> addToCart(id,'Electronics')}>add to cart</button>
+            <button className="btn-cart" type="button" onClick={()=> addToCart()}>add to cart</button>
             <div className="action-links sinrat-list-icon">
-                <Link to='#' title="Wishlist" onClick={()=> addToWishList(id,'Electronics')}><i className="lnr lnr-heart" /></Link>
+                <Link to='#' title="Wishlist" onClick={()=> addToWishList()}><i className="lnr lnr-heart" /></Link>
                 <Link to='#' title="Compare"><i className="lnr lnr-sync" /></Link>
-                <Link to='#' title="Quick view" onClick={()=>quickView(id,'Electronics')} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></Link>
+                <Link to='#' title="Quick view" onClick={()=>quickView()} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></Link>
             </div>
             </div>
         </div>

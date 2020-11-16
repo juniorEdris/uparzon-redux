@@ -171,7 +171,7 @@ p {
   padding-left: 0;
   padding-right: 0;
 }
-del{
+del {
   text-decoration: line-through;
 }
 /*--------------------------------------------------------------------
@@ -2768,10 +2768,6 @@ a.shop-btn:hover {
   padding-top: 58px;
 }
 
-.widget-body > p {
-  margin-bottom: 35px;
-}
-
 .payment-method > h4 {
   color: #111;
   font-size: 18px;
@@ -2785,6 +2781,9 @@ a.shop-btn:hover {
   font-weight: 600;
   margin-bottom: 15px;
   text-transform: capitalize;
+}
+.widget-title > p {
+  margin-bottom: 35px;
 }
 
 .footer-useful-link li {

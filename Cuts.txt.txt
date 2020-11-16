@@ -1,3 +1,4 @@
+Laptop & Computer,Headphones & Accessories,Business & Office product component
 Product items--------------
 
 // <div className="product-item" id={product.id}>

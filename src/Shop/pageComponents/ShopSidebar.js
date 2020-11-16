@@ -1,8 +1,33 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import { Link } from 'react-router-dom'
+import Slider from '@material-ui/core/Slider';
+import $ from 'jquery'
+import './ShopSidebar.css'
+
+
+
 
 export default function Sidebar() {
 
+    // useEffect(() => {
+    //     // pricing filter
+	// 	$( "#price-slider" ).slider({
+	// 		range: true,
+	// 		min: 0,
+	// 		max: 500,
+	// 		values: [ 0, 500 ],
+	// 		slide: function( event, ui ) {
+	// 		 $( "#min-price" ).val('$' + ui.values[ 0 ] );
+	// 		 $( "#max-price" ).val('$' + ui.values[ 1 ] );
+	// 		  }
+	// 	});
+	// 	   $( "#min-price" ).val('$' + $( "#price-slider" ).slider( "values", 0 ));
+	// 	   $( "#max-price" ).val('$' + $( "#price-slider" ).slider( "values", 1 ));
+    // }, [])
+    const [value, setValue] = useState([0, 10]);
+    const handleChange = (event, newValue) =>{
+        setValue(newValue)
+    }
     // Active shop-sidebar-inner active state
     const [radioActive, setRadioActive] = useState(false);
     const SelectRadio = (e) =>{
@@ -20,14 +45,19 @@ export default function Sidebar() {
                         <div className="sidebar-content-box"> 
                         <div className="filter-price-content">
                             <form action="#" method="post">
-                            <div id="price-slider" className="price-slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div className="ui-slider-range ui-widget-header ui-corner-all" style={{left: '16.6667%', width: '79.1667%'}} /><span className="ui-slider-handle ui-state-default ui-corner-all" tabIndex={0} style={{left: '16.6667%'}} /><span className="ui-slider-handle ui-state-default ui-corner-all" tabIndex={0} style={{left: '95.8333%'}} /></div>
+                            {/* <div id="price-slider" className="price-slider ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div className="ui-slider-range ui-widget-header ui-corner-all" style={{left: '16.6667%', width: '79.1667%'}} /><span className="ui-slider-handle ui-state-default ui-corner-all" tabIndex={0} style={{left: '16.6667%'}} /><span className="ui-slider-handle ui-state-default ui-corner-all" tabIndex={0} style={{left: '95.8333%'}} /></div> */}
+                            <Slider
+                            value={value}
+                            onChange={handleChange}
+                            />
                             <div className="filter-price-wapper">
                                 <div className="filter-price-cont">
                                 <div className="input-type">
-                                    <input id="min-price" readOnly type="text" />
+                                    <input id="min-price" readOnly type="text" value={`$${value[0]}`} />
+                                    
                                 </div>
                                 <div className="input-type">
-                                    <input id="max-price" readOnly type="text" />
+                                    <input id="max-price" readOnly type="text" value={`$${value[1]}`} />
                                 </div>
                                 </div>
                             </div>

@@ -25,6 +25,13 @@ export const initialState = {
                 ...state,
                 wishList:[...state.wishList,wishItem]
               }
+            case 'DELETE_FROM_CART':
+              const  delwishItem = action.payload 
+              console.log('delete from wishcart',delwishItem)
+              return{
+                ...state,
+                wishList:[...state.wishList,delwishItem]
+              }
               default:
                 return {...state}
               }
