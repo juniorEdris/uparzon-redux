@@ -16,6 +16,7 @@ import Product from './ProductCart/ProductCart';
 import Checkout from './Checkout/Index';
 import Register from './MyAccount/Register/Register';
 import Login from './MyAccount/Login/Login';
+import Details from './ProductDetails'
 import './App.css';
 
 
@@ -29,6 +30,11 @@ function App() {
           <Route path='/contact'>
             <Header/>
             <Contact/>
+            <Footer/>
+          </Route>
+          <Route path='/productdetails'>
+            <Header/>
+            <Details/>
             <Footer/>
           </Route>
           <Route path='/blog'>

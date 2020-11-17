@@ -1,4 +1,9 @@
-
-.slick-slide.slick-current.slick-active.slick-center .pro-nav .pro-nav-thumb img {
-    border:1px solid #4f0f40 !important;
+.slick-slide.slick-current.slick-active.slick-center
+  .pro-nav
+  .pro-nav-thumb
+  img {
+  border: 1px solid #4f0f40 !important;
+}
+.slick-slide.slick-current.slick-active.slick-center .pro-nav {
+  /* display: flex !important; */
 }

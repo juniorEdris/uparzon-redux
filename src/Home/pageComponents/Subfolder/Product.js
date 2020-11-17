@@ -92,7 +92,7 @@ export default function Product({id,brand,name,oldPrice,price,sale,latest,specia
             :
             <div className={`product-item ${isGrid && 'mb-30'}`} id={id}>
                   <div className="product-thumb">
-                    <Link to="/">
+                    <Link to="/productdetails">
                       <img src={img1} className="pri-img" alt={name} />
                       <img src={img2} className="sec-img" alt={name} />
                     </Link>

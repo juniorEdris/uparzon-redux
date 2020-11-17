@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
 import Slider from '@material-ui/core/Slider';
 import $ from 'jquery'
@@ -9,22 +9,7 @@ import './ShopSidebar.css'
 
 export default function Sidebar() {
 
-    // useEffect(() => {
-    //     // pricing filter
-	// 	$( "#price-slider" ).slider({
-	// 		range: true,
-	// 		min: 0,
-	// 		max: 500,
-	// 		values: [ 0, 500 ],
-	// 		slide: function( event, ui ) {
-	// 		 $( "#min-price" ).val('$' + ui.values[ 0 ] );
-	// 		 $( "#max-price" ).val('$' + ui.values[ 1 ] );
-	// 		  }
-	// 	});
-	// 	   $( "#min-price" ).val('$' + $( "#price-slider" ).slider( "values", 0 ));
-	// 	   $( "#max-price" ).val('$' + $( "#price-slider" ).slider( "values", 1 ));
-    // }, [])
-    const [value, setValue] = useState([0, 10]);
+    const [value, setValue] = useState([70, 500]);
     const handleChange = (event, newValue) =>{
         setValue(newValue)
     }
@@ -49,6 +34,7 @@ export default function Sidebar() {
                             <Slider
                             value={value}
                             onChange={handleChange}
+                            max={500}
                             />
                             <div className="filter-price-wapper">
                                 <div className="filter-price-cont">
