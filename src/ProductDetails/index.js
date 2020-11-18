@@ -1,4 +1,5 @@
 import React from 'react'
+import ScrollBar from '../PrimarySections/ScrollBar'
 import Breadcrumbs from './PageComponents/DetailsBreadcrumbs'
 import Details from './PageComponents/ProductDetailsWrap'
 import Review from './PageComponents/ProductReviews'
@@ -9,6 +10,7 @@ export default function index() {
             <Breadcrumbs/>
             <Details/>
             <Review/>
+            <ScrollBar/>
             <Suggestions/>
         </div>
         )

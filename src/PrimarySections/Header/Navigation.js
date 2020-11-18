@@ -20,7 +20,6 @@ export default function Navigation() {
         }
         //main menu set
         const [mainMenu, setMainMenu] = useState(false)
-        console.log("main-menu",mainMenu);
     return (
         <div className="header-top-menu theme-bg sticker">
         <div className="container-fluid">

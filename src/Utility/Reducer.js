@@ -1,10 +1,13 @@
+
 export const initialState = {
-    product:[],
-    basket:[],
-    wishList:[],
-    user:1
-  }
-  
+  product:[],
+  basket:[],
+  wishList:[],
+  compareList:[],
+  user:1
+}
+
+
   export default function reducer (state,action){
       switch(action.type){
           case 'QUICK_VIEW' :
@@ -14,20 +17,37 @@ export const initialState = {
             quickView:singleItem,
             }
             case 'ADD_TO_CART':  
-            console.log('cart item',action.payload);
               return{
                 ...state,
                 basket:[...state.basket,action.payload]
               }
+            case 'COMPARE_PRODUCTS':
+              const  compareItem = action.payload 
+              return{
+                ...state,
+                compareList:[...state.compareList,compareItem]
+              }
+            // case 'NEW_COMPARE_PRODUCTS':
+            //   const  newcompareItem = action.payload 
+            //   console.log('4th Compare Item',newcompareItem);
+            //   return{
+            //     ...state,
+            //     compareList:[...state.compareList].push(newcompareItem)
+            //   }
             case 'ADD_TO_WISH_LIST':
               const  wishItem = action.payload 
               return{
                 ...state,
                 wishList:[...state.wishList,wishItem]
               }
+            case 'PRODUCT_VIEW':
+              const  product = action.payload 
+              return{
+                ...state,
+                productView:product
+              }
             case 'DELETE_FROM_CART':
               const  delwishItem = action.payload 
-              console.log('delete from wishcart',delwishItem)
               return{
                 ...state,
                 wishList:[...state.wishList,delwishItem]

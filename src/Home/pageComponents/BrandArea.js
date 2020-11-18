@@ -41,7 +41,7 @@ export default function BrandArea() {
 }
 
 const options = {
-  loop: true,
+  loop: false,
   margin:10,
   nav:true,
   navText:['<i class="lnr lnr-arrow-left"></i>','<i class="lnr lnr-arrow-right"></i>'],

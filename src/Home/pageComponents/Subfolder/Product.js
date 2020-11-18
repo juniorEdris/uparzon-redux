@@ -9,33 +9,56 @@ import $ from 'jquery'
 
 export default function Product({id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings,description,isGrid,isList}) {
   
+  const [{user,wishList,basket,compareList},dispatch] = useStateValue()
+
+  console.log('product wish',wishList);
+  console.log('product basket',basket);
+  console.log('product compare',compareList);
+
   useEffect(() => {
     $('.action-links a').on('click',function( event ) {
       event.preventDefault();
     });
-  }, [])
+
+    localStorage.setItem('Wish List',JSON.stringify(wishList))
+    localStorage.setItem('Cart List',JSON.stringify(basket))
+    localStorage.setItem('Compare List',JSON.stringify(compareList))
+    
+  }, [wishList,basket,compareList])
 
 
-  const [{user},dispatch] = useStateValue()
   const quickView = ()=>{
       dispatch({type:"QUICK_VIEW",payload:{
-        id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings
+        id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings,description
       }})
+  }
+  const ProductDetail = () => {
+    dispatch({type:"PRODUCT_VIEW",payload:{
+      id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings,description
+    }})
+  }
+  
+  const addToCompare = () => {
+    if(compareList.length === 3 ){
+      return  
+    }
+      dispatch({type:"COMPARE_PRODUCTS",payload:{
+          id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings,description
+        }})
+
   }
 
   const addToCart= ()=>{
     if(user || !user){
       dispatch({type:"ADD_TO_CART",payload:{
-              id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings
+              id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings,description
             }})
       }
     }
   const addToWishList= ()=>{
-    
       dispatch({type:"ADD_TO_WISH_LIST",payload:{
-        id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings
+        id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings,description
       }})
-    
   }
     return (
         <div>
@@ -45,10 +68,10 @@ export default function Product({id,brand,name,oldPrice,price,sale,latest,specia
             isList ?  
             <div className="sinrato-list-item mb-30" id={id}>
             <div className="sinrato-thumb">
-            <a href="product-details.html">
-                <img src={img1} className="pri-img" alt={name} />
-                <img src={img2} className="sec-img" alt={name} />
-            </a>
+            <Link to="/productdetails" onClick={()=>ProductDetail()}>
+                <img  src={img1} className="pri-img" alt={name} />
+                <img  src={img2} className="sec-img" alt={name} />
+            </Link>
             <div className="box-label">
                 <div className="label-product label_new">
                     <span>{latest ? 'new': ''}</span>
@@ -84,7 +107,7 @@ export default function Product({id,brand,name,oldPrice,price,sale,latest,specia
             <button className="btn-cart" type="button" onClick={()=> addToCart()}>add to cart</button>
             <div className="action-links sinrat-list-icon">
                 <Link to='#' title="Wishlist" onClick={()=> addToWishList()}><i className="lnr lnr-heart" /></Link>
-                <Link to='#' title="Compare"><i className="lnr lnr-sync" /></Link>
+                <Link to='#' title="Compare" onClick={()=>addToCompare()}><i className="lnr lnr-sync" /></Link>
                 <Link to='#' title="Quick view" onClick={()=>quickView()} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></Link>
             </div>
             </div>
@@ -92,7 +115,7 @@ export default function Product({id,brand,name,oldPrice,price,sale,latest,specia
             :
             <div className={`product-item ${isGrid && 'mb-30'}`} id={id}>
                   <div className="product-thumb">
-                    <Link to="/productdetails">
+                    <Link to="/productdetails" onClick={()=>ProductDetail()}>
                       <img src={img1} className="pri-img" alt={name} />
                       <img src={img2} className="sec-img" alt={name} />
                     </Link>
@@ -107,7 +130,7 @@ export default function Product({id,brand,name,oldPrice,price,sale,latest,specia
                     </div>
                     <div className="action-links">
                       <Link to="#" title="Wishlist" onClick={()=> addToWishList()}><i className="lnr lnr-heart" /></Link>
-                      <Link to="#" title="Compare"><i className="lnr lnr-sync" /></Link>
+                      <Link to="#" title="Compare" onClick={()=>addToCompare()}><i className="lnr lnr-sync" /></Link>
                       <Link to="#" title="Quick view" onClick={()=>quickView()} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></Link>
                     </div>
                   </div>
@@ -134,7 +157,6 @@ export default function Product({id,brand,name,oldPrice,price,sale,latest,specia
                 
                 </div>
           }
-          
 
         </div>
     )

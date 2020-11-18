@@ -24,7 +24,7 @@ function OurProduct () {
   const [Entertproducts] = useState(Entertainments)
   const [Mobileproducts] = useState(MobileProducts)
   const options = {
-    loop: true,
+    loop: false,
     margin:10,
     nav:true,
     navText:['<i class="lnr lnr-arrow-left"></i>','<i class="lnr lnr-arrow-right"></i>'],
@@ -73,7 +73,7 @@ function OurProduct () {
   <div className="tab-content">
   <div className="tab-pane fade show active" id="one">
     <div className="product-gallary-wrapper">
-      <div className="product-gallary-active  product-spacing">{/*owl-carousel owl-arrow-style */}
+      <div className="product-gallary-active  product-spacing">
             <OwlCarousel
               className="owl-theme"
               {...options}
@@ -93,7 +93,7 @@ function OurProduct () {
   <div className="tab-pane fade" id="two">
     <div className="product-gallary-wrapper">
  
-      <div className="product-gallary-active  product-spacing"> {/*owl-carousel owl-arrow-style */}
+      <div className="product-gallary-active  product-spacing">
         <OwlCarousel
         className="owl-theme"
         {...options}
@@ -116,7 +116,7 @@ function OurProduct () {
 
     <div className="product-gallary-wrapper">
 
-      <div className="product-gallary-active  product-spacing">{/**owl-carousel owl-arrow-style */}
+      <div className="product-gallary-active  product-spacing">
       <OwlCarousel
         className="owl-theme"
         {...options}
