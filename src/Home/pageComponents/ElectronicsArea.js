@@ -5,7 +5,6 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 import './ElectronicsArea.css'
 import { MobileProducts } from '../../Data';
 import Card from './Subfolder/Card';
-import Product from './Subfolder/Product';
 
 export default function ElectronicsArea() {
 
