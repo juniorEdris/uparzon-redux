@@ -1,5 +1,5 @@
 import React from 'react'
-import ScrollBar from '../PrimarySections/ScrollBar'
+import ScrollBar from '../PrimarySections/ScrollBar/ScrollBar'
 import ShopBreadCrumbs from './pageComponents/ShopBreadCrumbs'
 import ShopWrapper from './pageComponents/ShopWrapper'
 

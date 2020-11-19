@@ -1,10 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "mburger-css/dist/mburger.css"
 import "mburger-css/dist/mburger"
 import './header.css'
-import { Link } from 'react-router-dom'
-import { useStateValue } from '../../Utility/StateProvider'
-import { getSubTotal } from '../../Utility/Reducer'
 import Logo from "./UparzonLogo"
 import Search from './Search'
 import HeaderButtons from './HeaderButtons'

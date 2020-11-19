@@ -8,8 +8,6 @@ export default function CompareBody() {
 
   const [{compareList}] = useStateValue()
     return (
-        <div>
-            {/* Start compare Wrapper */}
 <div className="comparison-wrapper pb-50">
   <div className="container-fluid">
     <div className="row">
@@ -23,7 +21,7 @@ export default function CompareBody() {
                 </div>
                 {
                   
-                compareList.length > 0 && 
+                compareList.length > 0 ? 
                 <form action="#">
                   <div className="table-responsive  text-center">
                     <table className="table table-bordered compare-style">
@@ -45,7 +43,7 @@ export default function CompareBody() {
                           <td className="product-title">Image</td>
                           {
                             compareList.map(item=>(
-                              <td> <img src={item.img1} alt="" className={item.name} /> </td>
+                              <td> <img src={item.img1} alt={item.name} className='img-thumbnail' style={{width:'250px'}}/> </td>
                             ))
                           }
                          
@@ -132,18 +130,15 @@ export default function CompareBody() {
                       </tbody>
                     </table>
                   </div>
-                </form>
+                </form> : <div className='choose_product'><Link to='/' className="btn">Choose Product</Link></div>
               }
               </div>
             </div>
-          </div> {/* end of comparison */}
-        </main> {/* end of #primary */}
+          </div> 
+        </main> 
       </div>
-    </div> {/* end of row */}
-  </div> {/* end of container */}
+    </div> 
+  </div> 
 </div>
-{/* End compare Wrapper */}
-
-        </div>
     )
 }

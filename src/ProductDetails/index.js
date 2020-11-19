@@ -1,5 +1,5 @@
 import React from 'react'
-import ScrollBar from '../PrimarySections/ScrollBar'
+import ScrollBar from '../PrimarySections/ScrollBar/ScrollBar'
 import Breadcrumbs from './PageComponents/DetailsBreadcrumbs'
 import Details from './PageComponents/ProductDetailsWrap'
 import Review from './PageComponents/ProductReviews'

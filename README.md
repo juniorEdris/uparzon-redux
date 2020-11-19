@@ -19,12 +19,12 @@ In the project directory, you can run:
     > Itterate through all the cart items
     > Quick view nav need to be fixed.
     > Create only one product component for every same layout products
+    > Style search-form > select options.
+    > Used Semantic UI in all Dropdown
 
     ## Will Work on
 
-    > Style search-form > select options.
     > fix the rating starts to apear according to the ratings average.
     > Set page navbar in mobile view.
     > In shop page [filter button,category check box] need to fixed.
-    > Use Semantic UI in all Dropdown
-    > PageAction export and use in every components where is beeded.
+    > PageAction export and use in every components where is needed.

@@ -11,10 +11,6 @@ export default function Product({id,brand,name,oldPrice,price,sale,latest,specia
   
   const [{user,wishList,basket,compareList},dispatch] = useStateValue()
 
-  console.log('product wish',wishList);
-  console.log('product basket',basket);
-  console.log('product compare',compareList);
-
   useEffect(() => {
     $('.action-links a').on('click',function( event ) {
       event.preventDefault();
@@ -25,7 +21,6 @@ export default function Product({id,brand,name,oldPrice,price,sale,latest,specia
     localStorage.setItem('Compare List',JSON.stringify(compareList))
     
   }, [wishList,basket,compareList])
-
 
   const quickView = ()=>{
       dispatch({type:"QUICK_VIEW",payload:{

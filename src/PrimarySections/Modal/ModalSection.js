@@ -6,9 +6,8 @@ import './ModalSection.css'
 export default function ModalSection({product}){
     
     return (
-        <div>
-            {/* Quick view modal start */}
-            <div className="modal fade" id="quickk_view">
+        
+        <div className="modal fade" id="quickk_view">
             <div className="container">
                 <div className="modal-dialog modal-lg modal-dialog-centered">
                 <div className="modal-content">
@@ -24,9 +23,6 @@ export default function ModalSection({product}){
                 </div>
                 </div>
             </div>
-            </div>
-            {/* Quick view modal end */}
-
         </div>
     )
       }

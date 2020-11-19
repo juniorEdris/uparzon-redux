@@ -8,3 +8,20 @@
 .sinrat-list-icon a {
   margin-left: 10px;
 }
+
+.per-page
+  .MuiFormControl-root
+  .MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-formControl {
+  height: 40px;
+  width: 80px;
+  font-family: 'Work Sans';
+  font-size: 14px;
+}
+.product-short
+  .MuiFormControl-root
+  .MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-formControl {
+  font-size: 14px;
+  height: 40px;
+  width: 150px;
+  font-family: 'Work Sans';
+}

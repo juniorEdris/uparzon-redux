@@ -1,5 +1,5 @@
 import React from 'react'
-import ScrollBar from '../PrimarySections/ScrollBar'
+import ScrollBar from '../PrimarySections/ScrollBar/ScrollBar'
 import CompareBody from './pageComponents/CompareBody'
 import CompareBreadCrumbs from './pageComponents/CompareBreadCrumbs'
 

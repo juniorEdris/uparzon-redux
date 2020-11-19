@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React from 'react'
 import HomeSlider from './pageComponents/HomeSlider'
 import FeatureArea from './pageComponents/FeatureArea'
 import OurProduct from './pageComponents/OurProduct'
@@ -11,7 +11,7 @@ import HeadphonesAccessories from './pageComponents/HeadphonesAccessories';
 import BusinessAndOffice from './pageComponents/BusinessAndOffice';
 import WideBanner from './pageComponents/LongBanner'
 import BrandArea from './pageComponents/BrandArea';
-import ScrollBar from '../PrimarySections/ScrollBar'
+import ScrollBar from '../PrimarySections/ScrollBar/ScrollBar'
 import URL from '../RequestLinks'
 
 

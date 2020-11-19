@@ -1,7 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { Link } from 'react-router-dom';
 
 export default function Navigation() {
+
+    //Stciky nav trigger
+    const [stickyNav,setStickyNav] = useState(false)
+
+    useEffect(() => {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300 ) {
+                setStickyNav(true)
+            } else {
+                setStickyNav(false)
+            }
+        })
+        return () => {
+           window.removeEventListener('scroll',()=>{})
+        }
+    }, [])
 
         //catagories menu dropdown
         const[isBrowsing,setBrowsing] = useState(false)
@@ -21,7 +37,7 @@ export default function Navigation() {
         //main menu set
         const [mainMenu, setMainMenu] = useState(false)
     return (
-        <div className="header-top-menu theme-bg sticker">
+        <div className={`header-top-menu theme-bg sticker ${stickyNav && 'sticky'} `}>
         <div className="container-fluid">
             <div className="row">
             <div className="col-lg-12">

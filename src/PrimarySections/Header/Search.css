@@ -1,0 +1,14 @@
+.header-middle-inner {
+  display: flex;
+}
+.search-form
+  .MuiSelect-root.MuiSelect-select.MuiSelect-selectMenu.MuiInputBase-input.MuiInput-input {
+  width: 150px;
+  height: 52px;
+  background-color: #f0f0f0;
+  padding: 15px 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: 'Work Sans';
+  border-radius: 6px 0 0 0px;
+}

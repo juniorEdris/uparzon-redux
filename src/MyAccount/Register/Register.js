@@ -1,7 +1,7 @@
 import React from 'react'
 import BreadCrumbs from './pageComponents/RegisterBreadCrumbs'
 import Body from './pageComponents/RegisterBody'
-import ScrollBar from '../../PrimarySections/ScrollBar'
+import ScrollBar from '../../PrimarySections/ScrollBar/ScrollBar'
 
 export default function Register() {
     return (

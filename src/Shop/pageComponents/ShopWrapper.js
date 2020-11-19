@@ -12,6 +12,8 @@ import { useStateValue } from '../../Utility/StateProvider'
 import ModalSection from '../../PrimarySections/Modal/ModalSection'
 import Sidebar from './ShopSidebar'
 import Product from '../../Home/pageComponents/Subfolder/Product'
+import { FormControl, MenuItem, Select } from '@material-ui/core'
+
 
 export default function ShopWrapper() {
 
@@ -33,17 +35,7 @@ $('.product-view-mode a').on('click', function(e){
 
     const [state] = useStateValue()
     const [Electproducts] = useState(Electronics)
-    //quickView triggers all data in the popup
-    const quickView = (id,productCata)=>{
-      }
-      const addToCart= (id,productCata)=>{        
-      }
-      const addToWishList= (id,productCata)=>{
-      }
-
-
-
-    
+        
     return (
         <div>
             
@@ -75,28 +67,36 @@ $('.product-view-mode a').on('click', function(e){
                             <div className="top-bar-right">
                             <div className="per-page">
                                 <p>Show : </p>
-                                <select className="nice-select item-range" name="sortby">
-                                <option value="trending">10</option>
-                                <option value="sales">20</option>
-                                <option value="sales">30</option>
-                                <option value="rating">40</option>
-                                <option value="date">50</option>
-                                <option value="price-asc">60</option>
-                                <option value="price-asc">70</option>
-                                <option value="price-asc">100</option>
-                                </select>
+                        <FormControl className=''>
+                            <Select 
+                            variant="outlined"
+                            id="grouped-select"
+                            >
+                                <MenuItem value='trending'>10</MenuItem>
+                                <MenuItem value="sales">20</MenuItem>
+                                <MenuItem value="rating">30</MenuItem>
+                                <MenuItem value="date">40</MenuItem>
+                                <MenuItem value="price-asc">50</MenuItem>
+                            </Select>
+                        </FormControl>
+                        
                             </div>
                             <div className="product-short">
                                 <p>Sort By : </p>
-                                <select className="nice-select item-sort" name="sortby">
-                                <option value="trending">Relevance</option>
-                                <option value="sales">Name (A - Z)</option>
-                                <option value="sales">Name (Z - A)</option>
-                                <option value="rating">Price (Low &gt; High)</option>
-                                <option value="date">Rating (Lowest)</option>
-                                <option value="price-asc">Model (A - Z)</option>
-                                <option value="price-asc">Model (Z - A)</option>
-                                </select>
+                        <FormControl className=''>
+                            <Select 
+                            variant="outlined"
+                            id="grouped-select"
+                            >
+                                <MenuItem value='trending'>Relevance</MenuItem>
+                                <MenuItem value="sales">Name (A - Z)</MenuItem>
+                                <MenuItem value="rating">Name (Z - A)</MenuItem>
+                                <MenuItem value="date">Price (Low &gt; High)</MenuItem>
+                                <MenuItem value="price-asc">Rating (Lowest)</MenuItem>
+                                <MenuItem value="price-dsc">Model (A - Z)</MenuItem>
+                                <MenuItem value="price-bsc">Model (Z - A)</MenuItem>
+                            </Select>
+                        </FormControl>                                
                             </div> 
                             </div>
                         </div>

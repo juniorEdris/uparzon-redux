@@ -4,7 +4,7 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import './BrandArea.css'
-import { Electronics, Entertainments, MobileProducts, Truncate } from '../../Data';
+import { Electronics, Entertainments, MobileProducts, } from '../../Data';
 import { useStateValue } from '../../Utility/StateProvider';
 import ModalSection from '../../PrimarySections/Modal/ModalSection';
 import Product from './Subfolder/Product';
@@ -20,7 +20,7 @@ export default function BrandArea() {
   
 
   const brandOptions = {
-    loop: true,
+    loop: false,
     margin:10,
     nav:false,
     dots:false,
