@@ -21,6 +21,9 @@ In the project directory, you can run:
     > Create only one product component for every same layout products
     > Style search-form > select options.
     > Used Semantic UI in all Dropdown
+    > Breadcrumbs got trimmed.
+    > Style css got trimmed.
+    > LocalStorage saves Data.
 
     ## Will Work on
 

@@ -1,12 +1,12 @@
 import React from 'react'
+import Breadcrumb from '../PrimarySections/Breadcrumbs/Breadcrumb'
 import ScrollBar from '../PrimarySections/ScrollBar/ScrollBar'
 import WishListBody from './pageComponents/WishListBody'
-import WishListBreadCrumbs from './pageComponents/WishListBreadCrumbs'
 
 export default function WishList() {
     return (
         <div>
-            <WishListBreadCrumbs/>
+            <Breadcrumb pageName={'Wishlist'}/>
             <WishListBody/>
             <ScrollBar/>
         </div>

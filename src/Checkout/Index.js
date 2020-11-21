@@ -1,12 +1,12 @@
 import React from 'react'
+import Breadcrumb from '../PrimarySections/Breadcrumbs/Breadcrumb'
 import ScrollBar from '../PrimarySections/ScrollBar/ScrollBar'
 import CheckoutBody from './pageComponents/CheckoutBody'
-import CheckoutBreadCrumbs from './pageComponents/CheckoutBreadCrumbs'
 
 export default function Checkout() {
     return (
         <div>
-            <CheckoutBreadCrumbs/>
+            <Breadcrumb pageName={'Checkout'}/>
             <CheckoutBody/>
             <ScrollBar/>
         </div>

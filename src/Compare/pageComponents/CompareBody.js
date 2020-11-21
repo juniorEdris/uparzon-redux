@@ -7,6 +7,8 @@ import { useStateValue } from '../../Utility/StateProvider'
 export default function CompareBody() {
 
   const [{compareList}] = useStateValue()
+
+  console.log('Last work',++compareList.length);
     return (
 <div className="comparison-wrapper pb-50">
   <div className="container-fluid">
@@ -27,7 +29,7 @@ export default function CompareBody() {
                     <table className="table table-bordered compare-style">
                       <thead>
                         <tr>
-                          <td colSpan={4}><strong>Product Details</strong></td>
+                          <td colSpan={compareList.length>4 ? ++compareList.length: 4}><strong>Product Details</strong></td>
                         </tr>
                       </thead>
                       <tbody>

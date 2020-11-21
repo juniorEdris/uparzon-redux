@@ -1,49 +1,46 @@
 /* --------------------------
     Brand pictures css here
 --------------------------*/
-.nav ul{
-    border:1px solid red;
-
+.nav ul {
+  border: 1px solid red;
 }
-.brand-active li{
-    padding: 20px;
+.brand-active li {
+  padding: 20px;
 }
-.brand-area .nav img{
-    object-fit: contain;
+.brand-area .nav img {
+  object-fit: contain;
 }
-
 
 /* ---------------------------
     brand-sale arrow css
 ---------------*/
-.brand-sale .owl-nav{
-    background: #fff none repeat scroll 0 0;
-    border: 1px solid #f0f0f0;
-    border-radius: 25px;
-    height: 32px;
-    line-height: 32px;
-    position: absolute;
-    right: 0;
-    top: -247px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 7px;
+.brand-sale .owl-nav {
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid #f0f0f0;
+  border-radius: 25px;
+  height: 32px;
+  line-height: 32px;
+  position: absolute;
+  right: 0;
+  top: -190px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 7px;
 }
 .brand-sale .owl-nav .owl-prev,
-.brand-sale .owl-nav .owl-next{
-    height: 100%;
-    width: 100%;
+.brand-sale .owl-nav .owl-next {
+  height: 100%;
+  width: 100%;
 }
 .brand-sale .owl-nav:hover button.owl-prev,
-.brand-sale .owl-nav:hover button.owl-next{
-    background-color: #fff;
-    color:#222;
+.brand-sale .owl-nav:hover button.owl-next {
+  background-color: #fff;
+  color: #222;
 }
 
-
-@media (max-width: 768px){
-    .brand-sale .owl-nav{
-        top: -200px;
-    }
+@media (max-width: 768px) {
+  .brand-sale .owl-nav {
+    top: -200px;
+  }
 }

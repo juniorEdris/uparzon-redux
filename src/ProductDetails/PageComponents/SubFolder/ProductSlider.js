@@ -53,10 +53,10 @@ export default function ProductSlider() {
         {/* 1 */}
         {
           productView?.shots.map(img=>(
-            <div className="product-large-slider mb-20">
+            <div className="product-large-slider mb-20" >
             <div className="pro-large-img">
-            <img src={img} alt="hjgduy" />
-              <div className="img-view">
+            <img src={img} alt={productView.name} />
+              <div className="img-view" key={productView.id}>
                 <a className="img-popup" href={img} target="_blank"><i className="fa fa-search" /></a>
               </div>
             </div>

@@ -71,7 +71,7 @@ export default function HeaderButtons() {
             <Link className="cart-button" to="/cart">view cart</Link>
             </li>
             <li>
-            <Link className="cart-button" to="/checkout">checkout</Link>
+            <Link className="cart-button" to={user ? "/checkout": "/login"}>checkout</Link>
             </li>
         </ul>
         </li>

@@ -1,12 +1,13 @@
 import React from 'react'
-import BreadCrumbs from './pageComponents/LoginBreadCrumbs'
 import Body from './pageComponents/LoginBody'
 import ScrollBar from '../../PrimarySections/ScrollBar/ScrollBar'
+import  Breadcrumbs  from '../../PrimarySections/Breadcrumbs/Breadcrumb'
+
 
 export default function Login() {
     return (
         <div>
-            <BreadCrumbs/>
+            <Breadcrumbs pageName={'Login'}/>
             <Body/>
             <ScrollBar/>
         </div>

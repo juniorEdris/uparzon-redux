@@ -43,8 +43,9 @@
 .ham-burger {
   width: max-content;
   position: absolute;
-  right: 5px;
+  left: -10px;
   z-index: 9999;
+  color: #fff;
 }
 
 .mburger:hover {

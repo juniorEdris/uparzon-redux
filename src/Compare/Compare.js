@@ -1,12 +1,12 @@
 import React from 'react'
+import Breadcrumb from '../PrimarySections/Breadcrumbs/Breadcrumb'
 import ScrollBar from '../PrimarySections/ScrollBar/ScrollBar'
 import CompareBody from './pageComponents/CompareBody'
-import CompareBreadCrumbs from './pageComponents/CompareBreadCrumbs'
 
 export default function Compare() {
     return (
         <div>
-            <CompareBreadCrumbs/>
+            <Breadcrumb pageName={'Compare'}/>
             <CompareBody/>
             <ScrollBar/>
         </div>

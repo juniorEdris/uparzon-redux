@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { getSubTotal } from '../../Utility/Reducer';
@@ -7,7 +6,7 @@ import CartAccordion from './CartAccordion';
 import CartForm from './CartForm';
 
 export default function CartBody() {
-    const [{basket}] = useStateValue();
+    const [{basket,user}] = useStateValue();
     return (
         <div>
             {/* Start cart Wrapper */}
@@ -44,7 +43,7 @@ export default function CartBody() {
                             </div>
                             <div className="cart-button-wrapper d-flex justify-content-between mt-4">
                             <Link to="/shop" className="btn btn-secondary">Continue Shopping</Link>
-                            <Link to="/checkout" className="btn btn-secondary dark align-self-end">Checkout</Link>
+                            <Link to={user ? "/checkout": "/login"} className="btn btn-secondary dark align-self-end">Checkout</Link>
                             </div>
                         </div>
                         </div>

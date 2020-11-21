@@ -1,10 +1,10 @@
 
 export const initialState = {
   product:[],
-  basket:[],
-  wishList:[],
-  compareList:[],
-  user:1
+  basket:localStorage.getItem('Cart List') ? JSON.parse(localStorage.getItem('Cart List')) :[],
+  wishList:localStorage.getItem('Wish List') ? JSON.parse(localStorage.getItem('Wish List')) :[],
+  compareList:localStorage.getItem('Compare List') ? JSON.parse(localStorage.getItem('Compare List')) :[],
+  user:true
 }
 
 

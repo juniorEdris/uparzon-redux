@@ -1,3 +1,10 @@
+Will be added to component className 
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+
+
+
 Laptop & Computer,Headphones & Accessories,Business & Office product component
 Product items--------------
 

@@ -1,12 +1,12 @@
 import React from 'react'
+import Breadcrumb from '../PrimarySections/Breadcrumbs/Breadcrumb'
 import ScrollBar from '../PrimarySections/ScrollBar/ScrollBar'
-import ShopBreadCrumbs from './pageComponents/ShopBreadCrumbs'
 import ShopWrapper from './pageComponents/ShopWrapper'
 
 export default function Shop() {
     return (
         <div>
-            <ShopBreadCrumbs/>
+            <Breadcrumb pageName={'Shop'}/>
             <ShopWrapper/>
             <ScrollBar/>
         </div>
