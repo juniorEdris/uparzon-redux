@@ -1,12 +1,10 @@
 
 export const initialState = {
-  product:[],
   basket:localStorage.getItem('Cart List') ? JSON.parse(localStorage.getItem('Cart List')) :[],
   wishList:localStorage.getItem('Wish List') ? JSON.parse(localStorage.getItem('Wish List')) :[],
   compareList:localStorage.getItem('Compare List') ? JSON.parse(localStorage.getItem('Compare List')) :[],
-  user:true
+  user:false
 }
-
 
   export default function reducer (state,action){
       switch(action.type){

@@ -7,21 +7,7 @@ import './WishlistBody.css'
 
 export default function WishListBody() {
 
-    const [{user,wishList},dispatch] = useStateValue()
-
-    const addToCart= (id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings)=>{
-        if(user){
-          dispatch({type:"ADD_TO_CART",payload:{
-                  id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings
-                }})
-          }
-        }
-    const deleteCartProd= (id)=>{
-        if(user || !user){
-          const item = id  
-          dispatch({type:"DELETE_FROM_CART",payload:item})
-          }
-        }
+    const [{wishList}] = useStateValue()
 
     console.log('WishList page',wishList);
     return (
@@ -69,8 +55,8 @@ export default function WishListBody() {
                                                 <div className="price"><small><del>{prod.oldPrice || ''}</del></small> <strong>{prod.price}</strong></div>
                                             </td>
                                             <td>
-                                                <button type='button' onClick={()=>addToCart(prod.id,prod.brand,prod.name,prod.oldPrice,prod.price,prod.sale,prod.latest,prod.special,prod.img1,prod.img2,prod.categories,prod.shots,prod.colors,prod.ratings)} className="btn btn-primary"><i className="fa fa-shopping-cart" /></button>
-                                                <Link to="#" onClick={()=>deleteCartProd(prod.id)} className="btn btn-danger"><i className="fa fa-times" /></Link>
+                                                <button type='button'  className="btn btn-primary"><i className="fa fa-shopping-cart" /></button>
+                                                <Link to="#"  className="btn btn-danger"><i className="fa fa-times" /></Link>
                                             </td>
                                             </tr>
 

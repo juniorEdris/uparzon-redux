@@ -13,26 +13,29 @@ export default function HeaderButtons() {
     const showCart = (e)=>{
         e.preventDefault()
         setCartActive(!isCartActive)
+        setIsAccActive(false)
     }
+    // User btn active
+    const [isAccActive, setIsAccActive] = useState(false);
+    const AccBtn = (e) =>{
+        e.preventDefault();
+        setIsAccActive(!isAccActive);
+        setCartActive(false);
+    }
+
     return (
 <div className="col-lg-4 col-md-8 col-12 col-sm-8 order-lg-last">
     <div className="mini-cart-option">
     <ul>
-        <li className="compare">
-        {
-            //turnery option
-            user ? 
-            <Link className="ha-toggle" to={`/compare`}><span className="lnr lnr-sync" />Product compare</Link>
-            :
-            <Link className="ha-toggle" to="/login"><span className="lnr lnr-user" />user</Link>
-        }
+        <li className="compare"> 
+            <Link className="ha-toggle" to={`/compare`}><span className="lnr lnr-sync" /></Link>
         </li>
         
         <li className="wishlist">
-        <Link className="ha-toggle" to='/wishlist'><span className="lnr lnr-heart" /><span className="count">{ wishList.length || 0 }</span>wishlist</Link>
+        <Link className="ha-toggle" to='/wishlist'><span className="lnr lnr-heart" /><span className="count">{ wishList.length || 0 }</span></Link>
         </li>
         <li className="my-cart">
-        <Link onClick={basket.length > 0 && showCart} className="ha-toggle" to="#"><span className="lnr lnr-cart" /><span className="count">{ basket.length || 0 }</span>my cart</Link>
+        <Link onClick={basket.length > 0 && showCart} className="ha-toggle" to="#"><span className="lnr lnr-cart" /><span className="count">{ basket.length || 0 }</span></Link>
         <ul className={`mini-cart-drop-down ha-dropdown ${isCartActive ? 'active': 'inActive'}`}>
                 {
                     basket.map((prod) => (
@@ -74,6 +77,22 @@ export default function HeaderButtons() {
             <Link className="cart-button" to={user ? "/checkout": "/login"}>checkout</Link>
             </li>
         </ul>
+        </li>
+        <li className="compare"> 
+            <Link onClick={AccBtn} className="ha-toggle" to="#"><span className="lnr lnr-user" /></Link>
+            {
+                user ?
+            <ul className={`box-dropdown ha-dropdown ${isAccActive ? "active" : "inactive"}`}>
+                <li><a href="/dashboard">dashboard</a></li>
+                <li><a href="/">Log out</a></li>
+            </ul>
+            :
+            <ul className={`box-dropdown ha-dropdown ${isAccActive ? "active" : "inactive"}`}>
+                <li><a href="/register">Register</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+            
+            }
         </li>
         
     </ul>
