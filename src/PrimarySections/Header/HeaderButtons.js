@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getSubTotal } from '../../Utility/Reducer'
 import { useStateValue } from '../../Utility/StateProvider'
+import './HeaderButton.css'
 
 export default function HeaderButtons() {
 

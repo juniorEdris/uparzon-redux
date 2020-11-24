@@ -9,7 +9,6 @@ export default function WishListBody() {
 
     const [{wishList}] = useStateValue()
 
-    console.log('WishList page',wishList);
     return (
         <div>
             {/* Start of wishlist Wrapper */}

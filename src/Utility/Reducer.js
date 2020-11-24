@@ -25,13 +25,13 @@ export const initialState = {
                 ...state,
                 compareList:[...state.compareList,compareItem]
               }
-            // case 'NEW_COMPARE_PRODUCTS':
-            //   const  newcompareItem = action.payload 
-            //   console.log('4th Compare Item',newcompareItem);
-            //   return{
-            //     ...state,
-            //     compareList:[...state.compareList].push(newcompareItem)
-            //   }
+            case 'COMPARE_PRODUCT_ADD':
+              const  newcompareItem = action.payload 
+              console.log('4th Compare Item',newcompareItem);
+              return{
+                ...state,
+                compareList:[...state.compareList].push(newcompareItem)
+              }
             case 'ADD_TO_WISH_LIST':
               const  wishItem = action.payload 
               return{

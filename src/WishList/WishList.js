@@ -6,7 +6,7 @@ import WishListBody from './pageComponents/WishListBody'
 export default function WishList() {
     return (
         <div>
-            <Breadcrumb pageName={'Wishlist'}/>
+            <Breadcrumb pageName={'Wishlist'} route={'/'} parent={'Home'}/>
             <WishListBody/>
             <ScrollBar/>
         </div>

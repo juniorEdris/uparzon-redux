@@ -5,10 +5,17 @@ import { Link } from 'react-router-dom'
 import { useStateValue } from '../../Utility/StateProvider'
 
 export default function CompareBody() {
+  const [{user,compareList},dispatch] = useStateValue()
 
-  const [{compareList}] = useStateValue()
+  // Adding to cart from Compare body is not working(it need to return object singley)
+  const addToCart= (id)=>{
+    if(user){
+      const result = compareList.map(prod=>prod.id === id)
+      dispatch({type:"ADD_TO_CART",payload: result})
+      console.log('compare add',result);
+      }
+    }
 
-  console.log('Last work',++compareList.length);
     return (
 <div className="comparison-wrapper pb-50">
   <div className="container-fluid">
@@ -29,7 +36,7 @@ export default function CompareBody() {
                     <table className="table table-bordered compare-style">
                       <thead>
                         <tr>
-                          <td colSpan={compareList.length>4 ? ++compareList.length: 4}><strong>Product Details</strong></td>
+                          <td colSpan={4}><strong>Product Details</strong></td>
                         </tr>
                       </thead>
                       <tbody>
@@ -37,7 +44,7 @@ export default function CompareBody() {
                           <td className="product-title">Product</td>
                           {
                             compareList.map(item=>(
-                            <td><Link to="product-details.html"><strong>{item.name}</strong></Link></td>
+                            <td id={item.id}><Link to="product-details.html"><strong>{item.name}</strong></Link></td>
                             ))
                           }
                         </tr>
@@ -121,7 +128,7 @@ export default function CompareBody() {
                           {
                             compareList.map(item=>(
                           <td>
-                            <Link to="cart.html" className="btn btn-secondary mb-2 mb-lg-0 mr-xl-2">Add to Cart</Link>
+                            <Link to="#" className="btn btn-secondary mb-2 mb-lg-0 mr-xl-2" onClick={()=>addToCart(item.id)}>Add to Cart</Link>
                             <Link to="#" className="btn btn-secondary">Remove</Link>
                           </td>
 

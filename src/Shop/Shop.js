@@ -6,7 +6,7 @@ import ShopWrapper from './pageComponents/ShopWrapper'
 export default function Shop() {
     return (
         <div>
-            <Breadcrumb pageName={'Shop'}/>
+            <Breadcrumb pageName={'Shop'} route={'/'} parent={'Home'}/>
             <ShopWrapper/>
             <ScrollBar/>
         </div>

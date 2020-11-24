@@ -8,7 +8,7 @@ import UserInfo from './pageComponents/UserInfo'
 export default function Index() {
     return (
         <div>
-            <Breadcrumb pageName={'Dashboard'} route={'/home'} parent={'Home'}/>
+            <Breadcrumb pageName={'Dashboard'} route={'/'} parent={'Home'}/>
             {/* Start of My Account Wrapper */}
             <div className="my-account-wrapper pb-20">
             <div className="container-fluid">

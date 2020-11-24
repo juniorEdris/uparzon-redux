@@ -8,7 +8,7 @@ import Suggestions from './PageComponents/ProductSuggestion'
 export default function index() {
     return (
         <div>
-            <Breadcrumb pageName={'Product details'}/>
+            <Breadcrumb pageName={'Product details'} route={'/shop'} parent={'Shop'}/>
             <Details/>
             <Review/>
             <ScrollBar/>

@@ -6,8 +6,6 @@ In the project directory, you can run:
 
 ## Next day tasks
 
-    ## next day
-    > Compare page can add 3items and need to trim from last 3
     ## Done
 
     > useReducer working.
@@ -27,7 +25,9 @@ In the project directory, you can run:
 
     ## Will Work on
 
-    > fix the rating starts to apear according to the ratings average.
+    > Compare page can add 3items and need to trim from last 3
+    > fix the rating stars to apear according to the ratings average.
     > Set page navbar in mobile view.
     > In shop page [filter button,category check box] need to fixed.
     > PageAction export and use in every components where is needed.
+    > Adding to cart from Compare body is not working(it need to return object singley)

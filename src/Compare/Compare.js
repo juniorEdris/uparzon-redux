@@ -6,7 +6,7 @@ import CompareBody from './pageComponents/CompareBody'
 export default function Compare() {
     return (
         <div>
-            <Breadcrumb pageName={'Compare'}/>
+            <Breadcrumb pageName={'Compare'} route={'/'} parent={'Home'}/>
             <CompareBody/>
             <ScrollBar/>
         </div>

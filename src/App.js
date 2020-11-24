@@ -2,7 +2,7 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
 } from "react-router-dom";
 import Header from './PrimarySections/Header/Header'
 import Home from './Home/HomeMainSection';
@@ -22,6 +22,8 @@ import DashBoard from './MyAccount/DashBoard/Index';
 
 
 function App() {
+
+
   return (
     <div className="app">
       <Router>

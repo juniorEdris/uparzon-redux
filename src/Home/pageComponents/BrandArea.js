@@ -136,7 +136,7 @@ const options = {
                   </div>
                 </div>
               </div>
-              <div className="tab-pane fade show active" id="brand-two">
+              <div className="tab-pane fade" id="brand-two">
                 <div className="product-gallary-wrapper brand-sale">
                   <div className="product-gallary-active  sale-nav"> {/*owl-carousel owl-arrow-style */}
                   {/* product slider starts here */}
@@ -154,7 +154,7 @@ const options = {
                   </div>
                 </div>
               </div>
-              <div className="tab-pane fade show active" id="brand-three">
+              <div className="tab-pane fade" id="brand-three">
                 <div className="product-gallary-wrapper brand-sale">
                   <div className="product-gallary-active  sale-nav"> {/*owl-carousel owl-arrow-style */}
                   {/* product slider starts here */}

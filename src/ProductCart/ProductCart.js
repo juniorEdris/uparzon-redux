@@ -6,7 +6,7 @@ import CartBody from './pageComponents/CartBody'
 export default function ProductCart() {
     return (
         <div>
-            <Breadcrumb pageName={'Cart'}/>
+            <Breadcrumb pageName={'Cart'} route={'/'} parent={'Home'}/>
             <CartBody/>
             <ScrollBar/>
         </div>

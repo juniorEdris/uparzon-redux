@@ -10,7 +10,6 @@ import $ from 'jquery'
 export default function Product({id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings,description,isGrid,isList}) {
   
   const [{user,wishList,basket,compareList},dispatch] = useStateValue()
-  console.log("product page",wishList);
 
   useEffect(() => {
     $('.action-links a').on('click',function( event ) {
