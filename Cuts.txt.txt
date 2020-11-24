@@ -3,7 +3,9 @@ Will be added to component className
   display: -ms-flexbox;
   display: -webkit-flex;
 
+Select borders:
 
+class > MuiInput-underline:after,.MuiInput-underline:before => border-bottrom:none;
 
 Laptop & Computer,Headphones & Accessories,Business & Office product component
 Product items--------------

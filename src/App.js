@@ -18,7 +18,7 @@ import Register from './MyAccount/Register/Register';
 import Login from './MyAccount/Login/Login';
 import Details from './ProductDetails'
 import './App.css';
-import ModalLogin from './MyAccount/Login/ModalLogin';
+import DashBoard from './MyAccount/DashBoard/Index';
 
 
 function App() {
@@ -26,9 +26,9 @@ function App() {
     <div className="app">
       <Router>
         <Switch>
-          <Route path='/modallogin'>
+          <Route path='/dashboard'>
             <Header/>
-            <ModalLogin/>
+            <DashBoard/>
             <Footer/>
           </Route>
           <Route path='/contact'>

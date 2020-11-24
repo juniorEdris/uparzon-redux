@@ -8,7 +8,7 @@ export default function ScrollBar() {
         // get on top of the page after clicking scroll button
         const scrollTop = document.querySelector('.scroll-top');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 600) {
+            if (window.scrollY > 300) {
               scrollTop.classList.remove('not-visible')
             }else{
                 scrollTop.classList.add('not-visible')
