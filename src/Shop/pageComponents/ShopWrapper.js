@@ -13,6 +13,7 @@ import ModalSection from '../../PrimarySections/Modal/ModalSection'
 import Sidebar from './ShopSidebar'
 import Product from '../../Home/pageComponents/Subfolder/Product'
 import { FormControl, MenuItem, Select } from '@material-ui/core'
+import CartModal from '../../ProductCart/CartModal/CartModal'
 
 
 export default function ShopWrapper() {

@@ -2,6 +2,7 @@
 import React,{useState} from 'react'
 import { AllProduct} from '../../Data'
 import ModalSection from '../../PrimarySections/Modal/ModalSection'
+import CartModal from '../../ProductCart/CartModal/CartModal'
 import { useStateValue } from '../../Utility/StateProvider'
 import Product from './Subfolder/Product'
 
@@ -117,6 +118,7 @@ export default function HotCollection() {
   </div>
 
   <ModalSection product={state.singleProd}/>
+  <CartModal product={state.newCartProd}/>
 </div>
 
     )

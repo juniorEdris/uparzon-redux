@@ -6,6 +6,7 @@ import Logo from "./UparzonLogo"
 import Search from './Search'
 import HeaderButtons from './HeaderButtons'
 import Navigation from './Navigation'
+import ModalLogin from '../../MyAccount/Login/ModalLogin'
 
 
 function Header () {
@@ -24,6 +25,8 @@ function Header () {
                     </div>
                     {/* header-middle ends here */}
                     <Navigation/>
+
+                    <ModalLogin />
                 </header>
         )
     

@@ -9,13 +9,13 @@ import $ from 'jquery'
 
 export default function Product({id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings,description,isGrid,isList}) {
   
-  const [{user,wishList,basket,compareList},dispatch] = useStateValue()
+  const [{wishList,basket,compareList},dispatch] = useStateValue()
 
   useEffect(() => {
     $('.action-links a').on('click',function( event ) {
       event.preventDefault();
     });
-
+    //Add every item to localStorage on every item click
     localStorage.setItem('Wish List',JSON.stringify(wishList))
     localStorage.setItem('Cart List',JSON.stringify(basket))
     localStorage.setItem('Compare List',JSON.stringify(compareList))
@@ -44,12 +44,16 @@ export default function Product({id,brand,name,oldPrice,price,sale,latest,specia
   }
 
   const addToCart= ()=>{
-    if(user || !user){
+
+    // Cart modal dispatch 
+      dispatch({type:"NEW_TO_CART",payload:{
+        id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings,description
+      }})
+      // addToCart dispatch 
       dispatch({type:"ADD_TO_CART",payload:{
               id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings,description
             }})
       }
-    }
   const addToWishList= ()=>{
       dispatch({type:"ADD_TO_WISH_LIST",payload:{
         id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings,description
@@ -99,7 +103,7 @@ export default function Product({id,brand,name,oldPrice,price,sale,latest,specia
                 <span className="regular-price"><span className={` ${special && 'special-price'}`}>£{price}</span></span>
                 <span className="old-price"><del>{oldPrice ? `£${oldPrice}` : ''}</del></span>
             </div>
-            <button className="btn-cart" type="button" onClick={()=> addToCart()}>add to cart</button>
+            <button className="btn-cart" type="button" onClick={()=> addToCart()} data-target="#cart_modal" data-toggle="modal">add to cart</button>
             <div className="action-links sinrat-list-icon">
                 <Link to='#' title="Wishlist" onClick={()=> addToWishList()}><i className="lnr lnr-heart" /></Link>
                 <Link to='#' title="Compare" onClick={()=>addToCompare()}><i className="lnr lnr-sync" /></Link>
@@ -127,7 +131,7 @@ export default function Product({id,brand,name,oldPrice,price,sale,latest,specia
                       <Link to="#" title="Wishlist" onClick={()=> addToWishList()}><i className="lnr lnr-heart" /></Link>
                       <Link to="#" title="Compare" onClick={()=>addToCompare()}><i className="lnr lnr-sync" /></Link>
                       <Link to="#" title="Quick view" onClick={()=>quickView()} data-target="#quickk_view" data-toggle="modal"><i className="lnr lnr-magnifier" /></Link>
-                    </div>
+                    </div> 
                   </div>
                   <div className="product-caption">
                     <div className="manufacture-product">
@@ -147,7 +151,7 @@ export default function Product({id,brand,name,oldPrice,price,sale,latest,specia
                       <span className="regular-price"><span className={` ${special && 'special-price'}`}>£{price}</span></span>
                       <span className="old-price"><del>{oldPrice ? `£${oldPrice}` : ''}</del></span>
                     </div>
-                    <button className="btn-cart" onClick={()=> addToCart()} type="button">add to cart</button>
+                    <button data-target="#cart_modal" data-toggle="modal" className="btn-cart" onClick={()=> addToCart()} type="button">add to cart</button>
                   </div>
                 
                 </div>

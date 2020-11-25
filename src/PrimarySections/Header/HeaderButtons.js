@@ -80,7 +80,7 @@ export default function HeaderButtons() {
                     <Link className="cart-button" to="/cart">view cart</Link>
                     </li>
                     <li>
-                    <Link className="cart-button" to={user ? "/checkout": "/login"}>checkout</Link>
+                    <Link className="cart-button" to={!user ? "#": "/checkout"} data-target={!user && "#login_modal"} data-toggle={!user && "modal"}>checkout</Link>
                     </li>
                 </ul>
                 </li>

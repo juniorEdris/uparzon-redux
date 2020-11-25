@@ -6,7 +6,7 @@ import CheckoutBody from './pageComponents/CheckoutBody'
 export default function Checkout() {
     return (
         <div>
-            <Breadcrumb pageName={'Checkout'}/>
+            <Breadcrumb pageName={'Checkout'} route={'/cart'} parent={'Cart'}/>
             <CheckoutBody/>
             <ScrollBar/>
         </div>

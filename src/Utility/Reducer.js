@@ -1,9 +1,10 @@
 
 export const initialState = {
+  newCartProd:[],
   basket:localStorage.getItem('Cart List') ? JSON.parse(localStorage.getItem('Cart List')) :[],
   wishList:localStorage.getItem('Wish List') ? JSON.parse(localStorage.getItem('Wish List')) :[],
   compareList:localStorage.getItem('Compare List') ? JSON.parse(localStorage.getItem('Compare List')) :[],
-  user:true
+  user:false
 }
 
   export default function reducer (state,action){
@@ -14,10 +15,15 @@ export const initialState = {
             ...state,
             quickView:singleItem,
             }
-            case 'ADD_TO_CART':  
+            case 'ADD_TO_CART': 
               return{
                 ...state,
                 basket:[...state.basket,action.payload]
+              }
+            case 'NEW_TO_CART': 
+              return{
+                ...state,
+                newCartProd:action.payload
               }
             case 'COMPARE_PRODUCTS':
               const  compareItem = action.payload 
