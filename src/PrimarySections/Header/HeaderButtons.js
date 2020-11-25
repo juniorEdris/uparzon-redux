@@ -24,6 +24,11 @@ export default function HeaderButtons() {
         setCartActive(false);
     }
 
+    // Total Amount (inc vat & eco) 
+    const eco_tax = getSubTotal(basket) / 1.51
+    const vat_amount = getSubTotal(basket) * 0.20 
+    const get_total = getSubTotal(basket) + eco_tax + vat_amount
+
     return (
         <div className="col-lg-4 col-md-8 col-12 col-sm-8 order-lg-last">
             <div className="mini-cart-option">
@@ -57,19 +62,19 @@ export default function HeaderButtons() {
 
                     <li>
                     <div className="subtotal-text">Sub-total: </div>
-                    <div className="subtotal-price">{`£ ${getSubTotal(basket).toFixed(2)}`}</div>
+                    <div className="subtotal-price">${getSubTotal(basket).toFixed(2)}</div>
                     </li>
                     <li>
                     <div className="subtotal-text">Eco Tax (-2.00): </div>
-                    <div className="subtotal-price">£1.51</div>
+                    <div className="subtotal-price">${eco_tax.toFixed(2)}</div>
                     </li>
                     <li>
                     <div className="subtotal-text">Vat (20%): </div>
-                    <div className="subtotal-price">£9.79</div>
+                    <div className="subtotal-price">${vat_amount.toFixed(2)}</div>
                     </li>
                     <li>
                     <div className="subtotal-text">Total: </div>
-                    <div className="subtotal-price"><span>£60.24</span></div>
+                    <div className="subtotal-price"><span>${get_total.toFixed(2)}</span></div>
                     </li>
                     <li className="mt-30">
                     <Link className="cart-button" to="/cart">view cart</Link>

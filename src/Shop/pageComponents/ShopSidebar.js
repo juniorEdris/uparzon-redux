@@ -1,7 +1,6 @@
 import React,{useState} from 'react'
 import { Link } from 'react-router-dom'
 import Slider from '@material-ui/core/Slider';
-import $ from 'jquery'
 import './ShopSidebar.css'
 
 
@@ -106,7 +105,7 @@ export default function Sidebar() {
                     {/* sidebar promote picture start */}
                     <div className="single-sidebar mb-30">
                     <div className="sidebar-thumb">
-                        <Link to='/'><img src="assets/img/banner/img-static-sidebar.jpg" alt="" /></Link>
+                        <Link to='/'><img src="https://www.cloudways.com/blog/wp-content/uploads/ecommerce-website-checklist-b-.jpg" alt="" /></Link>
                     </div>
                     </div>
                     {/* sidebar promote picture end */}

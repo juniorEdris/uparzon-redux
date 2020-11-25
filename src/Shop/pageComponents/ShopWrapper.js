@@ -39,16 +39,17 @@ $('.product-view-mode a').on('click', function(e){
     return (
         <div>
             
-            {/* shop page main wrapper start */}
-            <div className="main-wrapper pt-35">
-            <div className="container-fluid">
-                <div className="row">
+            <div className="main-wrapper pt-10">
+                <div className="container-fluid">
+                <div className="shop-baner-img mb-70">
+                    <Link to='/'><img src="https://laz-img-cdn.alicdn.com/images/ims-web/TB1rZbOp3gP7K4jSZFqXXamhVXa.jpg_1200x1200Q100.jpg_.webp" alt="" /></Link>
+                </div>
+                </div>
+                <div className="container-fluid">
+                    <div className="row">
                 <Sidebar/>
                 <div className="col-lg-9 order-first order-lg-last">
                     <div className="product-shop-main-wrapper mb-50">
-                    <div className="shop-baner-img mb-70">
-                        <Link to='/'><img src="assets/img/banner/category-image.jpg" alt="" /></Link>
-                    </div>
                     <div className="shop-top-bar mb-30">
                         <div className="row">
                         <div className="col-md-6">
@@ -140,8 +141,6 @@ $('.product-view-mode a').on('click', function(e){
                 </div>
             </div>
             </div>
-            {/* shop page main wrapper end */}
-
             <ModalSection product={state.quickView}/>
         </div>
     )

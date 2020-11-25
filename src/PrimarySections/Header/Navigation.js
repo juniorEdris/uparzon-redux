@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react'
 import { Link } from 'react-router-dom';
+import './Navigation.css'
 
 export default function Navigation() {
 
@@ -126,7 +127,7 @@ export default function Navigation() {
                         <li><Link to="/">Headphones &amp; Accessories</Link></li>
                         <li><Link to="/">Quadcopters &amp; Accessories</Link></li>
                         <li><Link to="/">Network Devices</Link></li>
-                        <li className={`category-item-parent hidden ${menuShow ? '':'inActive'} `}><a href="/">Smart Watches</a></li>
+                        <li className={`category-item-parent hidden ${menuShow ? 'active':'inActive'} `}><a href="/">Smart Watches</a></li>
                         <li className="category-item-parent"><a className={`more-btn ${menuShow ? 'minus':''}`} href="/"  onClick={moreMenu}>{btnName}</a></li>
                     </ul>
                     </nav>

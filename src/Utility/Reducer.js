@@ -58,3 +58,4 @@ export const initialState = {
 
             // Total Amount function 
             export const getSubTotal = (basket) => basket?.reduce((amount, item) => item.price + amount,0)
+            
