@@ -142,7 +142,7 @@ $('.product-view-mode a').on('click', function(e){
                 </div>
             </div>
             </div>
-            <ModalSection product={state.quickView}/>
+            {/* <ModalSection product={state.quickView}/> */}
         </div>
     )
 }

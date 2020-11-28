@@ -9,7 +9,6 @@ import { useState } from 'react';
 import { useStateValue } from '../../Utility/StateProvider';
 import ModalSection from '../../PrimarySections/Modal/ModalSection';
 import Product from './Subfolder/Product';
-import CartModal from '../../ProductCart/CartModal/CartModal';
 
 
 
@@ -134,7 +133,6 @@ function OurProduct () {
           {/* </Slider> */}
         </div>
          <ModalSection product={state.quickView}/>
-         <CartModal product={state.newCartProd}/>
         </div>
         )
     }

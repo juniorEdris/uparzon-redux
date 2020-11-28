@@ -5,7 +5,7 @@ import { useStateValue } from '../../../Utility/StateProvider'
 
 
 export default function Details() {
-  const [{productView,user},dispatch] = useStateValue()
+  const [{productView}] = useStateValue()
 
   useEffect(() => {
     $('.useful-links a').on('click',function( event ) {
@@ -13,19 +13,6 @@ export default function Details() {
     });
     
   }, [])
-
-  // const addToCart= (id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings)=>{
-  //   if(user || !user){
-  //     dispatch({type:"ADD_TO_CART",payload:{
-  //             id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings
-  //           }})
-  //     }
-  //   }
-  // const addToWishList= (id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings)=>{
-  //     dispatch({type:"ADD_TO_WISH_LIST",payload:{
-  //       id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings
-  //     }})
-  // }
 
   return (
         <div className="col-lg-7">

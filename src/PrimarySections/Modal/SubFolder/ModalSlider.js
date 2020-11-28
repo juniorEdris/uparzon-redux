@@ -44,11 +44,11 @@ export default function ModalSlider({product}) {
         >
             {product?.shots.map((img) => {
                 return(
-            <div class="product-large-slider mb-20">
+                <div class="product-large-slider mb-20">
                 <div class="pro-large-img">
                     <img src={img} alt="" />
+                    </div>
                 </div>
-            </div>
             )})}
         </Slider>
     

@@ -13,24 +13,25 @@ export default function CartModal({product}) {
                 <div className="modal-body">
                     <div className="row">
                         <div className="col-12 col-sm-12 col-md-12 col-lg-12">
-                            <p className="blue"> <b>1 new item(s) have been added to your cart</b></p>
                             <div className="table-responsive text-center wishlist-style">
                                 <table className="table table-bordered">
                                 <tbody>
                                     {                                       
-                                        
-                                            <tr id={product?.id}>
-                                            <td>
-                                                <Link to="product-details.html"><img className='wish__thumb' src={product?.img1} alt={'product.name'} title={product?.name} /></Link>
-                                            </td>
-                                            <td>
-                                                <Link to="product-details.html">{product?.name}</Link>
-                                            </td>
-                                            <td>null</td>
-                                            <td>
-                                                <div className="price"><small><del>{product?.oldPrice || ''}</del></small> <strong>{product?.price}</strong></div>
-                                            </td>
-                                            </tr>
+                                        product.map(item =>(
+                                                <tr id={item?.id}>
+                                                <td>
+                                                    <Link to="product-details.html"><img className='wish__thumb' src={item?.img1} alt={'product.name'} title={item?.name} /></Link>
+                                                </td>
+                                                <td>
+                                                    <Link to="product-details.html">{item?.name}</Link>
+                                                </td>
+                                                <td>null</td>
+                                                <td>
+                                                    <div className="price"><small><del>{item?.oldPrice || ''}</del></small> <strong>{item?.price}</strong></div>
+                                                </td>
+                                                </tr>
+                                        ))
+                                            
 
                                       
 

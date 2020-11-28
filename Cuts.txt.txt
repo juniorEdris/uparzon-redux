@@ -16,3 +16,10 @@ CSS =========
     running fadeInDown;
   animation: 900ms cubic-bezier(0.2, 1, 0.22, 1) 0s normal none 1 running
     fadeInDown; */
+
+    ===========npm packages
+
+## deleted
+    > react-animated-numbers
+    > mmenu-js
+    > slick-carousel

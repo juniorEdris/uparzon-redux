@@ -118,7 +118,6 @@ export default function HotCollection() {
   </div>
 
   <ModalSection product={state.singleProd}/>
-  <CartModal product={state.newCartProd}/>
 </div>
 
     )

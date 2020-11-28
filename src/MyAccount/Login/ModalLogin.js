@@ -13,7 +13,7 @@ export default function ModalLogin() {
                 <button type="button" className="close" data-dismiss="modal">×</button>
                 </div>
             <div className="modal-body">
-                <div className="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div className="login-popup col-12 col-sm-12 col-md-12 col-lg-12">
                     <main id="primary" className="site-main">
                     <div className="user-login">
                     <div className="row">

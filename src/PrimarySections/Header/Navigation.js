@@ -9,7 +9,7 @@ export default function Navigation() {
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300 ) {
+            if (window.scrollY > 200 ) {
                 setStickyNav(true)
             } else {
                 setStickyNav(false)
@@ -44,7 +44,7 @@ export default function Navigation() {
             <div className="col-lg-12">
                 <div className="top-main-menu">
                 <div className="categories-menu-bar">
-                    <div onClick={browseCatalog} className={`categories-menu-btn`}  >{/*ha-toggle removed*/}
+                    <div onClick={browseCatalog} className={`categories-menu-btn`}  >
                     <div className="left">
                         <i className="lnr lnr-text-align-left" />
                         <span>Browse categories</span>
@@ -53,7 +53,7 @@ export default function Navigation() {
                         <i className="lnr lnr-chevron-down" />
                     </div>
                     </div>
-                    <nav className={`categorie-menus ha-dropdown ${isBrowsing ? 'active':'inActive'}`}>
+                    <nav className={`categorie-menus ha-dropdown ${isBrowsing ? 'active':'inActive'}`} >
                     <ul id="menu2">
                         <li><Link to="/all">Audio &amp; Home Theater <span className="lnr lnr-chevron-right" /></Link>
                         <ul className="cat-submenu">

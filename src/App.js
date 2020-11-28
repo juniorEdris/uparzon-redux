@@ -23,7 +23,6 @@ import DashBoard from './MyAccount/DashBoard/Index';
 
 function App() {
 
-
   return (
     <div className="app">
       <Router>
@@ -89,10 +88,8 @@ function App() {
             <Footer/>
           </Route>
         </Switch>
-        
       </Router>
-      
-      </div>
+     </div>
   );
 }
 

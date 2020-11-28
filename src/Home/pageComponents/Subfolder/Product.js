@@ -151,7 +151,7 @@ export default function Product({id,brand,name,oldPrice,price,sale,latest,specia
                       <span className="regular-price"><span className={` ${special && 'special-price'}`}>£{price}</span></span>
                       <span className="old-price"><del>{oldPrice ? `£${oldPrice}` : ''}</del></span>
                     </div>
-                    <button data-target="#cart_modal" data-toggle="modal" className="btn-cart" onClick={()=> addToCart()} type="button">add to cart</button>
+                    <button className="btn-cart" onClick={(e)=> addToCart()} type="button">add to cart</button>
                   </div>
                 
                 </div>

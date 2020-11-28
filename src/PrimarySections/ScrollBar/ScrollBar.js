@@ -25,12 +25,8 @@ export default function ScrollBar() {
         }
     }, [])
     return (
-        <div>
-            {/* /Scroll to Top starts */}
                 <div className="scroll-top not-visible">
                     <i className="fa fa-angle-up"/>
                 </div>
-            {/* /End Scroll to Top */}
-        </div>
     )
 }

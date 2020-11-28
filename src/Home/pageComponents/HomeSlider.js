@@ -7,6 +7,8 @@ import { Link } from 'react-router-dom';
 
 export default function HomeSlider() {
 
+    console.log('rendering agian and again');
+
     return (
         <div className='home_slider'>
           <OwlCarousel 

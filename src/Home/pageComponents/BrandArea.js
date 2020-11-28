@@ -8,7 +8,6 @@ import { Electronics, Entertainments, MobileProducts, } from '../../Data';
 import { useStateValue } from '../../Utility/StateProvider';
 import ModalSection from '../../PrimarySections/Modal/ModalSection';
 import Product from './Subfolder/Product';
-import CartModal from '../../ProductCart/CartModal/CartModal';
 
 export default function BrandArea() {
 
@@ -179,7 +178,6 @@ const options = {
       </div>
 </div>
   <ModalSection product={state.singleProd}/>
-  <CartModal/>
 </div>
     )
 }

@@ -1509,6 +1509,37 @@ a.shop-btn:hover {
 .owl-carousel .owl-item .product-module-thumb img {
   width: 100%;
 }
+/* ----brand sell area css start---- */
+.nav.brand-active {
+  background: #f8f8f8;
+  border: 1px solid #f0f0f0;
+  padding: 17px 0;
+}
+
+.nav.brand-active {
+  margin-bottom: 25px;
+}
+
+.single-brand {
+  display: block;
+}
+
+.brand-thumb {
+  text-align: center;
+}
+
+.owl-carousel .owl-item img {
+  width: auto;
+  display: inline-block;
+}
+
+.brand-area li {
+  text-align: center;
+}
+
+.sale-nav .owl-nav {
+  top: -190px;
+}
 
 /*Shop Page  pagination css  */
 .pagination-box li {
@@ -3410,7 +3441,7 @@ label {
   cursor: pointer;
   height: 50px;
   position: fixed;
-  right: 20px;
+  right: 15px;
   text-align: center;
   width: 50px;
   z-index: 9;

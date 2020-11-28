@@ -6,7 +6,7 @@ import './HeaderButton.css'
 
 export default function HeaderButtons() {
 
-
+    
     // Basket counting functionality
     const[{basket,wishList,user}] = useStateValue()
     //mycart menu dropdown
@@ -41,7 +41,7 @@ export default function HeaderButtons() {
                 <Link className="ha-toggle" to='/wishlist'><span className="lnr lnr-heart" /><span className="count">{ wishList.length || 0 }</span></Link>
                 </li>
                 <li className="my-cart">
-                <Link onClick={basket.length > 0 && showCart} className="ha-toggle" to="#"><span className="lnr lnr-cart" /><span className="count">{ basket.length || 0 }</span></Link>
+                <Link onClick={basket.length > 0 && showCart}  className="ha-toggle" to="#" ><span className="lnr lnr-cart" /><span className="count">{ basket.length || 0 }</span></Link>
                 <ul className={`mini-cart-drop-down ha-dropdown ${isCartActive ? 'active': 'inActive'}`}>
                         {
                             basket.map((prod) => (
@@ -85,7 +85,7 @@ export default function HeaderButtons() {
                 </ul>
                 </li>
                 <li className="compare"> 
-                    <Link onClick={AccBtn} className="ha-toggle" to="#"><span className="lnr lnr-user" /></Link>
+                    <Link onClick={AccBtn} className="ha-toggle" to="#" ><span className="lnr lnr-user" /></Link>
                     {
                         user ?
                     <ul className={`box-dropdown ha-dropdown ${isAccActive ? "active" : "inactive"}`}>
