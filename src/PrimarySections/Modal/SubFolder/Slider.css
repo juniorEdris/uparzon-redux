@@ -1,0 +1,17 @@
+.modal-slider .carousel .carousel-status {
+  color: #4f0f40;
+  right: 40%;
+  text-shadow: none;
+}
+.modal-slider .carousel .thumbs-wrapper {
+  margin: 0 !important;
+}
+.modal-slider .thumbs-wrapper .thumb {
+  border-radius: 0.3rem;
+}
+.modal-slider .carousel .thumbs-wrapper .control-prev.control-arrow:before {
+  border-right: 8px solid #4f0f40;
+}
+.modal-slider .carousel .thumbs-wrapper .control-next.control-arrow:before {
+  border-left: 8px solid #4f0f40;
+}

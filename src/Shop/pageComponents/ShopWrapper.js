@@ -1,8 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React,{ useEffect } from 'react'
-import 'jquery-nice-select/css/nice-select.css'
-import 'jquery-nice-select/js/jquery.nice-select.min'
-import 'jquery-nice-select/js/jquery'
 import $ from 'jquery'
 import { Link } from 'react-router-dom'
 import './ShopWrapper.css'
@@ -56,9 +53,9 @@ $('.product-view-mode a').on('click', function(e){
                         <div className="col-md-6">
                             <div className="top-bar-left">
                             <div className="product-view-mode">
-                                <Link to='/' data-target="column_3"><span>3-col</span></Link>
-                                <Link className="active" to="/" data-target="grid"><span>4-col</span></Link>
-                                <Link to='/' data-target="list"><span>list</span></Link>
+                                <Link to='#' data-target="column_3"><span>3-col</span></Link>
+                                <Link className="active" to="#" data-target="grid"><span>4-col</span></Link>
+                                <Link to='#' data-target="list"><span>list</span></Link>
                             </div>
                             <div className="product-page">
                                 <p>Showing 1 to 9 of 9 (1 Pages)</p>

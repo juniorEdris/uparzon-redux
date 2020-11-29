@@ -1,3 +1,23 @@
-.slick-list .slick-track .slick-slide.slick-cloned {
-  display: none !important;
+.product-details-slider .carousel .carousel-status {
+  color: #4f0f40;
+  right: 40%;
+  text-shadow: none;
+}
+.product-details-slider .carousel .thumbs-wrapper {
+  margin: 0 !important;
+}
+.product-details-slider .thumbs-wrapper .thumb {
+  border-radius: 0.3rem;
+}
+.product-details-slider
+  .carousel
+  .thumbs-wrapper
+  .control-prev.control-arrow:before {
+  border-right: 8px solid #4f0f40;
+}
+.product-details-slider
+  .carousel
+  .thumbs-wrapper
+  .control-next.control-arrow:before {
+  border-left: 8px solid #4f0f40;
 }

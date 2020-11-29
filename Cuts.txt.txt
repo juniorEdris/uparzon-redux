@@ -23,3 +23,6 @@ CSS =========
     > react-animated-numbers
     > mmenu-js
     > slick-carousel
+    > react-slick
+    > react-modal-image
+    > react-image-gallery
