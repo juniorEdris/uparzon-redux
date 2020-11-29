@@ -25,8 +25,11 @@
   line-height: 20px;
   position: absolute;
   text-align: center;
-  top: 5px;
   width: 20px;
+}
+.floating-basket > div:not(:last-child) {
+  border-bottom: 1px solid #4f0f40;
+  margin-bottom: 5px;
 }
 .floating-basket span {
   line-height: 44px;
@@ -38,9 +41,6 @@
   font-size: 14px;
   font-weight: 700;
   line-height: 24px;
-}
-.floating-basket p::before {
-  border-top: 2px solid var(--theme-color);
 }
 /* Visible css */
 

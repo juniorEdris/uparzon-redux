@@ -4,9 +4,11 @@ import { useStateValue } from '../../Utility/StateProvider'
 import { AnimatePresence, motion } from "framer-motion"
 import {Spring} from 'react-spring/renderprops'
 import './CartIcon.css'
+import { Link } from 'react-router-dom'
+import CartModal from '../../ProductCart/CartModal/CartModal'
 
 export default function CartIcon() {
-    const [{basket}] = useStateValue()
+    const [{basket,wishList,compareList}] = useStateValue()
 
     useEffect(()=>{
         const basket = document.querySelector('.floating-basket');
@@ -30,13 +32,22 @@ export default function CartIcon() {
         animate={{x:0}}
         exit={{x:100}}
         >
-            <span className="lnr lnr-cart" /><span className="count">{ basket.length || 0 }</span>
-            <Spring
-            from={{ number: 0 }}
-            to={{ number: getSubTotal(basket)}}
-            >
-            {props => <p>{props.number.toFixed(2)}</p>}
-            </Spring>
+            <div className='compare'>
+            <Link to="#" data-toggle="modal" data-target="#cart_modal"><span className="lnr lnr-sync" /><span className="count">{ compareList.length || 0 }</span></Link>
+            </div>
+            <div className='wish'>
+            <span className="lnr lnr-heart" /><span className="count">{ wishList.length || 0 }</span>
+            </div>
+            <div className='cart'>
+                <span className="lnr lnr-cart" /><span className="count">{ basket.length || 0 }</span>
+                <Spring
+                from={{ number: 0 }}
+                to={{ number: getSubTotal(basket)}}
+                >
+                {props => <p>{props.number.toFixed(2)}</p>}
+                </Spring>
+            </div>
+       
 
         </motion.div>
         </AnimatePresence>

@@ -51,8 +51,8 @@ export default function HomeMainSection() {
             <BrandArea/>
             <FeatureArea/>
             <ScrollBar/>
-            <Link to="#" data-toggle="modal" data-target="#cart_modal"><CartIcon/></Link>
-            <CartModal product={basket}/>
+            {show && <CartIcon/>}
+            {/* <CartModal product={basket}/> */}
         </div>
     )
 }

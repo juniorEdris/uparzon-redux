@@ -29,8 +29,8 @@ export default function Shop() {
             <Breadcrumb pageName={'Shop'} route={'/'} parent={'Home'}/>
             <ShopWrapper/>
             <ScrollBar/>
-            {show && <Link to="#" data-toggle="modal" data-target="#cart_modal"><CartIcon /></Link>}
-            <CartModal product={basket}/>
+            {show && <CartIcon />}
+            {/* <CartModal product={basket}/> */}
             <ModalSection product={quickView}/>
         </div>
     )
