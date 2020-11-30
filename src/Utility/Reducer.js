@@ -16,9 +16,11 @@ export const initialState = {
             quickView:singleItem,
             }
             case 'ADD_TO_CART': 
+            console.log('countAction',action.count);
               return{
                 ...state,
-                basket:[...state.basket,action.payload]
+                basket:[...state.basket,action.payload],
+                count:action.count
               }
             case 'NEW_TO_CART': 
               return{

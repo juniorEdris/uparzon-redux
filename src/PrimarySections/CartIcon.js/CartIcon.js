@@ -4,9 +4,6 @@ import { useStateValue } from '../../Utility/StateProvider'
 import { AnimatePresence, motion } from "framer-motion"
 import {Spring} from 'react-spring/renderprops'
 import './CartIcon.css'
-import { Link } from 'react-router-dom'
-import CartModal from '../../ProductCart/CartModal/CartModal'
-
 export default function CartIcon() {
     const [{basket,wishList,compareList}] = useStateValue()
 
@@ -33,7 +30,7 @@ export default function CartIcon() {
         exit={{x:100}}
         >
             <div className='compare'>
-            <Link to="#" data-toggle="modal" data-target="#cart_modal"><span className="lnr lnr-sync" /><span className="count">{ compareList.length || 0 }</span></Link>
+            <span className="lnr lnr-sync" /><span className="count">{ compareList.length || 0 }</span>
             </div>
             <div className='wish'>
             <span className="lnr lnr-heart" /><span className="count">{ wishList.length || 0 }</span>

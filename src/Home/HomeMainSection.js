@@ -14,28 +14,13 @@ import BrandArea from './pageComponents/BrandArea';
 import ScrollBar from '../PrimarySections/ScrollBar/ScrollBar'
 import URL from '../RequestLinks'
 import CartIcon from '../PrimarySections/CartIcon.js/CartIcon'
-import CartModal from '../ProductCart/CartModal/CartModal'
-import { useStateValue } from '../Utility/StateProvider'
-import { Link } from '@material-ui/core'
 
 
 
-export default function HomeMainSection() {
 
-    const [show,setShow] = useState(false)
-    const [{basket}]=useStateValue()
-    useEffect(()=>{
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-              setShow(true)
-            }else {
-                setShow(false)
-            }
-        })
-        return ()=>{
-            window.removeEventListener('scroll',()=>{})
-        }
-    },[])
+export default function HomeMainSection({show}) {
+
+
     return (
         <div>
             <HomeSlider/>
@@ -52,7 +37,6 @@ export default function HomeMainSection() {
             <FeatureArea/>
             <ScrollBar/>
             {show && <CartIcon/>}
-            {/* <CartModal product={basket}/> */}
         </div>
     )
 }

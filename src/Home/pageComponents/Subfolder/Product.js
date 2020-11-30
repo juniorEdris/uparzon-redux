@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 // Our Product,Hot Collection,Brand Sale,Shop(short-cirtuit evaluation to show grid and list view) product component
 
 import React,{useEffect} from 'react'
@@ -8,8 +7,7 @@ import { useStateValue } from '../../../Utility/StateProvider';
 import $ from 'jquery'
 
 export default function Product({id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings,description,isGrid,isList}) {
-  
-  const [{wishList,basket,compareList},dispatch] = useStateValue()
+  const [{wishList,basket,compareList,count},dispatch] = useStateValue()
 
   useEffect(() => {
     $('.action-links a').on('click',function( event ) {
@@ -44,15 +42,10 @@ export default function Product({id,brand,name,oldPrice,price,sale,latest,specia
   }
 
   const addToCart= ()=>{
-
-    // Cart modal dispatch 
-      dispatch({type:"NEW_TO_CART",payload:{
-        id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings,description
-      }})
       // addToCart dispatch 
       dispatch({type:"ADD_TO_CART",payload:{
               id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings,description
-            }})
+            },count:1})
       }
   const addToWishList= ()=>{
       dispatch({type:"ADD_TO_WISH_LIST",payload:{

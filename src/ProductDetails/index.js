@@ -2,7 +2,6 @@ import React from 'react'
 import Breadcrumb from '../PrimarySections/Breadcrumbs/Breadcrumb'
 import CartIcon from '../PrimarySections/CartIcon.js/CartIcon'
 import ScrollBar from '../PrimarySections/ScrollBar/ScrollBar'
-
 import Details from './PageComponents/ProductDetailsWrap'
 import Review from './PageComponents/ProductReviews'
 import Suggestions from './PageComponents/ProductSuggestion'

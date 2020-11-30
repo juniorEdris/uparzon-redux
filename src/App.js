@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -22,6 +22,20 @@ import DashBoard from './MyAccount/DashBoard/Index';
 
 
 function App() {
+
+  const [show,setShow] = useState(false)
+    useEffect(()=>{
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+              setShow(true)
+            }else {
+                setShow(false)
+            }
+        })
+        return ()=>{
+            window.removeEventListener('scroll',()=>{})
+        }
+    },[])
 
   return (
     <div className="app">
@@ -84,7 +98,7 @@ function App() {
           </Route>
           <Route path='/'>
             <Header/>
-            <Home/>
+            <Home show={show}/>
             <Footer/>
           </Route>
         </Switch>

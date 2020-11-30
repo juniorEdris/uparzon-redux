@@ -8,7 +8,8 @@ export default function HeaderButtons() {
 
     
     // Basket counting functionality
-    const[{basket,wishList,user}] = useStateValue()
+    const[{basket,wishList,user,count}] = useStateValue()
+    // console.log('count',count);
     //mycart menu dropdown
     const [isCartActive, setCartActive] = useState(false)
     const showCart = (e)=>{

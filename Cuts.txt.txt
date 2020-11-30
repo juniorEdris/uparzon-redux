@@ -1,4 +1,16 @@
-Will be added to component className 
+        slicedProds.sort(
+            (a,b)=>
+            sort==='lowestPrice' ? 
+            a.price > b.price
+             ? 1 : -1  :
+            sort==='highestPrice'? 
+            a.price < b.price 
+            ? 1 : -1 :
+            a.id > b.id 
+            ? 1 : -1       
+        )
+
+Will be added to component css 
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -19,10 +31,84 @@ CSS =========
 
     ===========npm packages
 
-## deleted
+## deleted packages
     > react-animated-numbers
     > mmenu-js
     > slick-carousel
     > react-slick
     > react-modal-image
     > react-image-gallery
+    > react-image-magnify
+    > react-image-zoom
+    > react-inner-image-zoom
+    > react-modal-image
+
+## File map
+
+    > Primary Components
+      1 BreadCrumbs
+      2 CartIcon
+      3 Connection
+      4 Footer
+      5 Header
+    
+    > Home
+      > Product comp
+      > Card comp
+      1 Home Slider
+      2 OurProduct
+      3 HomeBanner
+      4 Featured Category
+      5 Hot Collection
+      6 Static Banner
+      7 ElectronicsArea
+      8 Headphones Accessories
+      9 Business & Office
+      10 Wide Banner
+      11 Feature Area
+      12 Scrollbar
+    
+    > Compare
+      1 BreadCrumb
+      2 Compare Body
+      3 Scrollbar
+
+    > WishList
+      1 BreadCrumb
+      2 Compare Body
+      3 Scrollbar
+
+    > Product Cart
+      > CartModal
+      1 BreadCrumb
+      2 Cart Body
+      3 Scrollbar
+
+    > Checkout
+      1 BreadCrumb
+      2 Body
+      3 Scrollbar
+
+    > Product Details
+      1 BreadCrumb
+      2 Details
+      3 Review
+      4 CartIcon
+      5 Scrollbar
+      6 Suggestions
+
+    > Shop
+      1 BreadCrumb
+      2 Shop Wrapper
+      3 Scrollbar
+      4 Moda Section
+
+    > My Account
+      > DashBoard
+      > Login
+      > Register
+      
+    > Utility
+      1 PageAction
+      2 Reducer
+      3 State Provider

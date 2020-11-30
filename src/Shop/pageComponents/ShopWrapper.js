@@ -4,19 +4,18 @@ import $ from 'jquery'
 import { Link } from 'react-router-dom'
 import './ShopWrapper.css'
 import { useState } from 'react'
-import { Electronics,Entertainments,MobileProducts, Truncate } from '../../Data'
+import { AllProduct } from '../../Data'
 import { useStateValue } from '../../Utility/StateProvider'
 import ModalSection from '../../PrimarySections/Modal/ModalSection'
 import Sidebar from './ShopSidebar'
 import Product from '../../Home/pageComponents/Subfolder/Product'
-import { FormControl, MenuItem, Select } from '@material-ui/core'
-import CartModal from '../../ProductCart/CartModal/CartModal'
+import RightBarControl from './RightBarControl'
 
 
 export default function ShopWrapper() {
 
-    useEffect(() => {
-        // product view mode change js
+useEffect(() => {
+// product view mode change js
 $('.product-view-mode a').on('click', function(e){
     e.preventDefault();
     
@@ -28,12 +27,50 @@ $('.product-view-mode a').on('click', function(e){
     shopProductWrap.removeClass('grid list column_3').addClass(viewMode);
 })
 
-
 }, [])
 
-    const [state] = useStateValue()
-    const [Electproducts] = useState(Electronics)
-        
+const [state] = useStateValue()
+const [Electproducts,setElectProducts] = useState(AllProduct)
+const [sort,setSort] = useState('')
+const [limit,setLimit] = useState('')
+
+    //Product sort function
+    const ProductSort =(e)=>{
+        setSort(e.target.value)
+        const slicedProds = [...Electproducts]
+        if(e.target.value === 'lowestPrice'){
+            const lowestProd = slicedProds.sort((a,b)=>(a.price > b.price ? 1:-1))
+            setElectProducts(lowestProd)
+        }else if(e.target.value === 'highestPrice'){
+            const highestProd = slicedProds.sort((a,b)=>(a.price < b.price ? 1:-1))
+            setElectProducts(highestProd)
+        }else{
+            const allprod = slicedProds.sort((a,b)=>(a.id > b.id ? 1:-1))
+            setElectProducts(allprod)
+        }
+    }
+
+    //Product show function
+    const ProductLimit =(e)=>{
+        setLimit(e.target.value)
+        const slicedProds = AllProduct
+        if(e.target.value === 5){
+            const limitedProds = slicedProds.slice(0,e.target.value)
+            setElectProducts(limitedProds)
+        }else if(e.target.value === 10){
+            const limitedProds = slicedProds.slice(0,e.target.value)
+            setElectProducts(limitedProds)
+        }else if(e.target.value === 15){
+            const limitedProds = slicedProds.slice(0,e.target.value)
+            setElectProducts(limitedProds)
+        }else if(e.target.value === 20){
+            const limitedProds = slicedProds.slice(0,e.target.value)
+            setElectProducts(limitedProds)
+        }else if(e.target.value === 0){
+            setElectProducts(AllProduct)
+        }
+        setSort('')
+    }
     return (
         <div>
             
@@ -63,47 +100,18 @@ $('.product-view-mode a').on('click', function(e){
                             </div>
                         </div>
                         <div className="col-md-6">
-                            <div className="top-bar-right">
-                            <div className="per-page">
-                                <p>Show : </p>
-                        <FormControl className=''>
-                            <Select 
-                            variant="outlined"
-                            id="grouped-select"
-                            >
-                                <MenuItem value='trending'>10</MenuItem>
-                                <MenuItem value="sales">20</MenuItem>
-                                <MenuItem value="rating">30</MenuItem>
-                                <MenuItem value="date">40</MenuItem>
-                                <MenuItem value="price-asc">50</MenuItem>
-                            </Select>
-                        </FormControl>
-                        
-                            </div>
-                            <div className="product-short">
-                                <p>Sort By : </p>
-                        <FormControl className=''>
-                            <Select 
-                            variant="outlined"
-                            id="grouped-select"
-                            >
-                                <MenuItem value='trending'>Relevance</MenuItem>
-                                <MenuItem value="sales">Name (A - Z)</MenuItem>
-                                <MenuItem value="rating">Name (Z - A)</MenuItem>
-                                <MenuItem value="date">Price (Low &gt; High)</MenuItem>
-                                <MenuItem value="price-asc">Rating (Lowest)</MenuItem>
-                                <MenuItem value="price-dsc">Model (A - Z)</MenuItem>
-                                <MenuItem value="price-bsc">Model (Z - A)</MenuItem>
-                            </Select>
-                        </FormControl>                                
-                            </div> 
-                            </div>
+                            <RightBarControl 
+                            sort={sort} 
+                            ProductSort={ProductSort} 
+                            limit={limit}
+                            ProductLimit={ProductLimit}
+                            />
                         </div>
                         </div>
                     </div>
                     <div className="shop-product-wrap grid row">
                         {Electproducts.map(data=>(
-                    <div className="col-lg-3 col-md-4 col-sm-6">
+                    <div className="col-lg-3 col-md-4 col-sm-6" key={data.id}>
                         {/* grid view starts here */}
                         <Product isGrid={true} key={data.id} {...data} />
                         {/* List view starts here */}
@@ -139,7 +147,7 @@ $('.product-view-mode a').on('click', function(e){
                 </div>
             </div>
             </div>
-            {/* <ModalSection product={state.quickView}/> */}
+            <ModalSection product={state.quickView}/>
         </div>
     )
 }
