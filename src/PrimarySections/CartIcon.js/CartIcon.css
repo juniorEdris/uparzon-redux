@@ -1,5 +1,5 @@
 .floating-basket {
-  width: 80px;
+  width: 85px;
   position: absolute;
   background: #fff;
   top: 30%;
@@ -42,7 +42,6 @@
   line-height: 24px;
 }
 /* Visible css */
-
 .not-visible {
   display: none;
 }

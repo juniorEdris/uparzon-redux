@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect,useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { getSubTotal } from '../../Utility/Reducer'
 import { useStateValue } from '../../Utility/StateProvider'
@@ -6,9 +6,29 @@ import './HeaderButton.css'
 
 export default function HeaderButtons() {
 
-    
+    //Cart state false when clicked outside functionality
+    const cartRef = useRef(null)
+    const cartOutsideClick = (event)=>{
+        if (cartRef.current && !cartRef.current.contains(event.target)) {
+            setCartActive(false);
+        }
+    }
+    //user state false when clicked outside functionality
+    const userRef = useRef(null)
+    const userOutsideClick = (event)=>{
+        if (userRef.current && !userRef.current.contains(event.target)) {
+            setIsAccActive(false);
+        }
+    }
+    useEffect(()=>{
+        document.addEventListener('mousedown',cartOutsideClick)
+        document.addEventListener('mousedown',userOutsideClick)
+        return()=>{
+            document.removeEventListener('mousedown',()=>{})
+        }
+    },[])
     // Basket counting functionality
-    const[{basket,wishList,user,count}] = useStateValue()
+    const[{basket,wishList,user,}] = useStateValue()
     // console.log('count',count);
     //mycart menu dropdown
     const [isCartActive, setCartActive] = useState(false)
@@ -42,7 +62,7 @@ export default function HeaderButtons() {
                 <Link className="ha-toggle" to='/wishlist'><span className="lnr lnr-heart" /><span className="count">{ wishList.length || 0 }</span></Link>
                 </li>
                 <li className="my-cart">
-                <Link onClick={basket.length > 0 && showCart}  className="ha-toggle" to="#" ><span className="lnr lnr-cart" /><span className="count">{ basket.length || 0 }</span></Link>
+                <Link onClick={basket.length > 0 && showCart}   className="ha-toggle" to="#" ><span className="lnr lnr-cart" /><span className="count">{ basket.length || 0 }</span></Link>
                 <ul className={`mini-cart-drop-down ha-dropdown ${isCartActive ? 'active': 'inActive'}`}>
                         {
                             basket.map((prod) => (

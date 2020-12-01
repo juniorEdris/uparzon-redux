@@ -41,7 +41,7 @@ export default function CartIcon() {
                 from={{ number: 0 }}
                 to={{ number: getSubTotal(basket)}}
                 >
-                {props => <p>{props.number.toFixed(2)}</p>}
+                {props => <p className='cart__amount'>{props.number.toFixed(2)}</p>}
                 </Spring>
             </div>
        

@@ -23,6 +23,7 @@ import DashBoard from './MyAccount/DashBoard/Index';
 
 function App() {
 
+
   const [show,setShow] = useState(false)
     useEffect(()=>{
         window.addEventListener('scroll', () => {
@@ -40,68 +41,46 @@ function App() {
   return (
     <div className="app">
       <Router>
+            <Header/>
         <Switch>
           <Route path='/dashboard'>
-            <Header/>
             <DashBoard/>
-            <Footer/>
           </Route>
           <Route path='/contact'>
-            <Header/>
             <Contact/>
-            <Footer/>
           </Route>
           <Route path='/productdetails'>
-            <Header/>
             <Details/>
-            <Footer/>
           </Route>
           <Route path='/blog'>
-            <Header/>
             <Blog/>
-            <Footer/>
           </Route>
           <Route path='/shop'>
-            <Header/>
             <Shop/>
-            <Footer/>
           </Route>
           <Route path='/compare'>
-            <Header/>
             <Compare/>
-            <Footer/>
           </Route>
           <Route path='/wishlist'>
-            <Header/>
             <WishList/>
-            <Footer/>
           </Route>
           <Route path='/cart'>
-            <Header/>
             <Product/>
-            <Footer/>
           </Route>
           <Route path='/checkout'>
-            <Header/>
             <Checkout/>
-            <Footer/>
           </Route>
           <Route path='/register'>
-            <Header/>
             <Register/>
-            <Footer/>
           </Route>
           <Route path='/login'>
-            <Header/>
             <Login/>
-            <Footer/>
           </Route>
           <Route path='/'>
-            <Header/>
             <Home show={show}/>
-            <Footer/>
           </Route>
         </Switch>
+            <Footer/>
       </Router>
      </div>
   );

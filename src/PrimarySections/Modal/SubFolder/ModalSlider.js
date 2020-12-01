@@ -16,7 +16,7 @@ function Slider ({product}) {
                     {
                         product?.shots.map(img=>(
                     <div className='pro-large-img'>
-                        <img src={img} alt='' />
+                        <img className='modal-image' src={img} alt='' />
                     </div>
                         ))
                     }
