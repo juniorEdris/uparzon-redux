@@ -1,4 +1,4 @@
-import { Link } from '@material-ui/core'
+import { Link } from 'react-router-dom'
 import React from 'react'
 import './ModalLogin.css'
 
@@ -45,7 +45,7 @@ export default function ModalLogin() {
                                 <button type="submit" className="btn btn-secondary mb-4 mt-4">Sign In</button>
                                 </div>
                                 <div className="text-center pt-20 top-bordered">
-                                <p>No account? <Link to="/register">Create one here</Link>.</p>
+                                <p>No account? <Link to="/register" >Create one here</Link>.</p>
                                 </div>
                             </form>
                             </div>

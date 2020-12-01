@@ -7,7 +7,15 @@ import './WishlistBody.css'
 
 export default function WishListBody() {
 
-    const [{wishList}] = useStateValue()
+    const [{wishList},dispatch] = useStateValue()
+
+    const addToCart=(item)=>{
+        console.log('add wish item',item);
+        dispatch({type:"ADD_TO_CART",payload:item})
+    }
+    const DelItem = (item)=>{
+        console.log('need to work on',item);
+    }
 
     return (
         <div>
@@ -54,8 +62,8 @@ export default function WishListBody() {
                                                 <div className="price"><small><del>{prod.oldPrice || ''}</del></small> <strong>{prod.price}</strong></div>
                                             </td>
                                             <td>
-                                                <button type='button'  className="btn btn-primary"><i className="fa fa-shopping-cart" /></button>
-                                                <Link to="#"  className="btn btn-danger"><i className="fa fa-times" /></Link>
+                                                <button type='button'  className="btn btn-primary" onClick={()=>addToCart(prod)}><i className="fa fa-shopping-cart" /></button>
+                                                <Link to="#"  className="btn btn-danger" onClick={()=>DelItem(prod)}><i className="fa fa-times" /></Link>
                                             </td>
                                             </tr>
 

@@ -4,7 +4,7 @@ export const initialState = {
   basket:localStorage.getItem('Cart List') ? JSON.parse(localStorage.getItem('Cart List')) :[],
   wishList:localStorage.getItem('Wish List') ? JSON.parse(localStorage.getItem('Wish List')) :[],
   compareList:localStorage.getItem('Compare List') ? JSON.parse(localStorage.getItem('Compare List')) :[],
-  user:true
+  user:false
 }
 
   export default function reducer (state,action){
@@ -22,42 +22,42 @@ export const initialState = {
                 basket:[...state.basket,action.payload],
                 count:action.count
               }
-            case 'NEW_TO_CART': 
-              return{
-                ...state,
-                newCartProd:action.payload
-              }
+            // case 'NEW_TO_CART': 
+            //   return{
+            //     ...state,
+            //     newCartProd:action.payload
+            //   }
             case 'COMPARE_PRODUCTS':
               const  compareItem = action.payload 
               return{
                 ...state,
                 compareList:[...state.compareList,compareItem]
               }
-            case 'COMPARE_PRODUCT_ADD':
-              const  newcompareItem = action.payload 
-              console.log('4th Compare Item',newcompareItem);
-              return{
-                ...state,
-                compareList:[...state.compareList].push(newcompareItem)
-              }
+            // case 'COMPARE_PRODUCT_ADD':
+            //   const  newcompareItem = action.payload 
+            //   console.log('4th Compare Item',newcompareItem);
+            //   return{
+            //     ...state,
+            //     compareList:[...state.compareList].push(newcompareItem)
+            //   }
             case 'ADD_TO_WISH_LIST':
               const  wishItem = action.payload 
               return{
                 ...state,
                 wishList:[...state.wishList,wishItem]
               }
-            case 'PRODUCT_VIEW':
-              const  product = action.payload 
-              return{
-                ...state,
-                productView:product
-              }
-            case 'DELETE_FROM_CART':
-              const  delwishItem = action.payload 
-              return{
-                ...state,
-                wishList:[...state.wishList,delwishItem]
-              }
+            // case 'PRODUCT_VIEW':
+            //   const  product = action.payload 
+            //   return{
+            //     ...state,
+            //     productView:product
+            //   }
+            // case 'DELETE_FROM_CART':
+            //   const  delwishItem = action.payload 
+            //   return{
+            //     ...state,
+            //     wishList:[...state.wishList,delwishItem]
+            //   }
               default:
                 return {...state}
               }

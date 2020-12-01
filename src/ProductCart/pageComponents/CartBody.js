@@ -43,7 +43,7 @@ export default function CartBody() {
                             </div>
                             <div className="cart-button-wrapper d-flex justify-content-between mt-4">
                             <Link to="/shop" className="btn btn-secondary">Continue Shopping</Link>
-                            <Link to={user ? "/checkout": "/login"} className="btn btn-secondary dark align-self-end">Checkout</Link>
+                            <Link to={!user ? "#": "/checkout"} className="btn btn-secondary dark align-self-end" data-target={!user && "#login_modal"} data-toggle={!user && "modal"}>Checkout</Link>
                             </div>
                         </div>
                         </div>

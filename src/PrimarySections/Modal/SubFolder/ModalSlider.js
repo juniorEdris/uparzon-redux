@@ -7,8 +7,8 @@ function Slider ({product}) {
         return (
             <div className='col-lg-5 modal-slider'>
                 <Carousel 
-                // autoPlay 
-                // interval="3000" 
+                autoPlay 
+                interval="3000" 
                 transitionTime="1000" 
                 infiniteLoop
                 showIndicators={false}

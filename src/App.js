@@ -19,6 +19,7 @@ import Login from './MyAccount/Login/Login';
 import Details from './ProductDetails'
 import './App.css';
 import DashBoard from './MyAccount/DashBoard/Index';
+import { isArray } from 'jquery';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
         }
     },[])
 
+    
   return (
     <div className="app">
       <Router>

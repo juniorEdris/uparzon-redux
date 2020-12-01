@@ -7,7 +7,7 @@ import  Breadcrumbs  from '../../PrimarySections/Breadcrumbs/Breadcrumb'
 export default function Login() {
     return (
         <div>
-            <Breadcrumbs pageName={'Login'}/>
+            <Breadcrumbs pageName={'Login'} route={'/home'} parent={'Home'}/>
             <Body/>
             <ScrollBar/>
         </div>

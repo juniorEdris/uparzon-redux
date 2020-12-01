@@ -2544,6 +2544,7 @@ label {
 .shopping-cart-wrapper .table span {
   display: block;
   font-size: 12px;
+  margin-left: -16px;
 }
 
 .shopping-cart-wrapper .table .cart-input {
@@ -2688,13 +2689,15 @@ label {
 }
 
 .wishlist-wrapper .table .btn-danger {
-  background-color: #f4f4f4;
+  background-color: #e93737;
   border-color: #f4f4f4;
+  color: #fff;
 }
 
 .wishlist-wrapper .table .btn-danger:hover {
   background: var(--theme-color);
   border-color: var(--theme-color);
+  color: #fff;
 }
 
 /* ------Layout Checkout css start ------*/

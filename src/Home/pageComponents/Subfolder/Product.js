@@ -7,7 +7,7 @@ import { useStateValue } from '../../../Utility/StateProvider';
 import $ from 'jquery'
 
 export default function Product({id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings,description,isGrid,isList}) {
-  const [{wishList,basket,compareList,count},dispatch] = useStateValue()
+  const [{wishList,basket,compareList},dispatch] = useStateValue()
 
   useEffect(() => {
     $('.action-links a').on('click',function( event ) {

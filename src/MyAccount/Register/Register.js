@@ -6,7 +6,7 @@ import  Breadcrumb  from '../../PrimarySections/Breadcrumbs/Breadcrumb'
 export default function Register() {
     return (
         <div>
-            <Breadcrumb pageName={'Register'}/>
+            <Breadcrumb pageName={'Register'} route={'/home'} parent={'Home'}/>
             <Body/>
             <ScrollBar/>
         </div>

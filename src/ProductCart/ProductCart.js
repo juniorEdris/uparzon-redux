@@ -2,6 +2,7 @@ import React,{useEffect} from 'react'
 import Breadcrumb from '../PrimarySections/Breadcrumbs/Breadcrumb'
 import ScrollBar from '../PrimarySections/ScrollBar/ScrollBar'
 import CartBody from './pageComponents/CartBody'
+import ModalLogin from '../MyAccount/Login/ModalLogin'
 
 export default function ProductCart() {
     useEffect(() => {
@@ -13,6 +14,7 @@ export default function ProductCart() {
             <Breadcrumb pageName={'Cart'} route={'/'} parent={'Home'}/>
             <CartBody/>
             <ScrollBar/>
+            <ModalLogin />
         </div>
     )
 }

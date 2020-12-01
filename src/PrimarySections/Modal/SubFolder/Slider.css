@@ -3,6 +3,9 @@
   right: 40%;
   text-shadow: none;
 }
+.modal-slider .slider-wrapper {
+  margin-bottom: 10px;
+}
 .modal-slider .carousel .thumbs-wrapper {
   margin: 0 !important;
 }
