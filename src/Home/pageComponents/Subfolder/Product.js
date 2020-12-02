@@ -7,8 +7,6 @@ import { useStateValue } from '../../../Utility/StateProvider';
 import $ from 'jquery'
 
 export default function Product(product) {
-  console.log('product Page',product);
-
   const {id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings,description,isGrid,isList} = product
   const [{wishList,basket,compareList},dispatch] = useStateValue()
   useEffect(()=>{
@@ -26,36 +24,26 @@ export default function Product(product) {
   }, [wishList,basket,compareList])
   
   const quickView = ()=>{
-      dispatch({type:"QUICK_VIEW",payload:{
-        id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings,description
-      }})
+      dispatch({type:"QUICK_VIEW",payload:product})
   }
   const ProductDetail = () => {
-    dispatch({type:"PRODUCT_VIEW",payload:{
-      id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings,description
-    }})
+    dispatch({type:"PRODUCT_VIEW",payload:product})
   }
   
   const addToCompare = () => {
     if(compareList.length === 3 ){
       return  
     }
-      dispatch({type:"COMPARE_PRODUCTS",payload:{
-          id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings,description
-        }})
+      dispatch({type:"COMPARE_PRODUCTS",payload:product})
 
   }
 
   const addToCart= ()=>{
       // addToCart dispatch 
-      dispatch({type:"ADD_TO_CART",payload:{
-              id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings,description
-            },count:1})
+      dispatch({type:"ADD_TO_CART",payload:product,count:1})
       }
   const addToWishList= ()=>{
-      dispatch({type:"ADD_TO_WISH_LIST",payload:{
-        id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings,description
-      }})
+      dispatch({type:"ADD_TO_WISH_LIST",payload:product})
   }
     return (
         <div>

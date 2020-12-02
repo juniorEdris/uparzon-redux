@@ -2,11 +2,12 @@ import React,{useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import { useStateValue } from '../../Utility/StateProvider';
 import $ from 'jquery'
+import './CartForm.css'
 
 export default function CartForm() {
     const [{basket}] = useStateValue();
     useEffect(() => {
-        //Product Quantity
+        //Product Quantity 
 		$('.product-qty').append('<span class="dec qtybtn"><i class="fa fa-minus"></i></span><span class="inc qtybtn"><i class="fa fa-plus"></i></span>');
 		$('.qtybtn').on('click', function() {
 		    var $button = $(this);
@@ -58,7 +59,7 @@ export default function CartForm() {
                         <td>
                             <div className="input-group btn-block">
                             <div className="product-qty mr-3">
-                                <input type="number" defaultValue={0} />
+                                <input type="text" defaultValue={0} />
                             </div>
                             <span className="input-group-btn">
                                 <button type="submit" className="btn btn-primary"><i className="fa fa-refresh" /></button>

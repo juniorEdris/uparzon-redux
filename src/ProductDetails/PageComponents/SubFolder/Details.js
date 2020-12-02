@@ -2,18 +2,33 @@ import { Link } from 'react-router-dom'
 import React,{useEffect} from 'react'
 import $ from 'jquery'
 import { useStateValue } from '../../../Utility/StateProvider'
+import './Details.css'
 
 
 export default function Details() {
-  const [{productView}] = useStateValue()
+  const [{productView,compareList},dispatch] = useStateValue()
 
   useEffect(() => {
+    //Anchore propagation off
     $('.useful-links a').on('click',function( event ) {
       event.preventDefault();
     });
-    
   }, [])
 
+  const addToWishList = () => {
+    dispatch({type:'ADD_TO_WISH_LIST',payload:productView})
+  }
+  const addToCompare = () => {
+    if(compareList.length === 3 ){
+      return  
+    }
+      dispatch({type:"COMPARE_PRODUCTS",payload:productView})
+
+  }
+  const addToCart= ()=>{
+    // addToCart dispatch 
+    dispatch({type:"ADD_TO_CART",payload:productView})
+    }
   return (
         <div className="col-lg-7">
         <div className="product-details-inner">
@@ -66,18 +81,18 @@ export default function Details() {
             </div>
             <div className="pro-quantity-box mb-30">
               <div className="qty-boxx">
-                <label>qty :</label>
-                <input type="number" placeholder={0} />
-                <button className="btn-cart lg-btn">add to cart</button>
+              <label>qty :</label>
+                <input type="text" placeholder={0} />
+              <button className="btn-cart lg-btn" onClick={ ()=>addToCart()}>add to cart</button>
               </div>
             </div>
             <div className="useful-links mb-20">
               <ul>
                 <li>
-                  <Link to="#" ><i className="fa fa-heart-o" />add to wish list</Link>
+                  <Link to="#" onClick={ ()=>addToWishList()}><i className="fa fa-heart-o" />add to wish list</Link>
                 </li>
                 <li>
-                  <Link to="#" ><i className="fa fa-refresh" />compare this product</Link>
+                <Link to="#" onClick={ ()=>addToCompare()}><i className="fa fa-refresh" />compare this product</Link>
                 </li>
               </ul>
             </div>

@@ -8,12 +8,8 @@ export default function CompareBody() {
   const [{user,compareList},dispatch] = useStateValue()
 
   // Adding to cart from Compare body is not working(it need to return object singley)
-  const addToCart= (id)=>{
-    if(user){
-      const result = compareList.map(prod=>prod.id === id)
-      dispatch({type:"ADD_TO_CART",payload: result})
-      console.log('compare add',result);
-      }
+  const addToCart = (item) => {
+    dispatch({type:"ADD_TO_CART",payload:item})
     }
 
     return (
@@ -128,7 +124,7 @@ export default function CompareBody() {
                           {
                             compareList.map(item=>(
                           <td>
-                            <Link to="#" className="btn btn-secondary mb-2 mb-lg-0 mr-xl-2" onClick={()=>addToCart(item.id)}>Add to Cart</Link>
+                            <Link to="#" className="btn btn-secondary mb-2 mb-lg-0 mr-xl-2" onClick={()=>addToCart(item)}>Add to Cart</Link>
                             <Link to="#" className="btn btn-secondary">Remove</Link>
                           </td>
 
