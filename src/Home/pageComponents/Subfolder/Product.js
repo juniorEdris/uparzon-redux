@@ -6,13 +6,18 @@ import {  Truncate } from '../../../Data';
 import { useStateValue } from '../../../Utility/StateProvider';
 import $ from 'jquery'
 
-export default function Product({id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings,description,isGrid,isList}) {
-  const [{wishList,basket,compareList},dispatch] = useStateValue()
+export default function Product(product) {
+  console.log('product Page',product);
 
-  useEffect(() => {
+  const {id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings,description,isGrid,isList} = product
+  const [{wishList,basket,compareList},dispatch] = useStateValue()
+  useEffect(()=>{
     $('.action-links a').on('click',function( event ) {
       event.preventDefault();
     });
+  },[])
+
+  useEffect(() => {
     //Add every item to localStorage on every item click
     localStorage.setItem('Wish List',JSON.stringify(wishList))
     localStorage.setItem('Cart List',JSON.stringify(basket))

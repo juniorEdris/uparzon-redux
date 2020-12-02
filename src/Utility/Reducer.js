@@ -46,12 +46,12 @@ export const initialState = {
                 ...state,
                 wishList:[...state.wishList,wishItem]
               }
-            // case 'PRODUCT_VIEW':
-            //   const  product = action.payload 
-            //   return{
-            //     ...state,
-            //     productView:product
-            //   }
+            case 'PRODUCT_VIEW':
+              const  product = action.payload 
+              return{
+                ...state,
+                productView:product
+              }
             // case 'DELETE_FROM_CART':
             //   const  delwishItem = action.payload 
             //   return{

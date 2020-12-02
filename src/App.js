@@ -19,12 +19,9 @@ import Login from './MyAccount/Login/Login';
 import Details from './ProductDetails'
 import './App.css';
 import DashBoard from './MyAccount/DashBoard/Index';
-import { isArray } from 'jquery';
 
 
 function App() {
-
-
   const [show,setShow] = useState(false)
     useEffect(()=>{
         window.addEventListener('scroll', () => {
