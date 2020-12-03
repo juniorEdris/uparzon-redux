@@ -1,8 +1,16 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react'
+import { useStateValue } from '../../../Utility/StateProvider'
 
 export default function Driscription({product}) {
+    const[,dispatch]= useStateValue()
+
+    // addToCart dispatch 
+    const addToCart= (product)=>{
+        console.log(product);
+        dispatch({type:"ADD_TO_CART",payload:product,count:1})
+        }
     return (
         <div className="col-lg-7">
         <div className="product-details-inner">
@@ -53,8 +61,8 @@ export default function Driscription({product}) {
             <div className="pro-quantity-box mb-30">
                 <div className="qty-boxx">
                 <label>qty :</label>
-                <input type="text" placeholder={0} />
-                <button className="btn-cart lg-btn">add to cart</button>
+                <input type="text" className='qty-input' placeholder={0} />
+                <button className="btn-cart lg-btn" onClick={()=>addToCart(product)}>add to cart</button>
                 </div>
             </div>
             <div className="pro-social-sharing">

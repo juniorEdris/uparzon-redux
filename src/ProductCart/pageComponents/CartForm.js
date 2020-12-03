@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useStateValue } from '../../Utility/StateProvider';
 import $ from 'jquery'
 import './CartForm.css'
+import { DelItem } from '../../Utility/PageAction';
 
 export default function CartForm() {
     const [{basket}] = useStateValue();
@@ -63,7 +64,7 @@ export default function CartForm() {
                             </div>
                             <span className="input-group-btn">
                                 <button type="submit" className="btn btn-primary"><i className="fa fa-refresh" /></button>
-                                <button type="button" className="btn btn-danger pull-right"><i className="fa fa-times-circle" /></button>
+                                <button type="button" className="btn btn-danger pull-right" onClick={()=>DelItem(prod,basket,'Cart List')}><i className="fa fa-times-circle" /></button>
                             </span>
                             </div>
                         </td>

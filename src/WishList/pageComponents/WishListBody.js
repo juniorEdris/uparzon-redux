@@ -2,7 +2,8 @@
 // If wishList length is greater than 0 then form will render
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useStateValue } from '../../Utility/StateProvider'
+import { DelItem } from '../../Utility/PageAction'
+import { useStateValue, } from '../../Utility/StateProvider'
 import './WishlistBody.css'
 
 export default function WishListBody() {
@@ -13,9 +14,11 @@ export default function WishListBody() {
         console.log('add wish item',item);
         dispatch({type:"ADD_TO_CART",payload:item})
     }
-    const DelItem = (item)=>{
-        console.log('need to work on',item);
-    }
+    // const DelItem = (item)=>{
+    //     const filtered = wishList.filter(prod => prod.id !== item.id)
+    //     localStorage.setItem('Wish List',JSON.stringify(filtered))
+    //     window.location.reload(false);
+    // }
 
     return (
         <div>
@@ -63,7 +66,7 @@ export default function WishListBody() {
                                             </td>
                                             <td>
                                                 <button type='button'  className="btn btn-primary" onClick={()=>addToCart(prod)}><i className="fa fa-shopping-cart" /></button>
-                                                <Link to="#"  className="btn btn-danger" onClick={()=>DelItem(prod)}><i className="fa fa-times" /></Link>
+                                                <Link to="#"  className="btn btn-danger" onClick={()=>DelItem(prod,wishList,'Wish List')}><i className="fa fa-times" /></Link>
                                             </td>
                                             </tr>
 

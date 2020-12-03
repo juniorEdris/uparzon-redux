@@ -22,7 +22,7 @@ export default function Product(product) {
     localStorage.setItem('Compare List',JSON.stringify(compareList))
     
   }, [wishList,basket,compareList])
-  
+   
   const quickView = ()=>{
       dispatch({type:"QUICK_VIEW",payload:product})
   }
@@ -79,7 +79,7 @@ export default function Product(product) {
                 <span><i className="fa fa-star" /></span>
                 <span><i className="fa fa-star" /></span>
                 <span><i className="fa fa-star" /></span>
-            </div>
+            </div> 
             <div className="sinrato-product-des">
                 <p> {description || 'no description'}</p>
             </div>

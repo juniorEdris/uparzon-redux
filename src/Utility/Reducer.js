@@ -33,13 +33,6 @@ export const initialState = {
                 ...state,
                 compareList:[...state.compareList,compareItem]
               }
-            // case 'COMPARE_PRODUCT_ADD':
-            //   const  newcompareItem = action.payload 
-            //   console.log('4th Compare Item',newcompareItem);
-            //   return{
-            //     ...state,
-            //     compareList:[...state.compareList].push(newcompareItem)
-            //   }
             case 'ADD_TO_WISH_LIST':
               const  wishItem = action.payload 
               return{
@@ -66,4 +59,3 @@ export const initialState = {
 
             // Total Amount function 
             export const getSubTotal = (basket) => basket?.reduce((amount, item) => item.price + amount,0)
-            

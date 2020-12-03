@@ -1,28 +1,39 @@
-.mini-cart-drop-down {
-  z-index: 100;
+.my-cart:hover .mini-cart-drop-down {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  -webkit-animation: scale-in-ver-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: scale-in-ver-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 400ms;
+  transition-delay: 0.5s;
+}
+/* user dropdown */
+.user-cart:hover .box-dropdown {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  -webkit-animation: scale-in-ver-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: scale-in-ver-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: 400ms;
+  transition-delay: 0.5s;
 }
 
-.mini-cart-drop-down.active {
-  display: block;
+.mini-cart-drop-down {
+  z-index: 100;
   -webkit-animation: scale-in-ver-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
     both;
   animation: scale-in-ver-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
-.mini-cart-drop-down.inActive {
-  display: none;
-  -webkit-animation: scale-out-ver-top 0.5s cubic-bezier(0.47, 0, 0.745, 0.715)
-    both;
-  animation: scale-out-ver-top 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) both;
-}
-.box-dropdown.active {
-  display: block;
-  -webkit-animation: scale-in-ver-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-    both;
-  animation: scale-in-ver-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-}
-.box-dropdown.inActive {
-  display: none;
-  -webkit-animation: scale-out-ver-top 0.5s cubic-bezier(0.47, 0, 0.745, 0.715)
-    both;
-  animation: scale-out-ver-top 0.5s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+
+/* Dropdown */
+@media all and (max-width: 566px) {
+  .search-form
+    .MuiSelect-root.MuiSelect-select.MuiSelect-selectMenu.MuiInputBase-input.MuiInput-input {
+    width: 100px !important;
+  }
+  .MuiSelect-root.MuiSelect-select.MuiSelect-selectMenu.MuiInputBase-input.MuiInput-input {
+    font-size: 12px !important;
+  }
 }

@@ -382,6 +382,7 @@ input.top-cat-field {
   width: 300px;
   padding: 20px;
   display: none;
+  transition-delay: 1s;
   z-index: 9999999999;
   background: #fff;
   border-bottom: 2px solid var(--theme-color);

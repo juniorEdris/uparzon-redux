@@ -1,50 +1,34 @@
-import React, { useState,useEffect,useRef } from 'react'
+import React,{useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { getSubTotal } from '../../Utility/Reducer'
 import { useStateValue } from '../../Utility/StateProvider'
+import $ from 'jquery'
 import './HeaderButton.css'
 
 export default function HeaderButtons() {
+    useEffect(() => {
+		/*Header Cart
+		-----------------------------------*/
+		// var headerActionToggle = $('.ha-toggle');
+		// var headerActionDropdown = $('.ha-dropdown');
+		// Toggle Header Cart
+		// headerActionToggle.on("click", function() {
+		// 	var $this = $(this);
+		// 	headerActionDropdown.slideUp();
+		// 	if($this.siblings('.ha-dropdown').is(':hidden')){
+		// 		$this.siblings('.ha-dropdown').slideDown();
+		// 	} else {
+		// 		$this.siblings('.ha-dropdown').slideUp();
+		// 	}
+		// });
+		// // Prevent closing Header Cart upon clicking inside the Header Cart
+		// $('.ha-dropdown').on('click', function(e) {
+		// 	e.stopPropagation();
+		// });
+    }, [])
 
-    //Cart state false when clicked outside functionality
-    const cartRef = useRef(null)
-    const cartOutsideClick = (event)=>{
-        if (cartRef.current && !cartRef.current.contains(event.target)) {
-            setCartActive(false);
-        }
-    }
-    //user state false when clicked outside functionality
-    const userRef = useRef(null)
-    const userOutsideClick = (event)=>{
-        if (userRef.current && !userRef.current.contains(event.target)) {
-            setIsAccActive(false);
-        }
-    }
-    useEffect(()=>{
-        document.addEventListener('mousedown',cartOutsideClick)
-        document.addEventListener('mousedown',userOutsideClick)
-        return()=>{
-            document.removeEventListener('mousedown',()=>{})
-        }
-    },[])
     // Basket counting functionality
     const[{basket,wishList,user,}] = useStateValue()
-    // console.log('count',count);
-    //mycart menu dropdown
-    const [isCartActive, setCartActive] = useState(false)
-    const showCart = (e)=>{
-        e.preventDefault()
-        setCartActive(!isCartActive)
-        setIsAccActive(false)
-    }
-    // User btn active
-    const [isAccActive, setIsAccActive] = useState(false);
-    const AccBtn = (e) =>{
-        e.preventDefault();
-        setIsAccActive(!isAccActive);
-        setCartActive(false);
-    }
-
     // Total Amount (inc vat & eco) 
     const eco_tax = getSubTotal(basket) / 1.51
     const vat_amount = getSubTotal(basket) * 0.20 
@@ -62,8 +46,8 @@ export default function HeaderButtons() {
                 <Link className="ha-toggle" to='/wishlist'><span className="lnr lnr-heart" /><span className="count">{ wishList.length || 0 }</span></Link>
                 </li>
                 <li className="my-cart">
-                <Link onClick={basket.length > 0 && showCart}   className="ha-toggle" to="#" ><span className="lnr lnr-cart" /><span className="count">{ basket.length || 0 }</span></Link>
-                <ul className={`mini-cart-drop-down ha-dropdown ${isCartActive ? 'active': 'inActive'}`}>
+                <Link className="ha-toggle " to="/cart" ><span className="lnr lnr-cart" /><span className="count">{ basket.length || 0 }</span></Link>
+                <ul className={`mini-cart-drop-down ha-dropdown`}>
                         {
                             basket.map((prod) => (
                             <li className="mb-30">
@@ -105,16 +89,16 @@ export default function HeaderButtons() {
                     </li>
                 </ul>
                 </li>
-                <li className="compare"> 
-                    <Link onClick={AccBtn} className="ha-toggle" to="#" ><span className="lnr lnr-user" /></Link>
+                <li className="compare user-cart"> 
+                    <Link className="ha-toggle" to={!user ? "#": "/dashboard"} ><span className="lnr lnr-user" /></Link>
                     {
                         user ?
-                    <ul className={`box-dropdown ha-dropdown ${isAccActive ? "active" : "inactive"}`}>
+                    <ul className={`box-dropdown ha-dropdown`}>
                         <li><Link to="/dashboard">Dashboard</Link></li>
                         <li><Link to="/">Log out</Link></li>
                     </ul>
                     :
-                    <ul className={`box-dropdown ha-dropdown ${isAccActive ? "active" : "inactive"}`}>
+                    <ul className={`box-dropdown ha-dropdown`}>
                         <li><Link to="/register">Register</Link></li>
                         <li><Link to="/login">Login</Link></li>
                     </ul>

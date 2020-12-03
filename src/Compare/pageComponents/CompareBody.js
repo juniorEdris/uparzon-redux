@@ -2,10 +2,11 @@
 
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { DelItem } from '../../Utility/PageAction'
 import { useStateValue } from '../../Utility/StateProvider'
 
 export default function CompareBody() {
-  const [{user,compareList},dispatch] = useStateValue()
+  const [{compareList},dispatch] = useStateValue()
 
   // Adding to cart from Compare body is not working(it need to return object singley)
   const addToCart = (item) => {
@@ -125,7 +126,7 @@ export default function CompareBody() {
                             compareList.map(item=>(
                           <td>
                             <Link to="#" className="btn btn-secondary mb-2 mb-lg-0 mr-xl-2" onClick={()=>addToCart(item)}>Add to Cart</Link>
-                            <Link to="#" className="btn btn-secondary">Remove</Link>
+                            <Link to="#" className="btn btn-secondary" onClick={()=>DelItem(item,compareList,'Compare List')}>Remove</Link>
                           </td>
 
                             ))
