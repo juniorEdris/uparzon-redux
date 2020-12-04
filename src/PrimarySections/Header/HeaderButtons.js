@@ -56,7 +56,7 @@ export default function HeaderButtons() {
                                 </div>
                                 <div className="cart-info">
                                         <h4><a href="/">{prod.name} </a></h4>
-                                        <span> <span>{`${1} x` }</span>{`£ ${prod.price}`}</span>
+                                        <span> <span>{`${prod.count} x` }</span>{`£ ${prod.price}`}</span>
                                 </div>
                                 <div className="del-icon">
                                     <i className="fa fa-times-circle" />

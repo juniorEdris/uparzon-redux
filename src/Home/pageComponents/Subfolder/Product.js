@@ -7,41 +7,53 @@ import { useStateValue } from '../../../Utility/StateProvider';
 import $ from 'jquery'
 
 export default function Product(product) {
-  const {id,brand,name,oldPrice,price,sale,latest,special,img1,img2,categories,shots,colors,ratings,description,isGrid,isList} = product
-  const [{wishList,basket,compareList},dispatch] = useStateValue()
-  useEffect(()=>{
-    $('.action-links a').on('click',function( event ) {
+  const { id, brand, name, oldPrice, price, sale, latest, special, img1, img2, categories, shots, colors, ratings, description, isGrid, isList } = product
+  const [{ wishList, basket, compareList }, dispatch] = useStateValue()
+  useEffect(() => {
+    $('.action-links a').on('click', function (event) {
       event.preventDefault();
     });
-  },[])
+  }, [])
 
   useEffect(() => {
     //Add every item to localStorage on every item click
-    localStorage.setItem('Wish List',JSON.stringify(wishList))
-    localStorage.setItem('Cart List',JSON.stringify(basket))
-    localStorage.setItem('Compare List',JSON.stringify(compareList))
+    localStorage.setItem('Wish List', JSON.stringify(wishList))
+    localStorage.setItem('Cart List', JSON.stringify(basket))
+    localStorage.setItem('Compare List', JSON.stringify(compareList))
     
-  }, [wishList,basket,compareList])
+  }, [wishList, basket, compareList])
    
-  const quickView = ()=>{
-      dispatch({type:"QUICK_VIEW",payload:product})
+  const quickView = () => {
+    dispatch({ type: "QUICK_VIEW", payload: product })
   }
   const ProductDetail = () => {
-    dispatch({type:"PRODUCT_VIEW",payload:product})
+    dispatch({ type: "PRODUCT_VIEW", payload: product })
   }
   
   const addToCompare = () => {
-    if(compareList.length === 3 ){
-      return  
+    if (compareList.length === 3) {
+      return
     }
-      dispatch({type:"COMPARE_PRODUCTS",payload:product})
+    dispatch({ type: "COMPARE_PRODUCTS", payload: product })
 
   }
 
-  const addToCart= ()=>{
-      // addToCart dispatch 
-      dispatch({type:"ADD_TO_CART",payload:product,count:1})
+  // addToCart dispatch 
+  const addToCart = () => {
+
+      
+    let exist = false;
+    const basketFull = [...basket]
+    basketFull.forEach(x => {
+      if (x.id === id) {
+        x.count++;
+        console.log(x.count);
+        exist = true;
       }
+    })
+    if (!exist) {dispatch({ type: "ADD_TO_CART", payload: { ...product, count: 1 } })}
+  }
+
   const addToWishList= ()=>{
       dispatch({type:"ADD_TO_WISH_LIST",payload:product})
   }

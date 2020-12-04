@@ -1,32 +1,32 @@
-import React,{useEffect} from 'react'
+import React,{useEffect, useState} from 'react'
 import { Link } from 'react-router-dom';
 import { useStateValue } from '../../Utility/StateProvider';
 import $ from 'jquery'
 import './CartForm.css'
-import { DelItem } from '../../Utility/PageAction';
+import {DelItem} from '../../Utility/PageAction'
 
 export default function CartForm() {
-    const [{basket}] = useStateValue();
+    const [{basket}] = useStateValue();   
+
     useEffect(() => {
         //Product Quantity 
 		$('.product-qty').append('<span class="dec qtybtn"><i class="fa fa-minus"></i></span><span class="inc qtybtn"><i class="fa fa-plus"></i></span>');
 		$('.qtybtn').on('click', function() {
-		    var $button = $(this);
+            var $button = $(this);
             var oldValue = $button.parent().find('input').val();
             let newVal;
 		    if ($button.hasClass('inc')) {
-		         newVal = parseFloat(oldValue) + 1;
+                newVal = parseFloat(oldValue) + 1;
 		    } else {
-		        // Don't allow decrementing below zero
+                // Don't allow decrementing below zero
 		        if (oldValue > 0) {
-		             newVal = parseFloat(oldValue) - 1;
+                    newVal = parseFloat(oldValue) - 1;
 		        } else {
-		            newVal = 0;
+                    newVal = 0;
 		        }
 		    }
-		    $button.parent().find('input').val(newVal);
+            $button.parent().find('input').val(newVal);
 		});
-
     }, [])
 
     return (
@@ -60,7 +60,7 @@ export default function CartForm() {
                         <td>
                             <div className="input-group btn-block">
                             <div className="product-qty mr-3">
-                                <input type="text" defaultValue={0} />
+                                <input type="text" defaultValue={prod.count} />
                             </div>
                             <span className="input-group-btn">
                                 <button type="submit" className="btn btn-primary"><i className="fa fa-refresh" /></button>
@@ -69,7 +69,7 @@ export default function CartForm() {
                             </div>
                         </td>
                         <td>${prod.price}</td>
-                        <td>$200.00</td>
+                        <td>${(prod.price*prod.count).toFixed(2)}</td>
                     </tr>
                 ))
                 
