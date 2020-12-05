@@ -1,33 +1,23 @@
-.my-cart:hover .mini-cart-drop-down {
+/*Cart DropDown*/
+.mini-cart-drop-down.active {
   display: block;
-  opacity: 1;
-  visibility: visible;
   -webkit-animation: scale-in-ver-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
     both;
   animation: scale-in-ver-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation-delay: 400ms;
-  transition-delay: 0.5s;
 }
 /* user dropdown */
-.user-cart:hover .box-dropdown {
+.box-dropdown.active {
   display: block;
-  opacity: 1;
-  visibility: visible;
   -webkit-animation: scale-in-ver-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
     both;
   animation: scale-in-ver-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation-delay: 400ms;
-  transition-delay: 0.5s;
 }
 
 .mini-cart-drop-down {
   z-index: 100;
-  -webkit-animation: scale-in-ver-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
-    both;
-  animation: scale-in-ver-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-/* Dropdown */
+/* Search Select */
 @media all and (max-width: 566px) {
   .search-form
     .MuiSelect-root.MuiSelect-select.MuiSelect-selectMenu.MuiInputBase-input.MuiInput-input {
