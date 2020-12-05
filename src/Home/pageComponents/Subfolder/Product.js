@@ -31,10 +31,17 @@ export default function Product(product) {
   }
   
   const addToCompare = () => {
-    if (compareList.length === 3) {
-      return
+    let exist = false
+    const compare =[...compareList]
+    compare.forEach(x => {
+      if (x.id === id) {
+        exist = true;
+        return
+      }
+    })
+    if (!exist) {
+      dispatch({ type: "COMPARE_PRODUCTS", payload: product })
     }
-    dispatch({ type: "COMPARE_PRODUCTS", payload: product })
 
   }
 
@@ -47,7 +54,6 @@ export default function Product(product) {
     basketFull.forEach(x => {
       if (x.id === id) {
         x.count++;
-        console.log(x.count);
         exist = true;
       }
     })

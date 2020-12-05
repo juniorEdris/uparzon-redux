@@ -31,14 +31,14 @@ export default function CompareBody() {
                 <form action="#">
                   <div className="table-responsive  text-center">
                     <table className="table table-bordered compare-style">
-                      <thead>
+                      {/* <thead>
                         <tr>
                           <td colSpan={4}><strong>Product Details</strong></td>
                         </tr>
-                      </thead>
+                      </thead> */}
                       <tbody>
                         <tr>
-                          <td className="product-title">Product</td>
+                          <td className="product-title">Product Name</td>
                           {
                             compareList.map(item=>(
                             <td id={item.id}><Link to="product-details.html"><strong>{item.name}</strong></Link></td>
@@ -115,7 +115,7 @@ export default function CompareBody() {
                           {
                             compareList.map(item=>
                               (
-                              <td className="description">{item?.description}</td>
+                              <td className="description" style={{textAlign:'justify'}}>{item?.description}</td>
                             ))
                           }
                         </tr>

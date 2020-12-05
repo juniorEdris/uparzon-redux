@@ -14,14 +14,15 @@ export default function ScrollBar() {
                 scrollTop.classList.add('not-visible')
             }
         })
-        $(scrollTop).on('click',function (event){
+        scrollTop.addEventListener('click',()=>{
 	        $('html').animate({
 	            scrollTop:0
 	        },1000);
         });
         
         return()=>{
-            window.removeEventListener('scroll', () => {})
+            window.removeEventListener('scroll', () => {});
+            scrollTop.removeEventListener('click',()=>{});
         }
     }, [])
     return (
