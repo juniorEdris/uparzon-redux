@@ -48,7 +48,7 @@ export default function CartForm() {
                 basket.map(prod=>(
                     <tr>
                         <td>
-                            <Link to="product-details.html"><img src={prod.img1} alt={prod.name} title={prod.name} className="img-thumbnail" /></Link>
+                            <Link to="product-details.html"><img src={'https://uparzon.com.bd/assets/img/product/product-4.jpg'} alt={prod.name} title={prod.name} className="img-thumbnail" /></Link>
                         </td>
                         <td>
                             <Link to="product-details.html">{prod.name}</Link>

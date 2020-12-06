@@ -27,19 +27,19 @@ export default function Driscription({product}) {
                     <span><i className="fa fa-star" /></span>
                     <span><i className="fa fa-star" /></span>
                 </li>
-                <li><a href="#">{product?.ratings ? `${product?.ratings?.length} Reviews` : '0 Reviews'}</a></li>
+                <li><a href="#">{product?.ratings ? `${product?.reviews?.length} Reviews` : '0 Reviews'}</a></li>
                 </ul>
             </div>
             <div className="price-box mb-15">
                 <span className="regular-price"><span className="special-price">{`$${product?.price}`}</span></span>
-                <span className="old-price"><del>{product?.oldPrice ? `£${product.oldPrice}` : ''}</del></span>
+                <span className="old-price"><del>{product?.previous_price ? `£${product.previous_price}` : ''}</del></span>
             </div>
             <div className="product-detail-sort-des pb-20">
             <p>{product?.description}</p>
             </div>
             <div className="pro-details-list pt-20">
                 <ul>
-                <li><span>Availability :</span>{product?.isStock ? 'In Stock' : 'Out of Stock'}</li>
+                <li><span>Availability :</span>{product?.is_grocery ? 'In Stock' : 'Out of Stock'}</li>
                 </ul>
             </div>
             <div className="product-availabily-option mt-15 mb-15">
@@ -49,7 +49,7 @@ export default function Driscription({product}) {
                 <ul>
                 
                 {
-                    product?.colors.map(color =>{return(
+                    product?.color.map(color =>{return(
                     <li>
                         <a className="c-black" href="#" title="Black" style={{backgroundColor:`${color}`}} />
                     </li>  

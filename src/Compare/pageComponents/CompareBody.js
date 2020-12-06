@@ -49,7 +49,7 @@ export default function CompareBody() {
                           <td className="product-title">Image</td>
                           {
                             compareList.map(item=>(
-                              <td> <img src={item.img1} alt={item.name} className='img-thumbnail' style={{width:'250px'}}/> </td>
+                              <td> <img src={'https://uparzon.com.bd/assets/img/product/product-8.jpg'} alt={item.name} className='img-thumbnail' style={{width:'250px'}}/> </td>
                             ))
                           }
                          
@@ -58,7 +58,7 @@ export default function CompareBody() {
                           <td className="product-title">Price</td>
                           {
                             compareList.map(item=>(
-                              <td> <del>{item.oldPrice ?`$${item.oldPrice}` : '' }</del> <span>${item.price}</span></td>
+                              <td> <del>{item.previous_price ?`$${item.previous_price}` : '' }</del> <span>${item.price}</span></td>
                             ))
                           }
                         </tr>
@@ -74,7 +74,7 @@ export default function CompareBody() {
                           <td className="product-title">Brands</td>
                           {
                             compareList.map(item=>(
-                              <td><Link className="text-color" to="#">{item.brand}</Link></td>
+                              <td><Link className="text-color" to="#">{item.shop_name}</Link></td>
                             ))
                           }
                         </tr>
@@ -82,7 +82,7 @@ export default function CompareBody() {
                           <td className="product-title">Availability</td>
                           {
                             compareList.map(item=>(
-                              <td>{item.isStock ? 'In Stock' : 'Out of Stock'}</td>
+                              <td>{item.is_grocery ? 'In Stock' : 'Out of Stock'}</td>
                             ))
                           }
                         </tr>
@@ -101,7 +101,7 @@ export default function CompareBody() {
                                         <li><i className="fa fa-star disabled" /></li>
                                       </ul>
                                     </div>
-                                <span>Based on {item.ratings.length} reviews.</span>
+                                <span>Based on {item.reviews?.length} reviews.</span>
                               </td>
                                   ))
                                 }

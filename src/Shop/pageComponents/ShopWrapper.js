@@ -10,10 +10,12 @@ import ModalSection from '../../PrimarySections/Modal/ModalSection'
 import Sidebar from './ShopSidebar'
 import Product from '../../Home/pageComponents/Subfolder/Product'
 import RightBarControl from './RightBarControl'
+import { FectData } from '../../PrimarySections/Connections/Axios'
 
 
 export default function ShopWrapper() {
 
+    const [data,setData] = useState([])
 useEffect(() => {
 // product view mode change js
 $('.product-view-mode a').on('click', function(e){
@@ -26,48 +28,56 @@ $('.product-view-mode a').on('click', function(e){
     $(this).addClass('active');
     shopProductWrap.removeClass('grid list column_3').addClass(viewMode);
 })
+FectData('https://demostore.uparzon.com/api/uparzonapp/get_products?category_id=32&api_key=4e38d8be3269aa17280d0468b89caa4c7d39a699')
+.then(res=>{
+  setData(res.data)
+})
 
 }, [])
 
 const [state] = useStateValue()
-const [Electproducts,setElectProducts] = useState(AllProduct)
+// const [Electproducts,setElectProducts] = useState(AllProduct)
 const [sort,setSort] = useState('')
 const [limit,setLimit] = useState('')
 
     //Product sort function
     const ProductSort =(e)=>{
         setSort(e.target.value)
-        const slicedProds = [...Electproducts]
+        const slicedProds = [...data]
         if(e.target.value === 'lowestPrice'){
             const lowestProd = slicedProds.sort((a,b)=>(a.price > b.price ? 1:-1))
-            setElectProducts(lowestProd)
+            setData(lowestProd)
         }else if(e.target.value === 'highestPrice'){
             const highestProd = slicedProds.sort((a,b)=>(a.price < b.price ? 1:-1))
-            setElectProducts(highestProd)
+            setData(highestProd)
         }else{
             const allprod = slicedProds.sort((a,b)=>(a.id > b.id ? 1:-1))
-            setElectProducts(allprod)
+            setData(allprod)
         }
     }
 
     //Product show function
     const ProductLimit =(e)=>{
         setLimit(e.target.value)
-        const slicedProds = AllProduct
+        const slicedProds = data
         if(e.target.value === 5){
             const limitedProds = slicedProds.slice(0,e.target.value)
-            setElectProducts(limitedProds)
+            setData(limitedProds)
+            console.log('limit 5',limitedProds);
         }else if(e.target.value === 10){
             const limitedProds = slicedProds.slice(0,e.target.value)
-            setElectProducts(limitedProds)
+            console.log('limit 10',limitedProds);
+            setData(limitedProds)
         }else if(e.target.value === 15){
             const limitedProds = slicedProds.slice(0,e.target.value)
-            setElectProducts(limitedProds)
+            console.log('limit 15',limitedProds);
+            setData(limitedProds)
         }else if(e.target.value === 20){
             const limitedProds = slicedProds.slice(0,e.target.value)
-            setElectProducts(limitedProds)
+            console.log('limit 20',limitedProds);
+            setData(limitedProds)
         }else if(e.target.value === 0){
-            setElectProducts(AllProduct)
+            setData(data)
         }
         setSort('')
     }
@@ -110,13 +120,12 @@ const [limit,setLimit] = useState('')
                         </div>
                     </div>
                     <div className="shop-product-wrap grid row">
-                        {Electproducts.map(data=>(
+                        {data.map(data=>(
                     <div className="col-lg-3 col-md-4 col-sm-6" key={data.id}>
                         {/* grid view starts here */}
                         <Product isGrid={true} key={data.id} {...data} />
                         {/* List view starts here */}
                         <Product key={data.id} {...data} isList={true}/>
-                        
                         </div>
                         ))}
                         

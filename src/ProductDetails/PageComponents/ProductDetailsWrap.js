@@ -9,7 +9,7 @@ export default function ProductDetailsWrap() {
         <div className="product-details-main-wrapper pb-50">
   <div className="container-fluid">
     <div className="row">
-        <Slider/>
+        {/* <Slider/> */}
         <Details/>
     </div>
   </div>

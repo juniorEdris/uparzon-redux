@@ -1,24 +1,26 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import './BrandArea.css'
-import { Electronics, Entertainments, MobileProducts, } from '../../Data';
 import { useStateValue } from '../../Utility/StateProvider';
 import ModalSection from '../../PrimarySections/Modal/ModalSection';
 import Product from './Subfolder/Product';
+import { FectData } from '../../PrimarySections/Connections/Axios';
 
 export default function BrandArea() {
 
 
   const [state] = useStateValue()
-  const [Electproducts] = useState(Electronics)
-  const [Entertproducts] = useState(Entertainments)
-  const [Mobileproducts] = useState(MobileProducts)
-  
-  
+  useEffect(() => {
+    FectData('https://demostore.uparzon.com/api/uparzonapp/get_products?category_id=32&api_key=4e38d8be3269aa17280d0468b89caa4c7d39a699')
+      .then(res=>{
+        setData(res.data)
+      })
 
+    }, [])
+  const [data,setData] = useState([])
   const brandOptions = {
     loop: false,
     margin:10,
@@ -127,7 +129,7 @@ const options = {
                       {...options}
                     >
                   {
-                    Electproducts.map(product =>(
+                    data.map(product =>(
                           <Product key={product.id} {...product}/>
                         ))
                   }
@@ -145,7 +147,7 @@ const options = {
                       {...options}
                     >
                   {
-                    Entertproducts.map(product =>(
+                    data.map(product =>(
                       <Product key={product.id} {...product}/>
                         ))
                   }
@@ -163,7 +165,7 @@ const options = {
                       {...options}
                     >
                   {
-                    Mobileproducts.map(product =>(
+                    data.map(product =>(
                       <Product key={product.id} {...product}/>
                         ))
                   }

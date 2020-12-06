@@ -1,16 +1,24 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
+import React,{useEffect,useState} from 'react'
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-import { AllProduct } from '../../Data'
 import Product from '../../Home/pageComponents/Subfolder/Product'
 import './ProductSuggestion.css'
 import { useStateValue } from '../../Utility/StateProvider';
 import ModalSection from '../../PrimarySections/Modal/ModalSection';
+import { FectData } from '../../PrimarySections/Connections/Axios';
 
 export default function ProductSuggestion() {
     const [{quickView}] = useStateValue()
+    useEffect(() => {
+      FectData('https://demostore.uparzon.com/api/uparzonapp/get_products?category_id=32&api_key=4e38d8be3269aa17280d0468b89caa4c7d39a699')
+        .then(res=>{
+          setData(res.data)
+        })
+  
+      }, [])
+    const [data,setData] = useState([])
 
     const options = {
         loop: true,
@@ -49,7 +57,7 @@ export default function ProductSuggestion() {
               {...options}
             >
           {
-              AllProduct.map(product =>(
+              data.map(product =>(
           <div className="product-item mb-30">
                 <Product key={product.id} {...product}/>
           </div>

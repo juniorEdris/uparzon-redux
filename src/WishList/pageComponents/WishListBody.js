@@ -54,15 +54,15 @@ export default function WishListBody() {
                                         wishList?.map(prod =>(
                                             <tr id={prod.id}>
                                             <td>
-                                                <Link to="product-details.html"><img className='wish__thumb' src={prod.img1} alt="Wishlist Product Image" title={prod.name} /></Link>
+                                                <Link to="product-details.html"><img className='wish__thumb' src={'https://uparzon.com.bd/assets/img/product/product-12.jpg'} alt="Wishlist Product Image" title={prod.name} /></Link>
                                             </td>
                                             <td>
                                                 <Link to="product-details.html">{prod.name}</Link>
                                             </td>
                                             <td>null</td>
-                                            <td>{prod.isStock ? 'In stock' : 'Out of stock'}</td>
+                                            <td>{prod.is_grocery ? 'In stock' : 'Out of stock'}</td>
                                             <td>
-                                                <div className="price"><small><del>{prod.oldPrice || ''}</del></small> <strong>{prod.price}</strong></div>
+                                                <div className="price"><small><del>{prod.previous_price || ''}</del></small> <strong>{prod.price}</strong></div>
                                             </td>
                                             <td>
                                                 <button type='button'  className="btn btn-primary" onClick={()=>addToCart(prod)}><i className="fa fa-shopping-cart" /></button>

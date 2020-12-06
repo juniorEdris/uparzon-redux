@@ -7,7 +7,6 @@ import { useStateValue } from '../../../Utility/StateProvider';
 import $ from 'jquery'
 
 export default function Product(product) {
-  const { id, brand, name, oldPrice, price, sale, latest, special, img1, img2, categories, shots, colors, ratings, description, isGrid, isList } = product
   const [{ wishList, basket, compareList }, dispatch] = useStateValue()
   useEffect(() => {
     $('.action-links a').on('click', function (event) {
@@ -34,7 +33,7 @@ export default function Product(product) {
     let exist = false
     const compare =[...compareList]
     compare.forEach(x => {
-      if (x.id === id) {
+      if (x.id === product.id) {
         exist = true;
         return
       }
@@ -46,13 +45,11 @@ export default function Product(product) {
   }
 
   // addToCart dispatch 
-  const addToCart = () => {
-
-      
+  const addToCart = () => {   
     let exist = false;
     const basketFull = [...basket]
     basketFull.forEach(x => {
-      if (x.id === id) {
+      if (x.id === product.id) {
         x.count++;
         exist = true;
       }
@@ -61,35 +58,46 @@ export default function Product(product) {
   }
 
   const addToWishList= ()=>{
+    let exist = false
+    const wish =[...wishList]
+    wish.forEach(x => {
+      if (x.id === product.id) {
+        exist = true;
+        return
+      }
+    })
+    if(!exist){
       dispatch({type:"ADD_TO_WISH_LIST",payload:product})
+    }
   }
+
     return (
         <div>
 
 
           {
-            isList ?  
-            <div className="sinrato-list-item mb-30" id={id}>
+            product.isList ?  
+            <div className="sinrato-list-item mb-30" id={product.id}>
             <div className="sinrato-thumb">
             <Link to="/productdetails" onClick={()=>ProductDetail()}>
-                <img  src={img1} className="pri-img" alt={name} />
-                <img  src={img2} className="sec-img" alt={name} />
+                <img  src='https://uparzon.com.bd/assets/img/product/product-1.jpg' className="pri-img" alt={product.name} />
+                <img  src='https://uparzon.com.bd/assets/img/product/product-2.jpg' className="sec-img" alt={product.name} />
             </Link>
             <div className="box-label">
                 <div className="label-product label_new">
-                    <span>{latest ? 'new': ''}</span>
+                    <span>{product.latest ? 'new': ''}</span>
                 </div>
                 <div className="label-product label_sale">
-                    <span>{sale ? `-${sale}%` : '' }</span>
+                    <span>{product.sale ? `-${product.sale}%` : '' }</span>
                 </div>
             </div>
             </div>
             <div className="sinrato-list-item-content">
             <div className="manufacture-product">
-                <span><Link to='/'>{brand}</Link></span>
+                <span><Link to='/'>{product.brand}</Link></span>
             </div>
             <div className="sinrato-product-name">
-                <h4><a href="product-details.html" title={name}>{Truncate(name)}</a></h4>
+                <h4><a href="product-details.html" title={product.name}>{Truncate(product.name)}</a></h4>
             </div>
             <div className="sinrato-ratings mb-15">
                 <span><i className="fa fa-star" /></span>
@@ -99,13 +107,13 @@ export default function Product(product) {
                 <span><i className="fa fa-star" /></span>
             </div> 
             <div className="sinrato-product-des">
-                <p> {description || 'no description'}</p>
+                <p> {product.description || ''}</p>
             </div>
             </div>
             <div className="sinrato-box-action">
             <div className="price-box">
-                <span className="regular-price"><span className={` ${special && 'special-price'}`}>£{price}</span></span>
-                <span className="old-price"><del>{oldPrice ? `£${oldPrice}` : ''}</del></span>
+                <span className="regular-price"><span className={` ${product.special && 'special-price'}`}>£{product.price}</span></span>
+                <span className="old-price"><del>{product.previous_price ? `£${product.previous_price}` : ''}</del></span>
             </div>
             <button className="btn-cart" type="button" onClick={()=> addToCart()} data-target="#cart_modal" data-toggle="modal">add to cart</button>
             <div className="action-links sinrat-list-icon">
@@ -116,19 +124,19 @@ export default function Product(product) {
             </div>
         </div>
             :
-            <div className={`product-item ${isGrid && 'mb-30'}`} id={id}>
+            <div className={`product-item ${product.isGrid && 'mb-30'}`} id={product.id}>
                   <div className="product-thumb">
                     <Link to="/productdetails" onClick={()=>ProductDetail()}>
-                      <img src={img1} className="pri-img" alt={name} />
-                      <img src={img2} className="sec-img" alt={name} />
+                      <img src='https://uparzon.com.bd/assets/img/product/product-1.jpg' className="pri-img" alt={product.name} />
+                      <img src='https://uparzon.com.bd/assets/img/product/product-2.jpg' className="sec-img" alt={product.name} />
                     </Link>
                     
                     <div className="box-label">
                       <div className="label-product label_new">
-                        <span>{latest ? 'new': ''}</span>
+                        <span>{product.latest ? 'new': ''}</span>
                       </div>
                       <div className="label-product label_sale">
-                        <span>{sale ? `-${sale}%` : '' }</span>
+                        <span>{product.sale ? `-${product.sale}%` : '' }</span>
                       </div>
                     </div>
                     <div className="action-links">
@@ -139,10 +147,10 @@ export default function Product(product) {
                   </div>
                   <div className="product-caption">
                     <div className="manufacture-product">
-                      <p><Link to="/">{brand}</Link></p>
+                      <p><Link to="/">{product.shop_name}</Link></p>
                     </div>
                     <div className="product-name">
-                      <h4><Link to="/" title={name}>{Truncate(name,25) }</Link></h4>
+                      <h4><Link to="/" title={product.name}>{Truncate(product.name,25) }</Link></h4>
                     </div>
                     <div className="ratings">
                       <span className="purple"><i className="lnr lnr-star" /></span>
@@ -152,8 +160,8 @@ export default function Product(product) {
                       <span><i className="lnr lnr-star" /></span>
                     </div>
                     <div className="price-box">
-                      <span className="regular-price"><span className={` ${special && 'special-price'}`}>£{price}</span></span>
-                      <span className="old-price"><del>{oldPrice ? `£${oldPrice}` : ''}</del></span>
+                      <span className="regular-price"><span className={` ${product.special && 'special-price'}`}>£{product.price}</span></span>
+                      <span className="old-price"><del>{product.previous_price ? `£${product.previous_price}` : ''}</del></span>
                     </div>
                     <button className="btn-cart" onClick={(e)=> addToCart()} type="button">add to cart</button>
                   </div>

@@ -17,7 +17,7 @@ export default function ModalSection({product}){
                     </div>
                 <div className="modal-body">
                 <div className="row">
-                        <Slider product={product}/>
+                        {/* <Slider product={product}/> */}
                         <Description product={product}/>
                     </div>
                     </div>    

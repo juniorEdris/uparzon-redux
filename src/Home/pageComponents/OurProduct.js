@@ -5,24 +5,27 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import './OurProduct.css'
 import {AllProduct } from '../../Data';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { useStateValue } from '../../Utility/StateProvider';
 import ModalSection from '../../PrimarySections/Modal/ModalSection';
+// import Product from './Subfolder/Product__';
 import Product from './Subfolder/Product';
+import { FectData } from '../../PrimarySections/Connections/Axios';
 
 
 
 function OurProduct () {
 
+  useEffect(() => {
+    FectData('https://demostore.uparzon.com/api/uparzonapp/get_products?category_id=32&api_key=4e38d8be3269aa17280d0468b89caa4c7d39a699')
+      .then(res=>{
+        setData(res.data)
+      })
 
-  const Electronics = AllProduct.filter(prod => prod.categories === 'Electronics')
-  const Entertainments = AllProduct.filter(prod => prod.categories === 'Entertainment')
-  const MobileProducts = AllProduct.filter(prod => prod.categories === 'Mobile')
-  
+    }, [])
+  const [data,setData] = useState([])
   const [state] = useStateValue()
-  const [Electproducts] = useState(Electronics)
-  const [Entertproducts] = useState(Entertainments)
-  const [Mobileproducts] = useState(MobileProducts)
+
   const options = {
     loop: false,
     margin:10,
@@ -79,7 +82,7 @@ function OurProduct () {
               {...options}
             >
         
-            {Electproducts.map(product => (
+            {data.map(product => (
               <Product key={product.id} {...product}/>
                   ))
         }
@@ -100,7 +103,7 @@ function OurProduct () {
         >
 
         {
-          Entertproducts.map(product =>(
+          data.map(product =>(
             <Product key={product.id} {...product}/>
           ))
         }
@@ -121,7 +124,7 @@ function OurProduct () {
         className="owl-theme"
         {...options}
         >
-        {Mobileproducts.map(product => (
+        {data.map(product => (
           <Product key={product.id} {...product}/>        
         ))}
     </OwlCarousel>

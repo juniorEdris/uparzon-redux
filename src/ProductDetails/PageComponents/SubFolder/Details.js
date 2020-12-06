@@ -45,12 +45,12 @@ export default function Details() {
                   <span><i className="fa fa-star" /></span>
                   <span><i className="fa fa-star" /></span>
                 </li>
-                <li><Link to="#" />{productView?.ratings.legnth || "0 Reviews"}</li>
+                <li><Link to="#" />{productView?.reviews.legnth || "0 Reviews"}</li>
               </ul>
             </div>
             <div className="price-box mb-15">
               <span className="regular-price"><span className="special-price">£{productView?.price || 0}</span></span>
-              <span className="old-price"><del>£{productView?.oldPrice || 0}</del></span>
+              <span className="old-price"><del>£{productView?.previous_price || 0}</del></span>
             </div>
             <div className="product-detail-sort-des pb-20">
               <p>{productView?.description || ""}</p>
@@ -58,7 +58,7 @@ export default function Details() {
             <div className="pro-details-list pt-20">
               <ul>
                 <li><span>Ex Tax :</span>£60.24</li>
-                <li><span>Brands :</span><Link to="#" >{productView?.brand || "none"}</Link></li>
+                <li><span>Brands :</span><Link to="#" >{productView?.shop_name || "none"}</Link></li>
                 <li><span>Product Code :</span>Digital</li>
                 <li><span>Reward Points :</span>200</li>
                 <li><span>Availability :</span>{productView?.id ? "In Stock" : "Out of Stock"}</li>
@@ -69,13 +69,13 @@ export default function Details() {
               <div className="color-optionn">
                 <h4><sup>*</sup>color</h4>
                 <ul>
-                {
-                    productView?.colors.map(color=>(
+                  {
+                    productView?.color?.map(color=>(
                   <li>
-                    <Link className="c-black" href="#" title="Black" style={{backgroundColor:`${color}`}} />
+                    <Link className="c-black" href="#" title="Black" style={{backgroundColor:'#000'}} />
                   </li>
                     ))
-                }
+                  }
                 </ul> 
               </div>
             </div>

@@ -34,8 +34,7 @@ function App() {
         return ()=>{
             window.removeEventListener('scroll',()=>{})
         }
-    },[])
-
+    },[])   
     
   return (
     <div className="app">

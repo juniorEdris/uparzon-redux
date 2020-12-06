@@ -2178,6 +2178,8 @@ a.shop-btn:hover {
 }
 
 .sinrato-list-item-content {
+  min-width: 483px;
+  min-height: 223px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
