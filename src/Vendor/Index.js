@@ -71,7 +71,6 @@ useEffect(() => {
         }
         setSort('')
     }
-    // pushed to devlop
     return (
         <div className="main-wrapper">
             <Banner/>

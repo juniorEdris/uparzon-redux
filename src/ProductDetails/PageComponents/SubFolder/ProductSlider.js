@@ -22,16 +22,13 @@ export default function ProductSlider() {
         showIndicators={false}
       >
         {
-          productView?.shots.map(img=>(
+         
             <div className='pro-large-img'>
-                <img className='main-img' src={img} alt='' />
+                <img className='main-img' src={`https:${productView?.photo?.replace('demostore', 'store')}`} alt='' />
             </div>
-          ))
         }
           
-          </Carousel>
-
-          <div className="enlargedImage"></div>
+        </Carousel>
         </div>
     )
 }

@@ -80,8 +80,8 @@ export default function Product(product) {
             <div className="sinrato-list-item mb-30" id={product.id}>
             <div className="sinrato-thumb">
             <Link to="/productdetails" onClick={()=>ProductDetail()}>
-                <img  src='https://uparzon.com.bd/assets/img/product/product-1.jpg' className="pri-img" alt={product.name} />
-                <img  src='https://uparzon.com.bd/assets/img/product/product-2.jpg' className="sec-img" alt={product.name} />
+                <img  src={`https:${product.photo.replace('demostore', 'store')}`} className="pri-img" alt={product.name} />
+                {/* <img  src='https://uparzon.com.bd/assets/img/product/product-2.jpg' className="sec-img" alt={product.name} /> */}
             </Link>
             <div className="box-label">
                 <div className="label-product label_new">
@@ -127,8 +127,8 @@ export default function Product(product) {
             <div className={`product-item ${product.isGrid && 'mb-30'}`} id={product.id}>
                   <div className="product-thumb">
                     <Link to="/productdetails" onClick={()=>ProductDetail()}>
-                      <img src='https://uparzon.com.bd/assets/img/product/product-1.jpg' className="pri-img" alt={product.name} />
-                      <img src='https://uparzon.com.bd/assets/img/product/product-2.jpg' className="sec-img" alt={product.name} />
+                      <img src={`https:${product.photo.replace('demostore', 'store')}`} className="pri-img" alt={product.name} />
+                      {/* <img src='https://uparzon.com.bd/assets/img/product/product-2.jpg' className="sec-img" alt={product.name} /> */}
                     </Link>
                     
                     <div className="box-label">
