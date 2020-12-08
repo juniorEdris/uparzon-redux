@@ -1,3 +1,10 @@
+UI Colors >
+
+border: #f0f0f0
+primary: #4f0f40
+light : #fff
+
+
 HeaderBtn cuts jsx css >
     //mycart menu dropdown
     const [isCartActive, setCartActive] = useState(false)

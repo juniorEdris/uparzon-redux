@@ -19,6 +19,7 @@ import Login from './MyAccount/Login/Login';
 import Details from './ProductDetails'
 import './App.css';
 import DashBoard from './MyAccount/DashBoard/Index';
+import VendorPage from './Vendor/Index';
 
 
 function App() {
@@ -41,6 +42,9 @@ function App() {
       <Router>
             <Header/>
         <Switch>
+          <Route path='/vendor'>
+            <VendorPage/>
+          </Route>
           <Route path='/dashboard'>
             <DashBoard/>
           </Route>

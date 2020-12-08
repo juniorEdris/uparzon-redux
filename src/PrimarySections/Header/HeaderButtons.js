@@ -2,7 +2,6 @@ import React,{useEffect,useState} from 'react'
 import { Link } from 'react-router-dom'
 import { getSubTotal } from '../../Utility/Reducer'
 import { useStateValue } from '../../Utility/StateProvider'
-import $ from 'jquery'
 import './HeaderButton.css'
 
 export default function HeaderButtons() {
@@ -86,6 +85,7 @@ export default function HeaderButtons() {
                         user ?
                     <ul className={`box-dropdown ha-dropdown ${isAccActive ? 'active':''}`} onPointerLeave={()=>setIsAccActive(false)}>
                         <li><Link to="/dashboard">Dashboard</Link></li>
+                        <li><Link to="/vendor">My store</Link></li>
                         <li><Link to="/">Log out</Link></li>
                     </ul>
                     :

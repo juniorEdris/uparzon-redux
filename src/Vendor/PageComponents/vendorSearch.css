@@ -1,0 +1,37 @@
+.vendor__search {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+input.vendor-search-field {
+  border: 1px solid #e0e0e0;
+  color: #a4a4a4;
+  font-size: 13px;
+  height: 40px;
+  padding: 0 10px;
+  width: 180px;
+  float: left;
+  border-radius: 6px 0 0 6px;
+}
+.vendor-search-btn {
+  background: var(--theme-color) none repeat scroll 0 0;
+  border: medium none;
+  border-radius: 0 6px 6px 0;
+  color: var(--light-color);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 40px;
+  padding: 0 30px;
+  width: 150px;
+  height: 40px;
+}
+/* and (min-width: 1200px) */
+/* @media (max-width: 1500px) {
+  input.vendor-search-field {
+    width: calc(100% - 900px);
+  }
+
+  .vendor-search-btn {
+    width: 120px;
+  }
+} */

@@ -6,7 +6,7 @@ export default function Search() {
     return (
         <div className="col-lg-6 col-md-12 col-12 order-sm-last">
         <div className="header-middle-inner">
-        {/* <form action="method"> */}
+        
             <div className="top-cat hm1">
             <div className={`search-form`}>
             <FormControl className=''>
@@ -35,6 +35,7 @@ export default function Search() {
             </FormControl>
             </div>
             </div>
+        {/* <form action="method"> */}
             <input type="text" className="top-cat-field" placeholder="Search entire store here" />
             <input type="button" className="top-search-btn" defaultValue="Search" />
         {/* </form> */}

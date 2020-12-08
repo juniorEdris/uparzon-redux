@@ -1,5 +1,4 @@
 import React from 'react'
-import Slider from './SubFolder/ProductSlider'
 import Details from './SubFolder/Details'
 
 export default function ProductDetailsWrap() {

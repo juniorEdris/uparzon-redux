@@ -1,0 +1,42 @@
+.vendor__card {
+  width: 100%;
+  border: 1px solid #f0f0f0;
+  padding: 1rem;
+  border-radius: 6px;
+}
+.vendor__card p {
+  font-size: 15px;
+  line-height: 30px;
+}
+.vendor__img img {
+  width: 150px;
+}
+.vendor__identity .followers {
+  width: fit-content;
+}
+.vendor__btn {
+  height: fit-content;
+}
+.vendor__btn button {
+  height: 40px !important;
+  font-size: 13px;
+  text-transform: uppercase;
+  border-radius: 60;
+}
+.vendor__btn button span {
+  font-size: 14px;
+  margin-right: 5px;
+  line-height: 24px;
+}
+.vendor__btn .btn {
+  border: 1px solid #4f0f40 !important;
+  background-color: #fff !important;
+  color: #111;
+  font-weight: 600;
+  font-size: 15px;
+}
+.vendor__btn .btn:hover {
+  border: 1px solid #111 !important;
+  background-color: #4f0f40 !important;
+  color: #fff;
+}

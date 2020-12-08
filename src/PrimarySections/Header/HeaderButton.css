@@ -27,3 +27,19 @@
     font-size: 12px !important;
   }
 }
+@media (min-width: 433px) and (max-width: 575px) {
+  .box-dropdown {
+    right: 160px;
+  }
+  .mini-cart-drop-down.active {
+    right: 80px;
+  }
+}
+@media (min-width: 320px) and (max-width: 431px) {
+  .box-dropdown {
+    right: 80px;
+  }
+  .mini-cart-drop-down.active {
+    right: 10px;
+  }
+}

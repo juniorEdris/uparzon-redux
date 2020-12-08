@@ -66,7 +66,7 @@ export default function WishListBody() {
                                             </td>
                                             <td>
                                                 <button type='button'  className="btn btn-primary" onClick={()=>addToCart(prod)}><i className="fa fa-shopping-cart" /></button>
-                                                <Link to="#"  className="btn btn-danger" onClick={()=>DelItem(prod,wishList,'Wish List')}><i className="fa fa-times" /></Link>
+                                                <button type='button'  className="btn btn-danger" onClick={()=>DelItem(prod,wishList,'Wish List')}><i className="fa fa-times" /></button>
                                             </td>
                                             </tr>
 

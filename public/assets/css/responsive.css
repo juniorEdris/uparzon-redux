@@ -894,7 +894,7 @@
 
   .cart-info,
   .sticker.sticky .header-call-action {
-    text-align: left;
+    text-align: right;
   }
 
   /* home 2 */
@@ -1716,6 +1716,7 @@
 
   .sinrato-thumb {
     max-width: 100%;
+    margin: 0 auto;
   }
 
   .sinrato-list-item-content {
@@ -1735,7 +1736,9 @@
     -ms-flex-flow: column;
     flex-flow: column;
   }
-
+  .product-view-mode {
+    display: none;
+  }
   .product-view-mode,
   .product-page,
   .per-page {
