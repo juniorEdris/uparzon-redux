@@ -1,0 +1,35 @@
+.more__btn {
+  border: 1px solid #f0f0f0;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+}
+.more__btn:hover {
+  border: 1px solid var(--theme-color);
+}
+.more__btn__child {
+  margin-top: 30%;
+}
+.more__btn__child p {
+  padding: 10px;
+  text-align: center;
+  font-size: 24px;
+  line-height: 40px;
+  font-weight: 500;
+}
+.more__btn__child a {
+  width: 80%;
+  background: var(--theme-color);
+  border: medium none;
+  border-radius: 25px;
+  color: var(--light-color);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 32px;
+  margin-top: 30px;
+  margin-left: 20px;
+  padding: 5px 25px;
+  text-transform: capitalize;
+}
+.more__btn__child a:hover {
+  background-color: #111;
+}

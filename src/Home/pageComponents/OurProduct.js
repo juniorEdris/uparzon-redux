@@ -4,20 +4,20 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import './OurProduct.css'
-import {AllProduct } from '../../Data';
 import { useState,useEffect } from 'react';
 import { useStateValue } from '../../Utility/StateProvider';
 import ModalSection from '../../PrimarySections/Modal/ModalSection';
-// import Product from './Subfolder/Product__';
 import Product from './Subfolder/Product';
 import { FectData } from '../../PrimarySections/Connections/Axios';
+import {Request} from '../../PrimarySections/Connections/APILink';
+import {Link} from 'react-router-dom'
 
 
 
 function OurProduct () {
 
   useEffect(() => {
-    FectData('https://demostore.uparzon.com/api/uparzonapp/get_products?category_id=32&api_key=4e38d8be3269aa17280d0468b89caa4c7d39a699')
+    FectData(Request.AllProducts)
       .then(res=>{
         setData(res.data)
       })
@@ -77,7 +77,7 @@ function OurProduct () {
   <div className="tab-pane fade show active" id="one">
     <div className="product-gallary-wrapper">
       <div className="product-gallary-active  product-spacing">
-            <OwlCarousel
+        <OwlCarousel
               className="owl-theme"
               {...options}
             >
@@ -85,8 +85,8 @@ function OurProduct () {
             {data.map(product => (
               <Product key={product.id} {...product}/>
                   ))
-        }
-    </OwlCarousel>
+            }
+        </OwlCarousel>
       </div>
     </div>
   </div>

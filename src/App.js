@@ -20,6 +20,7 @@ import Details from './ProductDetails'
 import './App.css';
 import DashBoard from './MyAccount/DashBoard/Index';
 import VendorPage from './Vendor/Index';
+import ShopList from './Shop/ShopList/ShopList';
 
 
 function App() {
@@ -42,6 +43,9 @@ function App() {
       <Router>
             <Header/>
         <Switch>
+          <Route path='/shop-list'>
+            <ShopList/>
+          </Route>
           <Route path='/vendor'>
             <VendorPage/>
           </Route>

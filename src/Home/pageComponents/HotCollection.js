@@ -5,19 +5,24 @@ import { FectData } from '../../PrimarySections/Connections/Axios'
 import ModalSection from '../../PrimarySections/Modal/ModalSection'
 import { useStateValue } from '../../Utility/StateProvider'
 import Product from './Subfolder/Product'
+import {Request} from '../../PrimarySections/Connections/APILink';
 
 export default function HotCollection() {
   
   const [state] = useStateValue()
   useEffect(() => {
-    FectData('https://demostore.uparzon.com/api/uparzonapp/get_products?category_id=32&api_key=4e38d8be3269aa17280d0468b89caa4c7d39a699')
+    FectData(Request.AllProducts)
       .then(res=>{
         setData(res.data)
       })
 
     }, [])
   const [data,setData] = useState([])
-
+ const Card = data.map(product =>(
+  <div className="col mb-30">
+   <Product key={product.id} {...product}/>
+  </div> /* single item end */
+  ))
     return (
 <div className="home-module-three hm-1 fix pb-40">
   <div className="container-fluid">
@@ -51,16 +56,13 @@ export default function HotCollection() {
               </div>
             </div>
           </div> {/* single item end */}
-          {
-      data.map(product =>(
-          <div className="col mb-30">
-              <Product key={product.id} {...product}/>
-          </div> /* single item end */
-              ))
-          }
-      
-
-
+          {Card}
+          <div className="col mb-30 more__btn">
+            <div className="more__btn__child">
+              <p>1000+ Products Available in Hot Collection</p>
+              <Link to='/shop' className="btn">See More</Link>
+            </div>
+          </div>
         </div>
       </div>
       {/* module-two starts here */}
@@ -75,20 +77,19 @@ export default function HotCollection() {
               </div>
             </div>
           </div> {/* single item end */}
-          {
-            data.map(product=>(
-              <div className="col mb-30">
-
-                  <Product key={product.id} {...product}/>
-              </div> /* single item end */
-            ))
-          }
+          { Card}
+          <div className="col mb-30 more__btn">
+            <div className="more__btn__child">
+              <p>1000+ Products Available in Hot Collection</p>
+              <Link to='/shop' className="btn">See More</Link>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* module-three id starts here */}
       <div className="tab-pane fade" id="module-three">
-  <div className="module-four-wrapper custom-seven-column">
+        <div className="module-four-wrapper custom-seven-column">
 
           <div className="col col-2 mb-30">
             <div className="product-item">
@@ -99,20 +100,15 @@ export default function HotCollection() {
               </div>
             </div>
           </div> {/* single item end */}
-
-          {
-            data.map(product =>(
-              <div className="col mb-30">
-                <Product key={product.id} {...product}/>
-              </div> /* single item end */
-            ))
-          }
-          
-          
-    
-
-  </div>
-</div>
+          { Card}
+          <div className="col mb-30 more__btn">
+            <div className="more__btn__child">
+              <p>1000+ Products Available in Hot Collection</p>
+              <Link to='/shop' className="btn">See More</Link>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>

@@ -36,7 +36,7 @@ export default function ElectronicsArea() {
     <div className="section-title">
       <h3><span>Laptop</span> &amp; computer</h3>
     </div>
-    <div className="pro-module-four-active "> {/*owl-carousel owl-arrow-style */}
+    <div className="pro-module-four-active ">
       {/* slider starts here */}
       <OwlCarousel
         className="owl-theme"

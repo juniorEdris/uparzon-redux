@@ -1,0 +1,17 @@
+.shop__card {
+  padding: 15px;
+  border: 1px solid #f0f0f0;
+  border-radius: 25px;
+  width: fit-content;
+  text-align: center;
+}
+.shop__card:hover {
+  border: 1px solid #4f0f40;
+}
+.shop__card__img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+  padding: 10px;
+  overflow: hidden;
+}

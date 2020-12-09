@@ -14,11 +14,11 @@ function Slider ({product}) {
                 showIndicators={false}
                 >
                     {
-                        product?.shots.map(img=>(
+                       
                     <div className='pro-large-img'>
-                        <img className='modal-image' src={img} alt='' />
+                        <img className='modal-image' src={`https:${product?.photo?.replace('demostore', 'store')}`} alt='' />
                     </div>
-                        ))
+    
                     }
                 </Carousel>
             </div>

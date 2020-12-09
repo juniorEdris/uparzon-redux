@@ -37,7 +37,7 @@ export default function FearuredCategory() {
           </div>
           <div className="row">
             <div className="col-12">
-              <div className="featured-cat-active "> {/*owl-carousel owl-arrow-style */}
+              <div className="featured-cat-active "> 
                 {/* slider starts here */}
                 <OwlCarousel
                   className="owl-theme"

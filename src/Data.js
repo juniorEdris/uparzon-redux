@@ -1113,3 +1113,12 @@ export const Products = [
         "ratings":["great","Fantastic","very useful","TrustWorthy"],
     },    
 ] 
+
+
+export const Shop = [
+    {
+        shopName:'',
+        storeImage:'',
+        route:'/shop'
+    },
+]
