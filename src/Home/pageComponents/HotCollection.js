@@ -6,6 +6,7 @@ import ModalSection from '../../PrimarySections/Modal/ModalSection'
 import { useStateValue } from '../../Utility/StateProvider'
 import Product from './Subfolder/Product'
 import {Request} from '../../PrimarySections/Connections/APILink';
+import { ProductLoader } from '../../PrimarySections/ReactPlaceHolder/ReactPlaceHolder'
 
 export default function HotCollection() {
   
@@ -14,10 +15,12 @@ export default function HotCollection() {
     FectData(Request.AllProducts)
       .then(res=>{
         setData(res.data)
+        setReady(true)
       })
 
     }, [])
   const [data,setData] = useState([])
+  const [ready,setReady] = useState(false)
  const Card = data.map(product =>(
   <div className="col mb-30">
    <Product key={product.id} {...product}/>
@@ -44,6 +47,8 @@ export default function HotCollection() {
     </div>
     <div className="tab-content">
       <div className="tab-pane fade show active" id="module-one">
+        {!ready ? 
+        <ProductLoader className='product-item'/> :
         <div className="module-four-wrapper custom-seven-column">
           {/* module-one starts here */}
 
@@ -63,7 +68,7 @@ export default function HotCollection() {
               <Link to='/shop' className="btn">See More</Link>
             </div>
           </div>
-        </div>
+        </div>}
       </div>
       {/* module-two starts here */}
       <div className="tab-pane fade" id="module-two">
@@ -77,7 +82,7 @@ export default function HotCollection() {
               </div>
             </div>
           </div> {/* single item end */}
-          { Card}
+          {Card}
           <div className="col mb-30 more__btn">
             <div className="more__btn__child">
               <p>1000+ Products Available in Hot Collection</p>

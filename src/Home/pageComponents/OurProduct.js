@@ -11,6 +11,7 @@ import Product from './Subfolder/Product';
 import { FectData } from '../../PrimarySections/Connections/Axios';
 import {Request} from '../../PrimarySections/Connections/APILink';
 import {Link} from 'react-router-dom'
+import { ProductLoader } from '../../PrimarySections/ReactPlaceHolder/ReactPlaceHolder';
 
 
 
@@ -20,10 +21,12 @@ function OurProduct () {
     FectData(Request.AllProducts)
       .then(res=>{
         setData(res.data)
+        setReady(true)
       })
 
     }, [])
   const [data,setData] = useState([])
+  const [ready,setReady] = useState(false)
   const [state] = useStateValue()
 
   const options = {
@@ -77,16 +80,21 @@ function OurProduct () {
   <div className="tab-pane fade show active" id="one">
     <div className="product-gallary-wrapper">
       <div className="product-gallary-active  product-spacing">
+        {!ready ? 
+        <ProductLoader className='product-item'/>
+        :
         <OwlCarousel
               className="owl-theme"
               {...options}
             >
         
-            {data.map(product => (
+        {   
+            data.map(product => (
               <Product key={product.id} {...product}/>
                   ))
-            }
+        }
         </OwlCarousel>
+        }
       </div>
     </div>
   </div>

@@ -8,19 +8,22 @@ import { useStateValue } from '../../Utility/StateProvider';
 import ModalSection from '../../PrimarySections/Modal/ModalSection';
 import Product from './Subfolder/Product';
 import { FectData } from '../../PrimarySections/Connections/Axios';
+import { ProductLoader } from '../../PrimarySections/ReactPlaceHolder/ReactPlaceHolder';
 
 export default function BrandArea() {
 
 
   const [state] = useStateValue()
   useEffect(() => {
-    FectData('https://demostore.uparzon.com/api/uparzonapp/get_products?category_id=32&api_key=4e38d8be3269aa17280d0468b89caa4c7d39a699')
+    FectData('api/uparzonapp/get_products?category_id=32&api_key=4e38d8be3269aa17280d0468b89caa4c7d39a699')
       .then(res=>{
         setData(res.data)
+        setReady(true)
       })
 
     }, [])
   const [data,setData] = useState([])
+  const [ready,setReady] = useState(false)
   const brandOptions = {
     loop: false,
     margin:10,
@@ -121,7 +124,9 @@ const options = {
           <div className="col-12">
             <div className="tab-content">
               <div className="tab-pane fade show active" id="brand-one">
-                <div className="product-gallary-wrapper brand-sale">
+                {!ready ? 
+        <ProductLoader className='product-item'/>:
+        <div className="product-gallary-wrapper brand-sale">
                   <div className="product-gallary-active  sale-nav"> {/*owl-carousel owl-arrow-style */}
                   {/* product slider starts here */}
                     <OwlCarousel
@@ -136,7 +141,7 @@ const options = {
 
                   </OwlCarousel>
                   </div>
-                </div>
+                </div>}
               </div>
               <div className="tab-pane fade" id="brand-two">
                 <div className="product-gallary-wrapper brand-sale">

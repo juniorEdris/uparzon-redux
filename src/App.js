@@ -21,6 +21,7 @@ import './App.css';
 import DashBoard from './MyAccount/DashBoard/Index';
 import VendorPage from './Vendor/Index';
 import ShopList from './Shop/ShopList/ShopList';
+import {Loader, ProductLoader} from './PrimarySections/ReactPlaceHolder/ReactPlaceHolder';
 
 
 function App() {
@@ -43,6 +44,10 @@ function App() {
       <Router>
             <Header/>
         <Switch>
+          <Route path='/place'>
+            <ProductLoader/>
+            <Loader/>
+          </Route>
           <Route path='/shop-list'>
             <ShopList/>
           </Route>

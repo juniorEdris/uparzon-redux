@@ -1,0 +1,11 @@
+.product-loader {
+  height: 365px;
+  width: 220px;
+  border-radius: 10px;
+  margin: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+.text-block {
+  padding: 10px 12px 0px 7px;
+}

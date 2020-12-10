@@ -1,6 +1,6 @@
 {
   "name": "my-app",
-  "proxy": "https://demostore.uparzon.com",
+  "proxy": "https://demostore.uparzon.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,12 +15,16 @@
     "mburger-css": "^1.3.3",
     "medium-zoom": "^1.0.6",
     "react": "^16.14.0",
+    "react-content-loader": "^5.1.4",
     "react-dom": "^16.14.0",
     "react-owl-carousel": "^2.3.1",
+    "react-placeholder": "^4.0.3",
     "react-responsive-carousel": "^3.2.10",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.4",
-    "react-spring": "^8.0.27"
+    "react-spring": "^8.0.27",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
