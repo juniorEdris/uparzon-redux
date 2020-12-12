@@ -1,6 +1,6 @@
 import React,{useEffect, useState} from 'react'
 import Product from './subFolder/Product'
-import { FectData } from '../../PrimarySections/Connections/Axios'
+import { FetchData } from '../../PrimarySections/Connections/Axios'
 import { Request } from '../../PrimarySections/Connections/APILink'
 import { ProductLoader } from '../../PrimarySections/ReactPlaceHolder/ReactPlaceHolder';
 
@@ -10,7 +10,7 @@ export default function VendorProducts() {
     const [data,setData]=useState([])
     const [ready,setReady]=useState(false)
     useEffect(() => {
-        FectData(Request.VendorProducts)
+        FetchData(Request.VendorProducts)
         .then(res=>{
         setData(res.data)
         setReady(true)

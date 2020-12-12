@@ -8,7 +8,7 @@ import { useState,useEffect } from 'react';
 import { useStateValue } from '../../Utility/StateProvider';
 import ModalSection from '../../PrimarySections/Modal/ModalSection';
 import Product from './Subfolder/Product';
-import { FectData } from '../../PrimarySections/Connections/Axios';
+import { FetchData } from '../../PrimarySections/Connections/Axios';
 import {Request} from '../../PrimarySections/Connections/APILink';
 import {Link} from 'react-router-dom'
 import { ProductLoader } from '../../PrimarySections/ReactPlaceHolder/ReactPlaceHolder';
@@ -18,7 +18,7 @@ import { ProductLoader } from '../../PrimarySections/ReactPlaceHolder/ReactPlace
 function OurProduct () {
 
   useEffect(() => {
-    FectData(Request.AllProducts)
+    FetchData(Request.AllProducts)
       .then(res=>{
         setData(res.data)
         setReady(true)
@@ -80,21 +80,21 @@ function OurProduct () {
   <div className="tab-pane fade show active" id="one">
     <div className="product-gallary-wrapper">
       <div className="product-gallary-active  product-spacing">
-        {!ready ? 
-        <ProductLoader className='product-item'/>
-        :
-        <OwlCarousel
+        
+        {
+        !ready ?
+          <ProductLoader className=''/>  
+          :
+          <OwlCarousel
               className="owl-theme"
               {...options}
             >
-        
-        {   
-            data.map(product => (
-              <Product key={product.id} {...product}/>
-                  ))
+        {
+          data.map(product => (
+            <Product key={product.id} {...product}/>
+            ))
         }
-        </OwlCarousel>
-        }
+        </OwlCarousel>}
       </div>
     </div>
   </div>

@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React,{useState,useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import { FectData } from '../../PrimarySections/Connections/Axios'
+import { FetchData } from '../../PrimarySections/Connections/Axios'
 import ModalSection from '../../PrimarySections/Modal/ModalSection'
 import { useStateValue } from '../../Utility/StateProvider'
 import Product from './Subfolder/Product'
@@ -12,7 +12,7 @@ export default function HotCollection() {
   
   const [state] = useStateValue()
   useEffect(() => {
-    FectData(Request.AllProducts)
+    FetchData(Request.AllProducts)
       .then(res=>{
         setData(res.data)
         setReady(true)

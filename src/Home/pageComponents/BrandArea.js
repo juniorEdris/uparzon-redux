@@ -7,7 +7,7 @@ import './BrandArea.css'
 import { useStateValue } from '../../Utility/StateProvider';
 import ModalSection from '../../PrimarySections/Modal/ModalSection';
 import Product from './Subfolder/Product';
-import { FectData } from '../../PrimarySections/Connections/Axios';
+import { FetchData } from '../../PrimarySections/Connections/Axios';
 import { ProductLoader } from '../../PrimarySections/ReactPlaceHolder/ReactPlaceHolder';
 
 export default function BrandArea() {
@@ -15,7 +15,7 @@ export default function BrandArea() {
 
   const [state] = useStateValue()
   useEffect(() => {
-    FectData('api/uparzonapp/get_products?category_id=32&api_key=4e38d8be3269aa17280d0468b89caa4c7d39a699')
+    FetchData('api/uparzonapp/get_products?category_id=32&api_key=4e38d8be3269aa17280d0468b89caa4c7d39a699')
       .then(res=>{
         setData(res.data)
         setReady(true)

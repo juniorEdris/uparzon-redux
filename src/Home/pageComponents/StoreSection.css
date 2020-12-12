@@ -1,25 +1,66 @@
-.store-address {
-  height: 40px;
-  width: fit-content;
+.store-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+.store-card:hover {
+  border: 1px solid #4f0f40;
+}
+.store-thumb {
+  width: 175px;
+  height: 175px;
+  position: relative;
+  display: block;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.store-thumb img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.store-info {
+  padding: 10px;
 }
 .store-name {
   width: fit-content;
-  height: 44px;
+  margin: 0 auto;
 }
-.store-thumb img {
-  height: 130px;
-  width: 130px;
-  object-fit: contain;
+.store-name a,
+.store-btn {
+  color: #111;
 }
-.more-btn {
-  height: 148px;
+.store-more-btn {
+  height: 247px;
+  width: 175px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
 }
-.more-btn:hover {
+.more-store {
+  margin: auto 0;
+}
+.more-store-name {
+  text-align: center;
+  font-size: 24px;
+  line-height: 40px;
+  font-weight: 500;
+}
+.store-more-btn a {
+  padding: 5px 10px;
+  border: 1px solid var(--theme-color);
+  border-radius: 6px;
+  color: #111;
+}
+.store-more-btn a:hover {
+  background-color: #111;
+  color: var(--light-color);
+}
+.store-more-btn:hover {
+  border: 1px solid #4f0f40;
   background-color: #f0f0f0;
 }
-.more-btn::before {
+.store-more-btn::before {
   content: '';
-}
-.button a {
-  font-size: 1.2rem;
 }

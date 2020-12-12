@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React,{ useEffect } from 'react'
-import $ from 'jquery'
+import $, { ready } from 'jquery'
 import { Link } from 'react-router-dom'
 import './ShopWrapper.css'
 import { useState } from 'react'
@@ -10,7 +10,8 @@ import ModalSection from '../../PrimarySections/Modal/ModalSection'
 import Sidebar from './ShopSidebar'
 import Product from '../../Home/pageComponents/Subfolder/Product'
 import RightBarControl from './RightBarControl'
-import { FectData } from '../../PrimarySections/Connections/Axios'
+import { FetchData } from '../../PrimarySections/Connections/Axios'
+import { ProductLoader } from '../../PrimarySections/ReactPlaceHolder/ReactPlaceHolder'
 
 
 export default function ShopWrapper() {
@@ -28,9 +29,10 @@ $('.product-view-mode a').on('click', function(e){
     $(this).addClass('active');
     shopProductWrap.removeClass('grid list column_3').addClass(viewMode);
 })
-    FectData('https://demostore.uparzon.com/api/uparzonapp/get_products?category_id=32&api_key=4e38d8be3269aa17280d0468b89caa4c7d39a699')
+    FetchData('https://demostore.uparzon.com/api/uparzonapp/get_products?category_id=32&api_key=4e38d8be3269aa17280d0468b89caa4c7d39a699')
     .then(res=>{
     setData(res.data)
+    setReady(true)
     })
 
 }, [])
@@ -38,6 +40,7 @@ $('.product-view-mode a').on('click', function(e){
 const [state] = useStateValue()
 const [sort,setSort] = useState('')
 const [limit,setLimit] = useState('')
+const [ready,setReady] = useState(false)
 
     //Product sort function
     const ProductSort =(e)=>{
@@ -118,7 +121,11 @@ const [limit,setLimit] = useState('')
                         </div>
                         </div>
                     </div>
+                    {!ready ? 
                     <div className="shop-product-wrap grid row">
+                        <ProductLoader/>
+                    </div>
+                    :<div className="shop-product-wrap grid row">
                         {data.map(data=>(
                     <div className="col-lg-3 col-md-4 col-sm-6" key={data.id}>
                         {/* grid view starts here */}
@@ -126,9 +133,8 @@ const [limit,setLimit] = useState('')
                         {/* List view starts here */}
                         <Product key={data.id} {...data} isList={true}/>
                         </div>
-                        ))}
-                        
-                    </div>
+                        ))}    
+                    </div>}
                     <div className="paginatoin-area style-2 pt-35 pb-20">
                         <div className="row">
                         <div className="col-sm-6">

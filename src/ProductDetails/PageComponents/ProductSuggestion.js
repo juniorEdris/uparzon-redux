@@ -7,12 +7,12 @@ import Product from '../../Home/pageComponents/Subfolder/Product'
 import './ProductSuggestion.css'
 import { useStateValue } from '../../Utility/StateProvider';
 import ModalSection from '../../PrimarySections/Modal/ModalSection';
-import { FectData } from '../../PrimarySections/Connections/Axios';
+import { FetchData } from '../../PrimarySections/Connections/Axios';
 
 export default function ProductSuggestion() {
     const [{quickView}] = useStateValue()
     useEffect(() => {
-      FectData('https://demostore.uparzon.com/api/uparzonapp/get_products?category_id=32&api_key=4e38d8be3269aa17280d0468b89caa4c7d39a699')
+      FetchData('https://demostore.uparzon.com/api/uparzonapp/get_products?category_id=32&api_key=4e38d8be3269aa17280d0468b89caa4c7d39a699')
         .then(res=>{
           setData(res.data)
         })

@@ -1,3 +1,6 @@
-.home-banner{
-    margin-bottom:20px !important;
+.home-banner {
+  margin-bottom: 20px !important;
+}
+.home-banner .single-banner-statics img {
+  width: 100% !important;
 }

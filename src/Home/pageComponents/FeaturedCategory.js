@@ -19,7 +19,7 @@ export default function FearuredCategory() {
             nav:false,
         },
         700:{
-          items:3,
+          items:2,
           nav:true
         },
         1000:{

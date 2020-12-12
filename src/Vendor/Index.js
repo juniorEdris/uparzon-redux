@@ -7,7 +7,7 @@ import VendorProducts from './PageComponents/VendorProducts'
 import Pagination from './PageComponents/VendorPagination'
 import FilterControl from './PageComponents/VendorBarControl'
 import Profile from './PageComponents/VendorCard'
-import { FectData } from '../PrimarySections/Connections/Axios'
+import { FetchData } from '../PrimarySections/Connections/Axios'
 import Search from './PageComponents/VendorSearch'
 import Modal from '../PrimarySections/Modal/ModalSection'
 import { useStateValue } from '../Utility/StateProvider'
@@ -23,7 +23,7 @@ const [{quickView}] = useStateValue()
 
 useEffect(() => {
     
-    FectData('https://demostore.uparzon.com/api/uparzonapp/get_products?category_id=32&api_key=4e38d8be3269aa17280d0468b89caa4c7d39a699')
+    FetchData('https://demostore.uparzon.com/api/uparzonapp/get_products?category_id=32&api_key=4e38d8be3269aa17280d0468b89caa4c7d39a699')
         .then(res=>{
         setData(res.data)
     })
