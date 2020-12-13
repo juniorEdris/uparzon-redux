@@ -30,53 +30,67 @@ export default function CartForm() {
     }, [])
 
     return (
-        <form action="#">
-            <div className="table-responsive">
-                {basket.length>0 ? <table className="table table-bordered">
-                <thead>
-                    <tr>
-                    <td>Image</td>
-                    <td>Product Name</td>
-                    <td>Model</td>
-                    <td>Quantity</td>
-                    <td>Unit Price</td>
-                    <td>Total</td>
-                    </tr>
-                </thead>
-                <tbody>
-                {
+        <div className="">
+            {basket.length>0 ?        
                 basket.map(prod=>(
-                    <tr>
-                        <td>
-                            <Link to="product-details.html"><img src={'https://uparzon.com.bd/assets/img/product/product-4.jpg'} alt={prod.name} title={prod.name} className="img-thumbnail" /></Link>
-                        </td>
-                        <td>
-                            <Link to="product-details.html">{prod.name}</Link>
-                            <span>Delivery Date: 2019-09-22</span>
-                            <span>Color: Brown</span>
-                            <span>Reward Points: 300</span>
-                        </td>
-                        <td>3</td>
-                        <td>
-                            <div className="input-group btn-block">
-                            <div className="product-qty mr-3">
-                                <input type="text" defaultValue={prod.count} />
-                            </div>
-                            <span className="input-group-btn">
-                                <button type="submit" className="btn btn-primary"><i className="fa fa-refresh" /></button>
-                                <button type="button" className="btn btn-danger pull-right" onClick={()=>DelItem(prod,basket,'Cart List')}><i className="fa fa-times-circle" /></button>
-                            </span>
-                            </div>
-                        </td>
-                        <td>${prod.price}</td>
-                        <td>${(prod.price*prod.count).toFixed(2)}</td>
-                    </tr>
-                ))
-                
-                }
-                </tbody>
-                </table> : <div className='choose_product'><Link to='/' className="btn">Choose Product</Link></div>}
+                <form action="#">
+                <div className="table-responsive mb-1">
+                    <div className="col-12 d-flex flex-column flex-md-row justify-content-between align-items-center vendor__row">
+                        <div className="vendor__name">
+                           <h3>Shop:  <Link to='/shop'><span>{prod.shop_name}</span></Link></h3>
+                           <p>Phone:  {prod.phone || 'none'}</p>
+                           <p>Address:  {prod.shop_address || 'none'}</p>
+                        </div>
+                        <div className="vendor__alt__text">
+                            <small className='text-muted'>Minimum 500tk product purchaseable from single Shop</small>
+                        </div>
+                    </div>
+                <table className="table table-bordered">
+                    <thead>
+                        <tr>
+                        <td>Image</td>
+                        <td>Product Name</td>
+                        <td>Model</td>
+                        <td>Quantity</td>
+                        <td>Unit Price</td>
+                        <td>Total</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <Link to="/productdetails"><img src={`https:${prod.photo.replace('demostore','store')}`} alt={prod.name} title={prod.name} className="img-thumbnail" /></Link>
+                            </td>
+                            <td>
+                                <Link to="/productdetails">{prod.name}</Link>
+                                <span>Delivery Date: 2019-09-22</span>
+                                <span>Color: Brown</span>
+                                <span>Reward Points: 300</span>
+                            </td>
+                            <td>3</td>
+                            <td>
+                                <div className="input-group btn-block">
+                                <div className="product-qty mr-3">
+                                    <input type="text" defaultValue={prod.count} />
+                                </div>
+                                <span className="input-group-btn">
+                                    <button type="submit" className="btn btn-primary"><i className="fa fa-refresh" /></button>
+                                    <button type="button" className="btn btn-danger pull-right" onClick={()=>DelItem(prod,basket,'Cart List')}><i className="fa fa-times-circle" /></button>
+                                </span>
+                                </div>
+                            </td>
+                            <td>${prod.price}</td>
+                            <td>${(prod.price*prod.count).toFixed(2)}</td>
+                        </tr> 
+                    </tbody>
+                </table>
             </div>
         </form>
+                    ))
+                    
+                    
+                    : <div className='choose_product'><Link to='/' className="btn">Choose Product</Link></div>}
+                
+        </div>
     )
 }

@@ -18,7 +18,7 @@ export default function Product(product) {
     dispatch({ type: "QUICK_VIEW", payload: product })
   }
   const ProductDetail = () => {
-    dispatch({ type: "PRODUCT_VIEW", payload: product })
+    dispatch({ type: "PRODUCT_VIEW", payload: product.id })
   }
   
   const addToCompare = () => {

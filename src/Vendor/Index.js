@@ -7,10 +7,12 @@ import VendorProducts from './PageComponents/VendorProducts'
 import Pagination from './PageComponents/VendorPagination'
 import FilterControl from './PageComponents/VendorBarControl'
 import Profile from './PageComponents/VendorCard'
-import { FetchData } from '../PrimarySections/Connections/Axios'
+import { ShopDetails } from '../PrimarySections/Connections/Axios'
+import { Request } from '../PrimarySections/Connections/APILink'
 import Search from './PageComponents/VendorSearch'
 import Modal from '../PrimarySections/Modal/ModalSection'
 import { useStateValue } from '../Utility/StateProvider'
+import ScrollBar from '../PrimarySections/ScrollBar/ScrollBar'
 
 
 
@@ -19,16 +21,16 @@ export default function Index() {
 const [sort,setSort] = useState('')
 const [limit,setLimit] = useState('')
 const [data,setData] = useState([])
-const [{quickView}] = useStateValue()
-
-useEffect(() => {
-    
-    FetchData('https://demostore.uparzon.com/api/uparzonapp/get_products?category_id=32&api_key=4e38d8be3269aa17280d0468b89caa4c7d39a699')
+const [{quickView,shopId}] = useStateValue()
+const [ready,setReady]=useState(false)
+    useEffect(() => {
+        ShopDetails(Request.VendorProducts,shopId)
         .then(res=>{
         setData(res.data)
-    })
-
-}, [])
+        setReady(true)
+        })
+        localStorage.setItem('Shop Id', JSON.stringify(shopId))
+    }, [shopId])
 
     //Product sort function
     const ProductSort =(e)=>{
@@ -74,7 +76,7 @@ useEffect(() => {
     return (
         <div className="main-wrapper">
             <Banner/>
-            <Profile/>
+            <Profile data={data}/>
             <Search/>
         <div className="container-fluid">
             <div className="row">
@@ -83,7 +85,7 @@ useEffect(() => {
                     <div className="product-shop-main-wrapper mb-50">
                         <div className="shop-top-bar mb-30">
                             <div className="row">
-                                <View/>
+                                {/* <View/> */}
                                 
                                 <div className="col-md-6">
                                     <FilterControl 
@@ -95,12 +97,13 @@ useEffect(() => {
                                 </div>
                             </div>
                         </div>
-                        <VendorProducts/>
+                        <VendorProducts data={data} ready={ready}/>
                         <Pagination/>
                     </div>
                 </div>
             </div>
     </div>
+    <ScrollBar/>
     <Modal product={quickView}/>
     </div>
     )

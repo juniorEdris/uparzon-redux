@@ -1,0 +1,15 @@
+.vendor__row {
+  padding: 0.5rem;
+  border: 1px solid #dee2e6;
+  border-bottom: none;
+}
+.vendor__name a {
+  font-weight: 500 !important;
+  color: var(--theme-color);
+}
+.vendor__name span {
+  color: #007bff;
+}
+.vendor__name span:hover {
+  color: #111;
+}

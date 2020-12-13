@@ -54,7 +54,7 @@ export default function WishListBody() {
                                         wishList?.map(prod =>(
                                             <tr id={prod.id}>
                                             <td>
-                                                <Link to="product-details.html"><img className='wish__thumb' src={'https://uparzon.com.bd/assets/img/product/product-12.jpg'} alt="Wishlist Product Image" title={prod.name} /></Link>
+                                                <Link to="product-details.html"><img className='wish__thumb' src={`https:${prod.photo.replace('demostore','store')}`} alt="Wishlist Product Image" title={prod.name} /></Link>
                                             </td>
                                             <td>
                                                 <Link to="product-details.html">{prod.name}</Link>

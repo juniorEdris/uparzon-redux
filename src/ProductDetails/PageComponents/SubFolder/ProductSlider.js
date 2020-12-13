@@ -1,14 +1,10 @@
 import React from 'react'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import { useStateValue } from '../../../Utility/StateProvider'
 import './ProductSlider.css'
 
 
-export default function ProductSlider() {
-
-
-  const [{productView}] = useStateValue()
+export default function ProductSlider({data}) {
 
     return (
         <div className="col-lg-5 product-details-slider">
@@ -24,7 +20,7 @@ export default function ProductSlider() {
         {
          
             <div className='pro-large-img'>
-                <img className='main-img' src={`https:${productView?.photo?.replace('demostore', 'store')}`} alt='' />
+                <img className='main-img' src={`https:${data?.photo?.replace('demostore', 'store')}`} alt='' />
             </div>
         }
           

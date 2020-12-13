@@ -7,6 +7,7 @@ import { Truncate } from '../../Data'
 import './StoreSection.css'
 import { Link } from 'react-router-dom';
 import { StoreLoader } from '../../PrimarySections/ReactPlaceHolder/ReactPlaceHolder';
+import { useStateValue } from '../../Utility/StateProvider';
 
 export default function StoreSection() {
 
@@ -24,6 +25,10 @@ export default function StoreSection() {
       const [link,setLink] = useState([])
       const [meta,setMeta] = useState([])
       const [ready,setReady] = useState(false)
+      const [,dispatch] = useStateValue()
+      const VendorDetails=(id)=>{
+          dispatch({type:'VENDOR_PAGE',payload:id})
+      }
 
     return (
         <>
@@ -39,7 +44,7 @@ export default function StoreSection() {
                   <StoreLoader/>:
                   <div className=" d-flex flex-wrap justify-content-center"> 
                   {shop.map(store=>(
-                        <Link to={`/shop/${store.shop_id}`}>
+                        <Link to={`/vendor`} onClick={()=> VendorDetails(store.shop_id)}>
                           <div className="store-card mb-3 mr-3" key={store.shop_id}>
                                 <div className="store-thumb">
                                 <img src={`https:${store.logo.replace('demostore', 'store')}`} alt={store.shop_name} />

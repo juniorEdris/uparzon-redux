@@ -5,8 +5,8 @@ import { useStateValue } from '../../../Utility/StateProvider'
 import './Details.css'
 
 
-export default function Details() {
-  const [{productView,compareList},dispatch] = useStateValue()
+export default function Details({data}) {
+  const [{compareList},dispatch] = useStateValue()
 
   useEffect(() => {
     //Anchore propagation off
@@ -16,25 +16,25 @@ export default function Details() {
   }, [])
 
   const addToWishList = () => {
-    dispatch({type:'ADD_TO_WISH_LIST',payload:productView})
+    dispatch({type:'ADD_TO_WISH_LIST',payload:data})
   }
   const addToCompare = () => {
     if(compareList.length === 3 ){
       return  
     }
-      dispatch({type:"COMPARE_PRODUCTS",payload:productView})
+      dispatch({type:"COMPARE_PRODUCTS",payload:data})
 
   }
   const addToCart= ()=>{
     // addToCart dispatch 
-    dispatch({type:"ADD_TO_CART",payload:productView})
+    dispatch({type:"ADD_TO_CART",payload:data})
     }
   return (
         <div className="col-lg-7">
         <div className="product-details-inner">
           <div className="product-details-contentt">
             <div className="pro-details-name mb-10">
-            <h3>{productView?.name || undefined}</h3>
+            <h3>{data?.name || undefined}</h3>
             </div>
             <div className="pro-details-review mb-20">
               <ul>
@@ -45,23 +45,23 @@ export default function Details() {
                   <span><i className="fa fa-star" /></span>
                   <span><i className="fa fa-star" /></span>
                 </li>
-                <li><Link to="#" />{productView?.reviews.legnth || "0 Reviews"}</li>
+                <li><Link to="#" />{data?.reviews?.legnth || "0 Reviews"}</li>
               </ul>
             </div>
             <div className="price-box mb-15">
-              <span className="regular-price"><span className="special-price">£{productView?.price || 0}</span></span>
-              <span className="old-price"><del>£{productView?.previous_price || 0}</del></span>
+              <span className="regular-price"><span className="special-price">£{data?.price || 0}</span></span>
+              <span className="old-price"><del>£{data?.previous_price || 0}</del></span>
             </div>
             <div className="product-detail-sort-des pb-20">
-              <p>{productView?.description || ""}</p>
+              <p>{data?.description || ""}</p>
             </div>
             <div className="pro-details-list pt-20">
               <ul>
                 <li><span>Ex Tax :</span>£60.24</li>
-                <li><span>Brands :</span><Link to="#" >{productView?.shop_name || "none"}</Link></li>
+                <li><span>Brands :</span><Link to="#" >{data?.shop_name || "none"}</Link></li>
                 <li><span>Product Code :</span>Digital</li>
                 <li><span>Reward Points :</span>200</li>
-                <li><span>Availability :</span>{productView?.id ? "In Stock" : "Out of Stock"}</li>
+                <li><span>Availability :</span>{data?.id ? "In Stock" : "Out of Stock"}</li>
               </ul>
             </div>
             <div className="product-availabily-option mt-15 mb-15">
@@ -70,7 +70,7 @@ export default function Details() {
                 <h4><sup>*</sup>color</h4>
                 <ul>
                   {
-                    productView?.color?.map(color=>(
+                    data?.color?.map(color=>(
                   <li>
                     <Link className="c-black" href="#" title="Black" style={{backgroundColor:'#000'}} />
                   </li>

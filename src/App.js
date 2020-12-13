@@ -12,7 +12,7 @@ import Shop from './Shop/Shop';
 import Contact from './Contact/Contact';
 import Compare from './Compare/Compare';
 import WishList from './WishList/WishList';
-import Product from './ProductCart/ProductCart';
+import Cart from './ProductCart/ProductCart';
 import Checkout from './Checkout/Index';
 import Register from './MyAccount/Register/Register';
 import Login from './MyAccount/Login/Login';
@@ -75,7 +75,7 @@ function App() {
             <WishList/>
           </Route>
           <Route path='/cart'>
-            <Product/>
+            <Cart/>
           </Route>
           <Route path='/checkout'>
             <Checkout/>

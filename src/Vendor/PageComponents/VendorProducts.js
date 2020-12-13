@@ -1,21 +1,8 @@
-import React,{useEffect, useState} from 'react'
+import React from 'react'
 import Product from './subFolder/Product'
-import { FetchData } from '../../PrimarySections/Connections/Axios'
-import { Request } from '../../PrimarySections/Connections/APILink'
 import { ProductLoader } from '../../PrimarySections/ReactPlaceHolder/ReactPlaceHolder';
 
-
-
-export default function VendorProducts() {
-    const [data,setData]=useState([])
-    const [ready,setReady]=useState(false)
-    useEffect(() => {
-        FetchData(Request.VendorProducts)
-        .then(res=>{
-        setData(res.data)
-        setReady(true)
-        })
-    }, [])
+export default function VendorProducts({ready,data}) {
 
     return (
         <>
@@ -24,7 +11,7 @@ export default function VendorProducts() {
         :
         <div className="shop-product-wrap column_3 row">
             {
-                data.map(data=>(
+                data?.map(data=>(
                     <div className="col-lg-3 col-md-4 col-sm-6" key={data.id}>
                     {/* grid view starts here */}
                     <Product isGrid={true} key={data.id} {...data} />

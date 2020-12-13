@@ -4,7 +4,9 @@ export const initialState = {
   basket:localStorage.getItem('Cart List') ? JSON.parse(localStorage.getItem('Cart List')) :[],
   wishList:localStorage.getItem('Wish List') ? JSON.parse(localStorage.getItem('Wish List')) :[],
   compareList:localStorage.getItem('Compare List') ? JSON.parse(localStorage.getItem('Compare List')) :[],
-  user:true
+  user:true,
+  productView:localStorage.getItem('Product Id') ? JSON.parse(localStorage.getItem('Product Id')) :'',
+  shopId:localStorage.getItem('Shop Id') ? JSON.parse(localStorage.getItem('Shop Id')) :''
 }
 
   export default function reducer (state,action){
@@ -22,11 +24,12 @@ export const initialState = {
                 basket:[...state.basket,action.payload],
                 count:action.count
               }
-            // case 'NEW_TO_CART': 
-            //   return{
-            //     ...state,
-            //     newCartProd:action.payload
-            //   }
+            case 'VENDOR_PAGE':
+              console.log('Vendor id',action.payload) 
+              return{
+                ...state,
+                shopId:action.payload
+              }
             case 'COMPARE_PRODUCTS':
               const  compareItem = action.payload 
               return{
@@ -40,10 +43,9 @@ export const initialState = {
                 wishList:[...state.wishList,wishItem]
               }
             case 'PRODUCT_VIEW':
-              const  product = action.payload 
               return{
                 ...state,
-                productView:product
+                productView:action.payload 
               }
             // case 'DELETE_FROM_CART':
             //   const  delwishItem = action.payload 
