@@ -2,23 +2,23 @@ import React, { useState,useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import './Navigation.css'
 
-export default function Navigation() {
+function Navigation() {
 
     //Stciky nav trigger
     const [stickyNav,setStickyNav] = useState(false)
 
     useEffect(() => {
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 200 ) {
+            if (window.scrollY > 500 ) {
                 setStickyNav(true)
             } else {
                 setStickyNav(false)
             }
         })
         return () => {
-           window.removeEventListener('scroll',()=>{})
+            window.removeEventListener('scroll',()=>{})
         }
-    }, [])
+    }, [stickyNav])
 
         //catagories menu dropdown
         const[isBrowsing,setBrowsing] = useState(false)
@@ -161,3 +161,5 @@ export default function Navigation() {
         </div>
     )
 }
+
+export default React.memo(Navigation)

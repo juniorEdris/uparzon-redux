@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import $ from 'jquery'
 
-export default function ScrollBar() {
+function ScrollBar() {
     useEffect(() => {
         // get on top of the page after page loads
         (window).scrollTo(0,0)
@@ -19,11 +19,12 @@ export default function ScrollBar() {
 	            scrollTop:0
 	        },1000);
         });
-        
+
         return()=>{
-            window.removeEventListener('scroll', () => {});
-            scrollTop.removeEventListener('click',()=>{});
+            window.removeEventListener('scroll',()=>{})
+            scrollTop.removeEventListener('click',()=>{})
         }
+        
     }, [])
     return (
                 <div className="scroll-top not-visible">
@@ -31,3 +32,5 @@ export default function ScrollBar() {
                 </div>
     )
 }
+
+export default React.memo(ScrollBar)

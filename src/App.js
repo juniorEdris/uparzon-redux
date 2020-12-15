@@ -22,6 +22,8 @@ import DashBoard from './MyAccount/DashBoard/Index';
 import VendorPage from './Vendor/Index';
 import ShopList from './Shop/ShopList/ShopList';
 import {Loader, ProductLoader, StoreLoader} from './PrimarySections/ReactPlaceHolder/ReactPlaceHolder';
+import store from './ReduxStore'
+import {Provider} from 'react-redux'
 
 
 function App() {
@@ -40,6 +42,7 @@ function App() {
     },[])   
     
   return (
+    <Provider store={store}>
     <div className="app">
       <Router>
             <Header/>
@@ -93,6 +96,7 @@ function App() {
             <Footer/>
       </Router>
      </div>
+    </Provider>
   );
 }
 
